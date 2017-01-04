@@ -1,0 +1,23 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix : <http://usefulinc.com/ns/doap#> .
+@base <http://succotash.5th.ch/> .
+
+
+<#generalanzeiger> a :Project;
+  :name "S-Bahn Generalanzeiger Zürich HB" ;
+  :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
+  :programming-language "CSS" ; #link to css instead of literal?
+  foaf:maker <http://marcoko.ch/#i> .
+
+  <#mqttSense> :name "mqttSense" .
+  <#mqttSwitch> :name "mqttSwitch" .
+  <#xBeeSensorNetwork> :name "xBeeSensorNetwork" .
+  <#textly> :name "textly" .
+  <#matt> :name "matt" .
+  <#mqttNMEA> :name "mqttNMEA" .
+  <#mqttAnalogMeter> :name "mqttAnalogMeter" .
+  <#mqttLight> :name "mqttLight" .
+  <#mqttNEO> :name "mqttNEO" .
+  <#holdEm> :name "holdEm" .
+  <#typer> :name "typer" .
