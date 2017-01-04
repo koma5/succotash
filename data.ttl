@@ -21,3 +21,4 @@
   <#mqttNEO> :name "mqttNEO" .
   <#holdEm> :name "holdEm" .
   <#typer> :name "typer" .
+  <#succotash> :name "succotash" .

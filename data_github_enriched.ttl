@@ -1,0 +1,109 @@
+@prefix : <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://succotash.5th.ch/#generalanzeiger> a :Project ;
+    :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
+    :name "S-Bahn Generalanzeiger Zürich HB" ;
+    :programming-language "CSS" ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#holdEm> a :Project ;
+    :description "Texas Hold'Em Hand simulator as python notebook" ;
+    :homepage <https://github.com/koma5/holdEm> ;
+    :name "holdEm" ;
+    :repository <git@github.com:koma5/holdEm.git>,
+        <https://github.com/koma5/holdEm.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#matt> a :Project ;
+    :description "JavaScript site to turn (my) mqtt devices on and off and display their state." ;
+    :homepage <https://github.com/koma5/matt> ;
+    :name "matt" ;
+    :repository <git@github.com:koma5/matt.git>,
+        <https://github.com/koma5/matt.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttAnalogMeter> a :Project ;
+    :description "mqtt analog meter display for any values" ;
+    :homepage <https://github.com/koma5/mqttAnalogMeter> ;
+    :name "mqttAnalogMeter" ;
+    :repository <git@github.com:koma5/mqttAnalogMeter.git>,
+        <https://github.com/koma5/mqttAnalogMeter.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttLight> a :Project ;
+    :description "mqtt light switch" ;
+    :homepage <https://github.com/koma5/mqttLight> ;
+    :name "mqttLight" ;
+    :repository <git@github.com:koma5/mqttLight.git>,
+        <https://github.com/koma5/mqttLight.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttNEO> a :Project ;
+    :description "mqtt controlled, color changing lamp" ;
+    :homepage <https://github.com/koma5/mqttNEO> ;
+    :name "mqttNEO" ;
+    :repository <git@github.com:koma5/mqttNEO.git>,
+        <https://github.com/koma5/mqttNEO.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttNMEA> a :Project ;
+    :description "mqtt gps receiver" ;
+    :homepage <https://github.com/koma5/mqttNMEA> ;
+    :name "mqttNMEA" ;
+    :repository <git@github.com:koma5/mqttNMEA.git>,
+        <https://github.com/koma5/mqttNMEA.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttSense> a :Project ;
+    :description "mqtt temperature and humidity sensor" ;
+    :homepage <https://github.com/koma5/mqttSense> ;
+    :name "mqttSense" ;
+    :repository <git@github.com:koma5/mqttSense.git>,
+        <https://github.com/koma5/mqttSense.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#mqttSwitch> a :Project ;
+    :description "mqtt device to switch on and off an electric heater in my camper " ;
+    :homepage <https://github.com/koma5/mqttSwitch> ;
+    :name "mqttSwitch" ;
+    :repository <git@github.com:koma5/mqttSwitch.git>,
+        <https://github.com/koma5/mqttSwitch.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#succotash> a :Project ;
+    :description "fancy, static portfolio website from rdf data" ;
+    :homepage <https://github.com/koma5/succotash> ;
+    :name "succotash" ;
+    :repository <git@github.com:koma5/succotash.git>,
+        <https://github.com/koma5/succotash.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#textly> a :Project ;
+    :description "a very simple text editor which uses localStorage and html editable content." ;
+    :homepage <https://github.com/koma5/textly> ;
+    :name "textly" ;
+    :repository <git@github.com:koma5/textly.git>,
+        <https://github.com/koma5/textly.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#typer> a :Project ;
+    :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _" ;
+    :homepage <https://github.com/koma5/typer> ;
+    :name "typer" ;
+    :repository <git@github.com:koma5/typer.git>,
+        <https://github.com/koma5/typer.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#xBeeSensorNetwork> a :Project ;
+    :description "xBees jeff, hugo and daisy talking to each other..." ;
+    :homepage <https://github.com/koma5/xBeeSensorNetwork> ;
+    :name "xBeeSensorNetwork" ;
+    :repository <git@github.com:koma5/xBeeSensorNetwork.git>,
+        <https://github.com/koma5/xBeeSensorNetwork.git> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
