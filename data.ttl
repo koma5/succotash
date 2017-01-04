@@ -10,15 +10,15 @@
   :programming-language "CSS" ; #link to css instead of literal?
   foaf:maker <http://marcoko.ch/#i> .
 
-  <#mqttSense> :name "mqttSense" .
-  <#mqttSwitch> :name "mqttSwitch" .
-  <#xBeeSensorNetwork> :name "xBeeSensorNetwork" .
-  <#textly> :name "textly" .
-  <#matt> :name "matt" .
-  <#mqttNMEA> :name "mqttNMEA" .
-  <#mqttAnalogMeter> :name "mqttAnalogMeter" .
-  <#mqttLight> :name "mqttLight" .
-  <#mqttNEO> :name "mqttNEO" .
-  <#holdEm> :name "holdEm" .
-  <#typer> :name "typer" .
-  <#succotash> :name "succotash" .
+[] :name "mqttSense" .
+[] :name "mqttSwitch" .
+[] :name "xBeeSensorNetwork" .
+[] :name "textly" .
+[] :name "matt" .
+[] :name "mqttNMEA" .
+[] :name "mqttAnalogMeter" .
+[] :name "mqttLight" .
+[] :name "mqttNEO" .
+[] :name "holdEm" .
+[] :name "typer" .
+[] :name "succotash" .

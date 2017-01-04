@@ -2,6 +2,7 @@ import rdflib, requests
 
 graph = rdflib.Graph()
 me = rdflib.URIRef("http://marcoko.ch/#i")
+base = "http://succotash.5th.ch/#"
 
 graph.parse('./data.ttl', format='turtle')
 
@@ -22,28 +23,37 @@ for githubRepo in githubRepos:
     for repoToFetch in ReposToFetch:
         if githubRepo['name'] == repoToFetch['name'].toPython():
             print(githubRepo['name'])
-            graph.add(( repoToFetch['project'],
+
+            graph.remove((repoToFetch['project'], None, None))
+
+            newId = rdflib.URIRef(base + githubRepo['name'])
+
+            graph.add(( newId,
+                        doap.name,
+                        rdflib.Literal(githubRepo['name']) ))
+
+            graph.add(( newId,
                         doap.homepage,
                         rdflib.URIRef(githubRepo['html_url']) ))
 
-            graph.add(( repoToFetch['project'],
+            graph.add(( newId,
                         doap.repository,
                         rdflib.URIRef(githubRepo['ssh_url']) ))
 
-            graph.add(( repoToFetch['project'],
+            graph.add(( newId,
                         doap.repository,
                         rdflib.URIRef(githubRepo['clone_url']) ))
 
             if(githubRepo['description'] != None):
-                graph.add(( repoToFetch['project'],
+                graph.add(( newId,
                             doap.description,
                             rdflib.Literal(githubRepo['description']) ))
 
-            graph.add(( repoToFetch['project'],
+            graph.add(( newId,
                         foaf.maker,
                         me))
 
-            graph.add(( repoToFetch['project'],
+            graph.add(( newId,
                         rdf.type,
                         doap.Project ))
 
