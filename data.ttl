@@ -21,4 +21,5 @@
 [] :name "mqttNEO" .
 [] :name "holdEm" .
 [] :name "typer" .
+[] :name "daily" .
 [] :name "succotash" .

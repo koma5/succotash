@@ -32,9 +32,10 @@ for githubRepo in githubRepos:
                         doap.name,
                         rdflib.Literal(githubRepo['name']) ))
 
-            graph.add(( newId,
-                        doap.homepage,
-                        rdflib.URIRef(githubRepo['html_url']) ))
+            if(githubRepo['homepage'] != ""):
+                graph.add(( newId,
+                            doap.homepage,
+                            rdflib.URIRef(githubRepo['homepage']) ))
 
             graph.add(( newId,
                         doap.repository,
@@ -42,7 +43,7 @@ for githubRepo in githubRepos:
 
             graph.add(( newId,
                         doap.repository,
-                        rdflib.URIRef(githubRepo['clone_url']) ))
+                        rdflib.URIRef(githubRepo['html_url']) ))
 
             if(githubRepo['description'] != None):
                 graph.add(( newId,
