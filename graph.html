@@ -18,23 +18,10 @@
 </head>
 <body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+<script src="https://rawgit.com/linkeddata/rdflib.js/master/dist/rdflib.js"></script>
 <script>
 var width = 960,
     height = 600;
-
-var nodes = d3.range(50).map(function(i) {
-  return {
-    index: i
-  };
-});
-
-var links = d3.range(50).map(function(i) {
-  return {
-    source: Math.random() * 50 | 0,
-    target: Math.random() * 50 | 0
-  };
-});
-
 
 var svg = d3.select('body').append('svg')
     .attr('width', width)
@@ -42,10 +29,74 @@ var svg = d3.select('body').append('svg')
 
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(20).id(function(d, i) { return i; }))
+    .force("link", d3.forceLink().distance(20).id(function(d, i) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
+
+var doap = $rdf.Namespace("http://usefulinc.com/ns/doap#")
+var foaf = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
+var rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+/*@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix yago: <http://dbpedia.org/class/yago/> .*/
+
+
+var store = $rdf.graph()
+var timeout = 5000 // 5000 ms timeout
+var fetcher = new $rdf.Fetcher(store, timeout)
+
+var nodes = []
+var links = []
+
+fetcher.nowOrWhenFetched("http://127.0.0.1:8000/data_github_enriched.ttl", function(ok, body, xhr) {
+    if (ok) {
+
+      nodes.push({
+        id: "http://marcoko.ch/#i"
+      })
+
+      //doap projects
+      var doapProjects = store.statementsMatching(undefined, rdf('type'), doap('Project'))
+      for (var i=0; i<doapProjects.length; i++) {
+        project = doapProjects[i]
+        console.log(project.subject.uri)
+        nodes.push({
+          id: project.subject.uri
+        })
+      }
+
+
+
+
+
+      //foaf:maker links (makes this generic!!!! 👍)
+      //for each [foaf('maker'), programming language etc.]
+      var makers = store.statementsMatching(undefined, foaf('maker'), undefined)
+      for (var i=0; i<makers.length; i++) {
+        maker = makers[i]
+        console.log(maker.subject.uri + maker.object.uri)
+        links.push({
+          source: maker.subject.uri,
+          target: maker.object.uri,
+          type: foaf('maker').value
+        })
+      }
+
+waitinggg() // I really really really hate JavaScript!!!!
+
+
+
+    } else {
+          console.log("Oops, something happened and couldn't fetch data");
+        }
+})
+function waitinggg() { // did I say I hate this!!!! I spent hours befor noticing this code is not waiting - is running away!
 var link = svg.selectAll('.link')
     .data(links)
     .enter().append('line')
@@ -96,6 +147,7 @@ function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
+}
 }
 </script>
 </body>
