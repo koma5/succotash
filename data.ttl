@@ -1,5 +1,9 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix yago: <http://dbpedia.org/class/yago/> .
 @prefix : <http://usefulinc.com/ns/doap#> .
 @base <http://succotash.5th.ch/> .
 
@@ -7,19 +11,28 @@
 <#generalanzeiger> a :Project;
   :name "S-Bahn Generalanzeiger Zürich HB" ;
   :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
-  :programming-language "CSS" ; #link to css instead of literal?
+  :programming-language dbr:Cascading_Style_Sheets ;
   foaf:maker <http://marcoko.ch/#i> .
 
-[] :name "mqttSense" .
-[] :name "mqttSwitch" .
-[] :name "xBeeSensorNetwork" .
-[] :name "textly" .
-[] :name "matt" .
-[] :name "mqttNMEA" .
-[] :name "mqttAnalogMeter" .
-[] :name "mqttLight" .
-[] :name "mqttNEO" .
-[] :name "holdEm" .
-[] :name "typer" .
-[] :name "daily" .
-[] :name "succotash" .
+<#mqttSense> a :Project ; skos:related dbr:Internet_of_Things .
+<#mqttSwitch> a :Project .
+<#xBeeSensorNetwork> a :Project .
+<#textly> a :Project .
+<#matt> a :Project ; :programming-language dbr:JavaScript .
+<#mqttNMEA> a :Project ;
+  skos:related dbr:Arduino ;
+  dbo:computingPlatform dbr:Arduino .
+<#mqttAnalogMeter> a :Project .
+<#mqttLight> a :Project .
+<#mqttNEO> a :Project .
+<#holdEm> a :Project .
+<#typer> a :Project .
+<#daily> a :Project .
+<#succotash> a :Project .
+
+#_:frontend a skos:Concept .
+#dbr:Internet_of_Things a skos:Concept .
+#_:Arduino a skos:Concept .
+#_:Electronics a skos:Concept ; skos:narrower _:IoT .
+# dbo:programmingLanguage or :programming-language ?
+# dbo:computingPlatform

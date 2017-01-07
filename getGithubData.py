@@ -11,8 +11,8 @@ foaf = rdflib.namespace.FOAF
 rdf  = rdflib.namespace.RDF
 
 ReposToFetch = graph.query(
-    """SELECT ?name ?project
-       WHERE { ?project :name ?name . }""")
+    """SELECT ?project
+       WHERE { ?project a :Project . }""")
 
 
 githubReposUrl = "https://api.github.com/users/koma5/repos"
@@ -21,40 +21,38 @@ githubRepos = requests.get(githubReposUrl).json()
 
 for githubRepo in githubRepos:
     for repoToFetch in ReposToFetch:
-        if githubRepo['name'] == repoToFetch['name'].toPython():
+        hashId = repoToFetch['project'].toPython().split('#')[1]
+        if githubRepo['name'] == hashId:
             print(githubRepo['name'])
 
-            graph.remove((repoToFetch['project'], None, None))
 
-            newId = rdflib.URIRef(base + githubRepo['name'])
-
-            graph.add(( newId,
+            graph.add(( repoToFetch['project'],
                         doap.name,
-                        rdflib.Literal(githubRepo['name']) ))
+                        rdflib.Literal(hashId) ))
 
             if(githubRepo['homepage'] != ""):
-                graph.add(( newId,
+                graph.add(( repoToFetch['project'],
                             doap.homepage,
                             rdflib.URIRef(githubRepo['homepage']) ))
 
-            graph.add(( newId,
+            graph.add(( repoToFetch['project'],
                         doap.repository,
                         rdflib.URIRef(githubRepo['ssh_url']) ))
 
-            graph.add(( newId,
+            graph.add(( repoToFetch['project'],
                         doap.repository,
                         rdflib.URIRef(githubRepo['html_url']) ))
 
             if(githubRepo['description'] != None):
-                graph.add(( newId,
+                graph.add(( repoToFetch['project'],
                             doap.description,
                             rdflib.Literal(githubRepo['description']) ))
 
-            graph.add(( newId,
+            graph.add(( repoToFetch['project'],
                         foaf.maker,
                         me))
 
-            graph.add(( newId,
+            graph.add(( repoToFetch['project'],
                         rdf.type,
                         doap.Project ))
 

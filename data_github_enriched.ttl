@@ -1,9 +1,13 @@
 @prefix : <http://usefulinc.com/ns/doap#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix yago: <http://dbpedia.org/class/yago/> .
 
 <http://succotash.5th.ch/#daily> a :Project ;
     :description "minimal wordpress theme, which changes color on daylight" ;
@@ -15,7 +19,7 @@
 <http://succotash.5th.ch/#generalanzeiger> a :Project ;
     :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
     :name "S-Bahn Generalanzeiger Zürich HB" ;
-    :programming-language "CSS" ;
+    :programming-language dbr:Cascading_Style_Sheets ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#holdEm> a :Project ;
@@ -28,6 +32,7 @@
 <http://succotash.5th.ch/#matt> a :Project ;
     :description "JavaScript site to turn (my) mqtt devices on and off and display their state." ;
     :name "matt" ;
+    :programming-language dbr:JavaScript ;
     :repository <git@github.com:koma5/matt.git>,
         <https://github.com/koma5/matt> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -54,10 +59,12 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttNMEA> a :Project ;
+    dbo:computingPlatform dbr:Arduino ;
     :description "mqtt gps receiver" ;
     :name "mqttNMEA" ;
     :repository <git@github.com:koma5/mqttNMEA.git>,
         <https://github.com/koma5/mqttNMEA> ;
+    skos:related dbr:Arduino ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSense> a :Project ;
@@ -65,6 +72,7 @@
     :name "mqttSense" ;
     :repository <git@github.com:koma5/mqttSense.git>,
         <https://github.com/koma5/mqttSense> ;
+    skos:related dbr:Internet_of_Things ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSwitch> a :Project ;
