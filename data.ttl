@@ -14,21 +14,40 @@
   :programming-language dbr:Cascading_Style_Sheets ;
   foaf:maker <http://marcoko.ch/#i> .
 
-<#mqttSense> a :Project ; skos:related dbr:Internet_of_Things .
-<#mqttSwitch> a :Project .
-<#xBeeSensorNetwork> a :Project .
-<#textly> a :Project .
-<#matt> a :Project ; :programming-language dbr:JavaScript .
+<#ausleihdb> a :Project ;
+:programming-language dbr:Cascading_Style_Sheets, dbr:PHP  ;
+foaf:maker <http://marcoko.ch/#i> .
+
+<#mqttSense> a :Project ;
+  skos:related dbr:Internet_of_Things ;
+  :programming-language dbr:C_\(programming_language\) .
+<#mqttSwitch> a :Project ;
+  :programming-language dbr:C_\(programming_language\) .
+<#xBeeSensorNetwork> a :Project ;
+  :programming-language dbr:C_\(programming_language\) .
+<#textly> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript .
+<#matt> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript .
 <#mqttNMEA> a :Project ;
   skos:related dbr:Arduino ;
-  dbo:computingPlatform dbr:Arduino .
-<#mqttAnalogMeter> a :Project .
-<#mqttLight> a :Project .
-<#mqttNEO> a :Project .
-<#holdEm> a :Project .
-<#typer> a :Project .
-<#daily> a :Project .
-<#succotash> a :Project .
+  dbo:computingPlatform dbr:Arduino ;
+  :programming-language dbr:C_\(programming_language\) .
+<#mqttAnalogMeter> a :Project ;
+  :programming-language dbr:C_\(programming_language\) .
+<#mqttLight> a :Project ;
+  :programming-language dbr:C_\(programming_language\) .
+<#mqttNEO> a :Project ;
+  :programming-language dbr:C_\(programming_language\) .
+<#holdEm> a :Project ;
+  :programming-language dbr:Python_\(programming_language\) .
+<#typer> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript,  dbr:PHP .
+<#daily> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:PHP .
+<#succotash> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\) .
+
 
 #_:frontend a skos:Concept .
 #dbr:Internet_of_Things a skos:Concept .

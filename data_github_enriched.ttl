@@ -9,9 +9,16 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 
+<http://succotash.5th.ch/#ausleihdb> a :Project ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:PHP ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://succotash.5th.ch/#daily> a :Project ;
     :description "minimal wordpress theme, which changes color on daylight" ;
     :name "daily" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:PHP ;
     :repository <git@github.com:koma5/daily.git>,
         <https://github.com/koma5/daily> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -25,6 +32,7 @@
 <http://succotash.5th.ch/#holdEm> a :Project ;
     :description "Texas Hold'Em Hand simulator as python notebook" ;
     :name "holdEm" ;
+    :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <git@github.com:koma5/holdEm.git>,
         <https://github.com/koma5/holdEm> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -32,7 +40,8 @@
 <http://succotash.5th.ch/#matt> a :Project ;
     :description "JavaScript site to turn (my) mqtt devices on and off and display their state." ;
     :name "matt" ;
-    :programming-language dbr:JavaScript ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript ;
     :repository <git@github.com:koma5/matt.git>,
         <https://github.com/koma5/matt> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -40,6 +49,7 @@
 <http://succotash.5th.ch/#mqttAnalogMeter> a :Project ;
     :description "mqtt analog meter display for any values" ;
     :name "mqttAnalogMeter" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttAnalogMeter.git>,
         <https://github.com/koma5/mqttAnalogMeter> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -47,6 +57,7 @@
 <http://succotash.5th.ch/#mqttLight> a :Project ;
     :description "mqtt light switch" ;
     :name "mqttLight" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttLight.git>,
         <https://github.com/koma5/mqttLight> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -54,6 +65,7 @@
 <http://succotash.5th.ch/#mqttNEO> a :Project ;
     :description "mqtt controlled, color changing lamp" ;
     :name "mqttNEO" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNEO.git>,
         <https://github.com/koma5/mqttNEO> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -62,6 +74,7 @@
     dbo:computingPlatform dbr:Arduino ;
     :description "mqtt gps receiver" ;
     :name "mqttNMEA" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNMEA.git>,
         <https://github.com/koma5/mqttNMEA> ;
     skos:related dbr:Arduino ;
@@ -70,6 +83,7 @@
 <http://succotash.5th.ch/#mqttSense> a :Project ;
     :description "mqtt temperature and humidity sensor" ;
     :name "mqttSense" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSense.git>,
         <https://github.com/koma5/mqttSense> ;
     skos:related dbr:Internet_of_Things ;
@@ -78,6 +92,7 @@
 <http://succotash.5th.ch/#mqttSwitch> a :Project ;
     :description "mqtt device to switch on and off an electric heater in my camper " ;
     :name "mqttSwitch" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSwitch.git>,
         <https://github.com/koma5/mqttSwitch> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -85,6 +100,9 @@
 <http://succotash.5th.ch/#succotash> a :Project ;
     :description "fancy, static portfolio website from rdf data" ;
     :name "succotash" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript,
+        <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <git@github.com:koma5/succotash.git>,
         <https://github.com/koma5/succotash> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -93,6 +111,8 @@
     :description "a very simple text editor which uses localStorage and html editable content." ;
     :homepage <http://koma5.github.io/textly/textly.html> ;
     :name "textly" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript ;
     :repository <git@github.com:koma5/textly.git>,
         <https://github.com/koma5/textly> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -101,6 +121,9 @@
     :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _" ;
     :homepage <http://5th.li/typer_> ;
     :name "typer" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript,
+        dbr:PHP ;
     :repository <git@github.com:koma5/typer.git>,
         <https://github.com/koma5/typer> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -108,6 +131,7 @@
 <http://succotash.5th.ch/#xBeeSensorNetwork> a :Project ;
     :description "xBees jeff, hugo and daisy talking to each other..." ;
     :name "xBeeSensorNetwork" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/xBeeSensorNetwork.git>,
         <https://github.com/koma5/xBeeSensorNetwork> ;
     foaf:maker <http://marcoko.ch/#i> .

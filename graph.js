@@ -9,7 +9,7 @@ function nodesLinksFromRdfProperty(store, property, graph) {
     graph.links.push({
       source: match.subject.uri,
       target: match.object.uri,
-      type: foaf('maker').value
+      uri: foaf('maker').value
     })
   }
 
@@ -34,7 +34,7 @@ var svg = d3.select('body').append('svg')
 
 
 var simulation = d3.forceSimulation()
-    .force("link", d3.forceLink().distance(20).id(function(d, i) { return d.id; }))
+    .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
     .force("charge", d3.forceManyBody())
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -53,10 +53,12 @@ fetcher.nowOrWhenFetched("http://127.0.0.1:8000/data_github_enriched.ttl", funct
     if (ok) {
 
       nodesLinksFromRdfProperty(store, foaf('maker'), graph)
+      nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
 
       var link = svg.selectAll('.link')
           .data(graph.links)
           .enter().append('line')
+          .attr('uri', function(d) {return d.uri;})
           .attr('class', 'link');
 
       var node = svg.selectAll('.node')
@@ -64,6 +66,7 @@ fetcher.nowOrWhenFetched("http://127.0.0.1:8000/data_github_enriched.ttl", funct
           .enter().append('circle')
           .attr("r", 7)
           .attr('class', 'node')
+          .attr('uri', function(d) {return d.id;})
            .call(d3.drag()
                .on("start", dragstarted)
                .on("drag", dragged)

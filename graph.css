@@ -7,3 +7,13 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
+
+.link[uri="http://xmlns.com/foaf/0.1/maker"] {}
+
+.node[uri^="http://succotash.5th.ch/#"] {
+  fill:#888;
+}
+
+.node[uri="http://marcoko.ch/#i"] {
+  fill:#00f;
+}
