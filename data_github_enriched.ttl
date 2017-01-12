@@ -9,6 +9,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 
+<http://succotash.5th.ch/#Electronics> a skos:Concept .
+
 <http://succotash.5th.ch/#ausleihdb> a :Project ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
@@ -21,6 +23,8 @@
         dbr:PHP ;
     :repository <git@github.com:koma5/daily.git>,
         <https://github.com/koma5/daily> ;
+    skos:related <http://succotash.5th.ch/#FrontEndDevelopment>,
+        <http://succotash.5th.ch/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#generalanzeiger> a :Project ;
@@ -44,6 +48,9 @@
         dbr:JavaScript ;
     :repository <git@github.com:koma5/matt.git>,
         <https://github.com/koma5/matt> ;
+    skos:related <http://succotash.5th.ch/#DataVisualization>,
+        <http://succotash.5th.ch/#FrontEndDevelopment>,
+        <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttAnalogMeter> a :Project ;
@@ -52,6 +59,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttAnalogMeter.git>,
         <https://github.com/koma5/mqttAnalogMeter> ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttLight> a :Project ;
@@ -60,6 +68,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttLight.git>,
         <https://github.com/koma5/mqttLight> ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttNEO> a :Project ;
@@ -68,6 +77,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNEO.git>,
         <https://github.com/koma5/mqttNEO> ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttNMEA> a :Project ;
@@ -77,7 +87,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNMEA.git>,
         <https://github.com/koma5/mqttNMEA> ;
-    skos:related dbr:Arduino ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSense> a :Project ;
@@ -86,7 +96,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSense.git>,
         <https://github.com/koma5/mqttSense> ;
-    skos:related dbr:Internet_of_Things ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSwitch> a :Project ;
@@ -95,6 +105,7 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSwitch.git>,
         <https://github.com/koma5/mqttSwitch> ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#succotash> a :Project ;
@@ -105,6 +116,9 @@
         <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <git@github.com:koma5/succotash.git>,
         <https://github.com/koma5/succotash> ;
+    skos:related <http://succotash.5th.ch/#DataVisualization>,
+        <http://succotash.5th.ch/#FrontEndDevelopment>,
+        <http://succotash.5th.ch/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#textly> a :Project ;
@@ -115,6 +129,7 @@
         dbr:JavaScript ;
     :repository <git@github.com:koma5/textly.git>,
         <https://github.com/koma5/textly> ;
+    skos:related <http://succotash.5th.ch/#FrontEndDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#typer> a :Project ;
@@ -126,6 +141,7 @@
         dbr:PHP ;
     :repository <git@github.com:koma5/typer.git>,
         <https://github.com/koma5/typer> ;
+    skos:related <http://succotash.5th.ch/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#xBeeSensorNetwork> a :Project ;
@@ -134,5 +150,14 @@
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/xBeeSensorNetwork.git>,
         <https://github.com/koma5/xBeeSensorNetwork> ;
+    skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#DataVisualization> a skos:Concept .
+
+<http://succotash.5th.ch/#WebDevelopment> a skos:Concept .
+
+<http://succotash.5th.ch/#FrontEndDevelopment> a skos:Concept .
+
+<http://succotash.5th.ch/#IoT> a skos:Concept .
 
