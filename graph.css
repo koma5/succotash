@@ -1,6 +1,7 @@
 .link {
-  stroke: #999;
+  stroke: #444;
   stroke-opacity: 0.6;
+  stroke-width: 0.75px;
 }
 
 .node {
@@ -8,10 +9,15 @@
   stroke-width: 1.5px;
 }
 
-.link[uri="http://xmlns.com/foaf/0.1/maker"] {}
+.link[uri="http://xmlns.com/foaf/0.1/maker"] {
+  stroke-width: 2px;
+}
 
-.node[uri^="http://succotash.5th.ch/#"] {
+.node[rdftype="http://usefulinc.com/ns/doap#Project"] {
   fill:#888;
+}
+.node[rdftype="http://www.w3.org/2004/02/skos/core#Concept"] {
+  fill:#0f0;
 }
 
 .node[uri="http://marcoko.ch/#i"] {

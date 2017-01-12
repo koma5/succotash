@@ -9,7 +9,7 @@ function nodesLinksFromRdfProperty(store, property, graph) {
     graph.links.push({
       source: match.subject.uri,
       target: match.object.uri,
-      uri: foaf('maker').value
+      uri: property.value
     })
   }
 
@@ -21,8 +21,13 @@ function addUniqueNodes(graph, uri) {
     unique &= graph.nodes[i].id != uri;
   }
   if(unique) {
-    graph.nodes.push({id: uri})
+    rdftype = store.statementsMatching($rdf.sym(uri), rdf("type"), undefined)
+    graph.nodes.push({id: uri, rdftype: rdftype.length > 0 ? rdftype[0].object.uri : ""})
   }
+}
+
+function moreInfo(node) {
+  info.text(node.id);
 }
 
 var width = 960,
@@ -31,6 +36,9 @@ var width = 960,
 var svg = d3.select('body').append('svg')
     .attr('width', width)
     .attr('height', height);
+
+var info = d3.select("body").append('div')
+    .attr('class', 'info');
 
 
 var simulation = d3.forceSimulation()
@@ -42,6 +50,7 @@ var simulation = d3.forceSimulation()
 var doap = $rdf.Namespace("http://usefulinc.com/ns/doap#")
 var foaf = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
 var rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+var skos = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#")
 
 var store = $rdf.graph()
 var timeout = 5000 // 5000 ms timeout
@@ -54,6 +63,7 @@ fetcher.nowOrWhenFetched("http://127.0.0.1:8000/data_github_enriched.ttl", funct
 
       nodesLinksFromRdfProperty(store, foaf('maker'), graph)
       nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
+      nodesLinksFromRdfProperty(store, skos('related'), graph)
 
       var link = svg.selectAll('.link')
           .data(graph.links)
@@ -67,6 +77,12 @@ fetcher.nowOrWhenFetched("http://127.0.0.1:8000/data_github_enriched.ttl", funct
           .attr("r", 7)
           .attr('class', 'node')
           .attr('uri', function(d) {return d.id;})
+          .attr('rdftype', function(d) {return d.rdftype;})
+          .on('mouseover', function(d) {
+            d3.select(this).attr('r', 10);
+            moreInfo(d)})
+          .on("mouseout", function() {
+            d3.select(this).attr('r', 7);})
            .call(d3.drag()
                .on("start", dragstarted)
                .on("drag", dragged)
