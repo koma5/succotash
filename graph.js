@@ -67,16 +67,34 @@ function dragended(d) {
   d.fy = null;
 }
 
-function moreInfo(node) {
+function mouseOverNode(circle, node) {
+  d3.select(circle).attr('r', 10);
+  runtimeCSS.text('.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; }');
   info.text(node.id);
 }
 
+function mouseOutNode(circle, node) {
+  d3.select(circle).attr('r', 7);
+}
 
-var svg = d3.select('body').append('svg');
+function clickNode(circle, node) {
+  d3.event.stopPropagation();
+  // hide all other links which don't connect to our cliked node
+  runtimeCSS.text('.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { display:none; }');
+}
+
+function clickSvg(circle, node) {
+  // make all links visible again
+  runtimeCSS.text('');
+}
+
+var svg = d3.select('body').append('svg')
+    .on('click', function(d) {clickSvg();});
 
 var info = d3.select("body").append('div')
     .attr('class', 'info').text('hover nodes...');
 
+var runtimeCSS = d3.select("body").append('style').attr('id', 'runtimeCSS');
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
@@ -116,11 +134,9 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
           .attr('class', 'node')
           .attr('resource', function(d) {return d.id;})
           .attr('typeof', function(d) {return d.rdftype;})
-          .on('mouseover', function(d) {
-            d3.select(this).attr('r', 10);
-            moreInfo(d)})
-          .on("mouseout", function() {
-            d3.select(this).attr('r', 7);})
+          .on('click', function(d) {clickNode(this, d);})
+          .on('mouseover', function(d) {mouseOverNode(this, d);})
+          .on("mouseout", function(d) {mouseOutNode(this, d);})
            .call(d3.drag()
                .on("start", dragstarted)
                .on("drag", dragged)
