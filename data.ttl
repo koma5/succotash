@@ -7,19 +7,28 @@
 @prefix : <http://usefulinc.com/ns/doap#> .
 @base <http://succotash.5th.ch/> .
 
-
-<#generalanzeiger> a :Project;
-  :name "S-Bahn Generalanzeiger Zürich HB" ;
-  :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
-  :programming-language dbr:Cascading_Style_Sheets ;
-  foaf:maker <http://marcoko.ch/#i> .
-
 <#ausleihdb> a :Project ;
+  :name "IT Ausleih Datenbank"@de,
+        "IT lending database"@de ;
+  :description "Webapp um verliehene Geräte der IT zu erfassen."@de,
+               "webapp to track lended IT devices"@en ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:PHP  ;
-  foaf:maker <http://marcoko.ch/#i> .
+  foaf:maker <http://marcoko.ch/#i> ;
+  skos:related <#WebDevelopment> .
+
+# codePen pens below
+
+<#ZBPVRY> a :Project;
+  :programming-language dbr:Cascading_Style_Sheets .
+
+#github projects below
+
+<#bigShowerBrother> a :Project ;
+  skos:related  <#IoT>, <#DataVisualization>, <#DataAnalytics> ;
+  :programming-language dbr:Python_\(programming_language\) ;
+  skos:related <#IoT> .
 
 <#mqttSense> a :Project ;
-  skos:related  <#IoT> ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT> .
 
@@ -69,7 +78,7 @@
 
 <#succotash> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\) ;
-  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment> .
+  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemnaticWeb> .
 
 
 
@@ -78,6 +87,8 @@
 <#DataVisualization> a skos:Concept .
 <#WebDevelopment> a skos:Concept .
 <#Electronics> a skos:Concept .
+<#DataAnalytics> a skos:Concept .
+<#SemnaticWeb> a skos:Concept .
 
 # dbo:programmingLanguage or :programming-language ?
 # dbo:computingPlatform

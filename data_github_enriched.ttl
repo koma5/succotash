@@ -11,13 +11,37 @@
 
 <http://succotash.5th.ch/#Electronics> a skos:Concept .
 
+<http://succotash.5th.ch/#ZBPVRY> a :Project ;
+    :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
+    :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
+    :name "Zürich HB – Generalanzeiger S-Bahn" ;
+    :programming-language dbr:Cascading_Style_Sheets ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://succotash.5th.ch/#ausleihdb> a :Project ;
+    :description "Webapp um verliehene Geräte der IT zu erfassen."@de,
+        "webapp to track lended IT devices"@en ;
+    :name "IT Ausleih Datenbank"@de,
+        "IT lending database"@de ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
+    skos:related <http://succotash.5th.ch/#WebDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://succotash.5th.ch/#bigShowerBrother> a :Project ;
+    :description "script to detect someone showering by humidity time series"@en ;
+    :homepage <https://github.com/koma5/bigShowerBrother/blob/master/shower.ipynb> ;
+    :name "bigShowerBrother" ;
+    :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
+    :repository <git@github.com:koma5/bigShowerBrother.git>,
+        <https://github.com/koma5/bigShowerBrother> ;
+    skos:related <http://succotash.5th.ch/#DataAnalytics>,
+        <http://succotash.5th.ch/#DataVisualization>,
+        <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#daily> a :Project ;
-    :description "minimal wordpress theme, which changes color on daylight" ;
+    :description "minimal wordpress theme, which changes color on daylight"@en ;
     :name "daily" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
@@ -27,14 +51,9 @@
         <http://succotash.5th.ch/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://succotash.5th.ch/#generalanzeiger> a :Project ;
-    :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
-    :name "S-Bahn Generalanzeiger Zürich HB" ;
-    :programming-language dbr:Cascading_Style_Sheets ;
-    foaf:maker <http://marcoko.ch/#i> .
-
 <http://succotash.5th.ch/#holdEm> a :Project ;
-    :description "Texas Hold'Em Hand simulator as python notebook" ;
+    :description "Texas Hold'Em Hand simulator as python notebook"@en ;
+    :homepage <https://github.com/koma5/holdEm/blob/master/holdEm.ipynb> ;
     :name "holdEm" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <git@github.com:koma5/holdEm.git>,
@@ -42,7 +61,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#matt> a :Project ;
-    :description "JavaScript site to turn (my) mqtt devices on and off and display their state." ;
+    :description "JavaScript site to turn (my) mqtt devices on and off and display their state."@en ;
     :name "matt" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript ;
@@ -54,7 +73,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttAnalogMeter> a :Project ;
-    :description "mqtt analog meter display for any values" ;
+    :description "mqtt analog meter display for any values"@en ;
     :name "mqttAnalogMeter" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttAnalogMeter.git>,
@@ -63,7 +82,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttLight> a :Project ;
-    :description "mqtt light switch" ;
+    :description "mqtt light switch"@en ;
     :name "mqttLight" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttLight.git>,
@@ -72,7 +91,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttNEO> a :Project ;
-    :description "mqtt controlled, color changing lamp" ;
+    :description "mqtt controlled, color changing lamp"@en ;
     :name "mqttNEO" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNEO.git>,
@@ -82,7 +101,7 @@
 
 <http://succotash.5th.ch/#mqttNMEA> a :Project ;
     dbo:computingPlatform dbr:Arduino ;
-    :description "mqtt gps receiver" ;
+    :description "mqtt gps receiver"@en ;
     :name "mqttNMEA" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttNMEA.git>,
@@ -91,7 +110,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSense> a :Project ;
-    :description "mqtt temperature and humidity sensor" ;
+    :description "mqtt temperature and humidity sensor"@en ;
     :name "mqttSense" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSense.git>,
@@ -100,7 +119,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#mqttSwitch> a :Project ;
-    :description "mqtt device to switch on and off an electric heater in my camper " ;
+    :description "mqtt device to switch on and off an electric heater in my camper "@en ;
     :name "mqttSwitch" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/mqttSwitch.git>,
@@ -109,7 +128,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#succotash> a :Project ;
-    :description "fancy, static portfolio website from rdf data" ;
+    :description "fancy, static portfolio website from rdf data"@en ;
     :name "succotash" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript,
@@ -118,11 +137,12 @@
         <https://github.com/koma5/succotash> ;
     skos:related <http://succotash.5th.ch/#DataVisualization>,
         <http://succotash.5th.ch/#FrontEndDevelopment>,
+        <http://succotash.5th.ch/#SemnaticWeb>,
         <http://succotash.5th.ch/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#textly> a :Project ;
-    :description "a very simple text editor which uses localStorage and html editable content." ;
+    :description "a very simple text editor which uses localStorage and html editable content."@en ;
     :homepage <http://koma5.github.io/textly/textly.html> ;
     :name "textly" ;
     :programming-language dbr:Cascading_Style_Sheets,
@@ -133,7 +153,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#typer> a :Project ;
-    :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _" ;
+    :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _"@en ;
     :homepage <http://5th.li/typer_> ;
     :name "typer" ;
     :programming-language dbr:Cascading_Style_Sheets,
@@ -145,7 +165,7 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#xBeeSensorNetwork> a :Project ;
-    :description "xBees jeff, hugo and daisy talking to each other..." ;
+    :description "xBees jeff, hugo and daisy talking to each other..."@en ;
     :name "xBeeSensorNetwork" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <git@github.com:koma5/xBeeSensorNetwork.git>,
@@ -153,11 +173,15 @@
     skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
+<http://succotash.5th.ch/#DataAnalytics> a skos:Concept .
+
+<http://succotash.5th.ch/#SemnaticWeb> a skos:Concept .
+
 <http://succotash.5th.ch/#DataVisualization> a skos:Concept .
 
-<http://succotash.5th.ch/#WebDevelopment> a skos:Concept .
-
 <http://succotash.5th.ch/#FrontEndDevelopment> a skos:Concept .
+
+<http://succotash.5th.ch/#WebDevelopment> a skos:Concept .
 
 <http://succotash.5th.ch/#IoT> a skos:Concept .
 

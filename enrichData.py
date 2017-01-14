@@ -1,8 +1,7 @@
-import rdflib, requests
+import rdflib, requests, html
 
 graph = rdflib.Graph()
 me = rdflib.URIRef("http://marcoko.ch/#i")
-base = "http://succotash.5th.ch/#"
 
 graph.parse('./data.ttl', format='turtle')
 
@@ -46,7 +45,7 @@ for githubRepo in githubRepos:
             if(githubRepo['description'] != None):
                 graph.add(( repoToFetch['project'],
                             doap.description,
-                            rdflib.Literal(githubRepo['description']) ))
+                            rdflib.Literal(githubRepo['description'], lang='en') ))
 
             graph.add(( repoToFetch['project'],
                         foaf.maker,
@@ -56,7 +55,36 @@ for githubRepo in githubRepos:
                         rdf.type,
                         doap.Project ))
 
+codePensUrl = "http://cpv2api.com/pens/public/koma5"
+codePens = requests.get(codePensUrl).json()
 
+for codePen in codePens['data']:
+    for repoToFetch in ReposToFetch:
+        hashId = repoToFetch['project'].toPython().split('#')[1]
+        if codePen['id'] == hashId:
+            print(html.unescape(codePen['title']))
+
+            graph.add(( repoToFetch['project'],
+                        doap.name,
+                        rdflib.Literal(html.unescape(codePen['title'])) ))
+
+
+            graph.add(( repoToFetch['project'],
+                        doap.homepage,
+                        rdflib.URIRef(html.unescape(codePen['link'])) ))
+
+            description = html.unescape(codePen['details']).replace('<p>', '').replace('</p>', '')
+            graph.add(( repoToFetch['project'],
+                        doap.description,
+                        rdflib.Literal(description) ))
+
+            graph.add(( repoToFetch['project'],
+                        foaf.maker,
+                        me))
+
+            graph.add(( repoToFetch['project'],
+                        rdf.type,
+                        doap.Project ))
 
 outputFile = open('data_github_enriched.ttl', 'wb')
 outputFile.write(graph.serialize(format='turtle'))
