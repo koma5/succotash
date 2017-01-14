@@ -1,13 +1,25 @@
 @prefix : <http://usefulinc.com/ns/doap#> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix default1: <http://xmlns.com/foaf/0.1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://purl.org/vocab/relationship/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
+
+<http://marcoko.ch/> a foaf:PersonalProfileDocument ;
+    dct:hasFormat <http://marcoko.ch/index.rdf>,
+        <http://marcoko.ch/index.ttl> ;
+    foaf:maker <http://marcoko.ch/#i> ;
+    foaf:primaryTopic <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#Electronics> a skos:Concept .
 
@@ -173,6 +185,37 @@
     skos:related <http://succotash.5th.ch/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
+<http://marcoko.ch/#github> a foaf:OnlineAccount ;
+    foaf:accountName "koma5" ;
+    foaf:accountProfilePage <https://github.com/koma5> ;
+    foaf:accountServiceHomepage <https://github.com/> .
+
+<http://marcoko.ch/#gpgkey> a wot:PubKey ;
+    rdfs:label "GPG/PGP Key" ;
+    wot:fingerprint "AD344CFB6AAC30F09626F4915A2482053E053997" ;
+    wot:hex_id "3E053997" ;
+    wot:length 4096 ;
+    wot:pubkeyAddress <http://files.5th.ch/pgp_marco_koch.txt>,
+        <http://keys.gnupg.net/pks/lookup?op=get&search=0xAD344CFB6AAC30F09626F4915A2482053E053997>,
+        <https://pgp.mit.edu/pks/lookup?op=get&search=0xAD344CFB6AAC30F09626F4915A2482053E053997> .
+
+<http://marcoko.ch/#irc-freenode> a foaf:OnlineAccount ;
+    foaf:accountName "koma5" ;
+    foaf:accountServiceHomepage <http://freenode.net/> .
+
+<http://marcoko.ch/#twitter> a foaf:OnlineAccount ;
+    foaf:accountName "koma5" ;
+    foaf:accountProfilePage <http://twitter.com/koma5> ;
+    foaf:accountServiceHomepage <http://twitter.com/> .
+
+<http://marcoko.ch/index.rdf> a foaf:PersonalProfileDocument ;
+    rdfs:label "RDF/XML" ;
+    dc:format "application/rdf+xml" .
+
+<http://marcoko.ch/index.ttl> a foaf:PersonalProfileDocument ;
+    rdfs:label "Turtle" ;
+    dc:format "text/turtle" .
+
 <http://succotash.5th.ch/#DataAnalytics> a skos:Concept .
 
 <http://succotash.5th.ch/#SemnaticWeb> a skos:Concept .
@@ -184,4 +227,24 @@
 <http://succotash.5th.ch/#WebDevelopment> a skos:Concept .
 
 <http://succotash.5th.ch/#IoT> a skos:Concept .
+
+<http://marcoko.ch/#i> a foaf:Person,
+        wot:User ;
+    rel:wouldLikeToKnow <http://www.w3.org/People/Berners-Lee/card#i> ;
+    rdfs:seeAlso <http://5th.ch/~marco/foaf>,
+        <http://marcoko.ch/likes> ;
+    owl:differentFrom dbr:Marco_Koch ;
+    owl:sameAs <http://5th.ch/~marco/foaf#me> ;
+    foaf:account <http://marcoko.ch/#github>,
+        <http://marcoko.ch/#irc-freenode>,
+        <http://marcoko.ch/#twitter> ;
+    foaf:family_name "Koch" ;
+    foaf:givenname "Marco" ;
+    foaf:homepage <http://5th.ch/> ;
+    foaf:img <https://gravatar.com/avatar/d100e674f71d4661173a8d4cbb65a924?s=300> ;
+    foaf:mbox_sha1sum "b18392060e6ff4697d2f79d78a430708e4f5fba1" ;
+    foaf:name "Marco Koch" ;
+    foaf:nick "koma5" ;
+    foaf:weblog <http://blog.5th.ch/> ;
+    wot:hasKey <http://marcoko.ch/#gpgkey> .
 

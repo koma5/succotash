@@ -4,10 +4,13 @@ graph = rdflib.Graph()
 me = rdflib.URIRef("http://marcoko.ch/#i")
 
 graph.parse('./data.ttl', format='turtle')
+graph.parse(me)
 
 doap = rdflib.Namespace("http://usefulinc.com/ns/doap#")
 foaf = rdflib.namespace.FOAF
 rdf  = rdflib.namespace.RDF
+
+graph.bind('foaf', foaf, override=True)
 
 ReposToFetch = graph.query(
     """SELECT ?project
@@ -86,6 +89,6 @@ for codePen in codePens['data']:
                         rdf.type,
                         doap.Project ))
 
-outputFile = open('data_github_enriched.ttl', 'wb')
+outputFile = open('graph.ttl', 'wb')
 outputFile.write(graph.serialize(format='turtle'))
 outputFile.close()

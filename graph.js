@@ -94,7 +94,7 @@ var fetcher = new $rdf.Fetcher(store, timeout)
 
 var graph = {nodes: [], links:[]}
 
-fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enriched.ttl", function(ok, body, xhr) {
+fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", function(ok, body, xhr) {
     if (ok) {
 
       nodesLinksFromRdfProperty(store, foaf('maker'), graph)
