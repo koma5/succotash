@@ -68,7 +68,9 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enrich
       var link = svg.selectAll('.link')
           .data(graph.links)
           .enter().append('line')
-          .attr('uri', function(d) {return d.uri;})
+          .attr('about', function(d) {return d.source;}) //subject resource/about
+          .attr('property', function(d) {return d.uri;}) // predicate rel/property
+          .attr('href', function(d) {return d.target;}) //object href/resource2
           .attr('class', 'link');
 
       var node = svg.selectAll('.node')
@@ -76,8 +78,8 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enrich
           .enter().append('circle')
           .attr("r", 7)
           .attr('class', 'node')
-          .attr('uri', function(d) {return d.id;})
-          .attr('rdftype', function(d) {return d.rdftype;})
+          .attr('resource', function(d) {return d.id;})
+          .attr('typeof', function(d) {return d.rdftype;})
           .on('mouseover', function(d) {
             d3.select(this).attr('r', 10);
             moreInfo(d)})
