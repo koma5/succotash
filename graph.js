@@ -26,25 +26,61 @@ function addUniqueNodes(graph, uri) {
   }
 }
 
+function resize() {
+  width = window.innerWidth, height = window.innerHeight;
+  svg.attr("width", width).attr("height", height);
+  simulation.force("center", d3.forceCenter(width / 2, height / 2))
+  .alphaTarget(0.3).restart();
+
+  setTimeout(function () {
+      simulation.alphaTarget(0);
+  }, 500);
+
+}
+
+function ticked() {
+  link
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
+
+  node
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+}
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
 function moreInfo(node) {
   info.text(node.id);
 }
 
-var width = 960,
-    height = 600;
 
-var svg = d3.select('body').append('svg')
-    .attr('width', width)
-    .attr('height', height);
+var svg = d3.select('body').append('svg');
 
 var info = d3.select("body").append('div')
-    .attr('class', 'info');
+    .attr('class', 'info').text('hover nodes...');
 
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
     .force("charge", d3.forceManyBody())
-    .force("center", d3.forceCenter(width / 2, height / 2));
 
 
 var doap = $rdf.Namespace("http://usefulinc.com/ns/doap#")
@@ -65,7 +101,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enrich
       nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
       nodesLinksFromRdfProperty(store, skos('related'), graph)
 
-      var link = svg.selectAll('.link')
+      link = svg.selectAll('.link')
           .data(graph.links)
           .enter().append('line')
           .attr('about', function(d) {return d.source;}) //subject resource/about
@@ -73,7 +109,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enrich
           .attr('href', function(d) {return d.target;}) //object href/resource2
           .attr('class', 'link');
 
-      var node = svg.selectAll('.node')
+      node = svg.selectAll('.node')
           .data(graph.nodes)
           .enter().append('circle')
           .attr("r", 7)
@@ -97,35 +133,8 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/data_github_enrich
       simulation.force("link")
           .links(graph.links);
 
-      function ticked() {
-        link
-            .attr("x1", function(d) { return d.source.x; })
-            .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
-
-        node
-            .attr("cx", function(d) { return d.x; })
-            .attr("cy", function(d) { return d.y; });
-      }
-
-      function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      }
-
-      function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-      }
-
-      function dragended(d) {
-        if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-      }
-
+      resize();
+      d3.select(window).on("resize", resize);
     }
     else {
           console.log("Oops, something happened and couldn't fetch data");
