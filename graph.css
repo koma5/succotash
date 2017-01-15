@@ -28,10 +28,12 @@ body {
 
 .link.faint {
   stroke-opacity: 0.1;
+  transition: 0.2s ease;
 }
 
 .node.faint {
   fill-opacity: 0.1;
+  transition: 0.2s ease;
 }
 
 .link[property="http://xmlns.com/foaf/0.1/maker"] {

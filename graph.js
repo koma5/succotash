@@ -96,7 +96,7 @@ function focusNodes(node) {
   svg.selectAll('.node').each(function(n) {
     unconnected = true
     if(n.id == node.id) { //clicked node
-      d3.select(this).attr('r', 10)
+      d3.select(this).attr('r', circleSizeBig)
     }
     for(i = 0; i < links.length; i++) {
       unconnected &= links[i].source.id != n.id && links[i].target.id != n.id
@@ -114,7 +114,7 @@ function unfocusNodes() {
     d3.select(this).attr('class', " link")
   });
   svg.selectAll('.node').each(function(l) {
-    d3.select(this).attr('class', " node").attr('r', 7);
+    d3.select(this).attr('class', " node").attr('r', circleSizeNormal);
   });
 
 
@@ -131,6 +131,9 @@ function clickSvg() {
   unfocusNodes();
 }
 
+var circleSizeNormal = 10;
+var circleSizeBig = 13;
+
 var clickedNode = null;
 
 var svg = d3.select('body').append('svg')
@@ -143,7 +146,7 @@ var info = d3.select("body").append('div')
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
-    .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody().strength(-200))
 
 
 var doap = $rdf.Namespace("http://usefulinc.com/ns/doap#")
@@ -175,7 +178,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
       node = svg.selectAll('.node')
           .data(graph.nodes)
           .enter().append('circle')
-          .attr("r", 7)
+          .attr("r", circleSizeNormal)
           .attr('class', 'node')
           .attr('resource', function(d) {return d.id;})
           .attr('typeof', function(d) {return d.rdftype;})
