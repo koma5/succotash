@@ -69,24 +69,36 @@ function dragended(d) {
 
 function mouseOverNode(circle, node) {
   d3.select(circle).attr('r', 10);
-  runtimeCSS.text('.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; }');
+  runtimeCSS.text(runtimeCSS.text() + '\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* hover */');
+  if (clickedNodeId != '') {
+    runtimeCSS.text(runtimeCSS.text().replace('\n.link:not([href="' + clickedNodeId + '"]):not([about="' + clickedNodeId + '"]) { stroke-opacity:0.1; } /* click */', ''))
+  }
   info.text(node.id);
 }
 
 function mouseOutNode(circle, node) {
   d3.select(circle).attr('r', 7);
+  runtimeCSS.text(runtimeCSS.text().replace('\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* hover */', ''))
+    if (clickedNodeId != '') {
+      runtimeCSS.text('\n.link:not([href="' + clickedNodeId + '"]):not([about="' + clickedNodeId + '"]) { stroke-opacity:0.1; } /* click */');
+      info.text(clickedNodeId);
+    }
 }
 
 function clickNode(circle, node) {
   d3.event.stopPropagation();
   // hide all other links which don't connect to our cliked node
-  runtimeCSS.text('.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { display:none; }');
+  runtimeCSS.text('\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* click */');
+  clickedNodeId = node.id;
 }
 
-function clickSvg(circle, node) {
+function clickSvg() {
   // make all links visible again
   runtimeCSS.text('');
+  clickedNodeId = '';
 }
+
+var clickedNodeId = '';
 
 var svg = d3.select('body').append('svg')
     .on('click', function(d) {clickSvg();});
@@ -94,7 +106,7 @@ var svg = d3.select('body').append('svg')
 var info = d3.select("body").append('div')
     .attr('class', 'info').text('hover nodes...');
 
-var runtimeCSS = d3.select("body").append('style').attr('id', 'runtimeCSS');
+var runtimeCSS = d3.select("head").append('style').attr('id', 'runtimeCSS');
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))

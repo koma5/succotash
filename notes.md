@@ -20,3 +20,4 @@
 # bugs:
 * default1 prefix??
 * marcoko.ch/ PersonalPrifileDocument maker in graph??
+* svg 100% scroll bar height
