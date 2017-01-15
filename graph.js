@@ -67,46 +67,79 @@ function dragended(d) {
   d.fy = null;
 }
 
-function mouseOverNode(circle, node) {
-  d3.select(circle).attr('r', 10);
-  runtimeCSS.text(runtimeCSS.text() + '\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* hover */');
-  if (clickedNodeId != '') {
-    runtimeCSS.text(runtimeCSS.text().replace('\n.link:not([href="' + clickedNodeId + '"]):not([about="' + clickedNodeId + '"]) { stroke-opacity:0.1; } /* click */', ''))
+function mouseOverNode(node) {
+  unfocusNodes();
+  focusNodes(node);
+}
+
+function mouseOutNode(node) {
+  unfocusNodes();
+  if(clickedNode != null) {
+    focusNodes(clickedNode)
   }
-  info.text(node.id);
 }
 
-function mouseOutNode(circle, node) {
-  d3.select(circle).attr('r', 7);
-  runtimeCSS.text(runtimeCSS.text().replace('\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* hover */', ''))
-    if (clickedNodeId != '') {
-      runtimeCSS.text('\n.link:not([href="' + clickedNodeId + '"]):not([about="' + clickedNodeId + '"]) { stroke-opacity:0.1; } /* click */');
-      info.text(clickedNodeId);
+function focusNodes(node) {
+  info.attr('style', null).text(node.id);
+
+  links = [];
+
+  svg.selectAll('.link').each(function(l) {
+    if(l.source.id != node.id && l.target.id != node.id) {
+      d3.select(this).attr('class', " link faint")
     }
+    else {
+      links.push(l);
+    }
+  })
+
+  svg.selectAll('.node').each(function(n) {
+    unconnected = true
+    if(n.id == node.id) { //clicked node
+      d3.select(this).attr('r', 10)
+    }
+    for(i = 0; i < links.length; i++) {
+      unconnected &= links[i].source.id != n.id && links[i].target.id != n.id
+    }
+
+    if(unconnected) {
+      d3.select(this).attr('class', "node faint")
+    }
+  })
 }
 
-function clickNode(circle, node) {
+function unfocusNodes() {
+  info.attr('style', 'display:none');
+  svg.selectAll('.link').each(function(l) {
+    d3.select(this).attr('class', " link")
+  });
+  svg.selectAll('.node').each(function(l) {
+    d3.select(this).attr('class', " node").attr('r', 7);
+  });
+
+
+}
+
+function clickNode(node) {
   d3.event.stopPropagation();
-  // hide all other links which don't connect to our cliked node
-  runtimeCSS.text('\n.link:not([href="' + node.id + '"]):not([about="' + node.id + '"]) { stroke-opacity:0.1; } /* click */');
-  clickedNodeId = node.id;
+  clickedNode = node;
+  focusNodes(node);
 }
 
 function clickSvg() {
-  // make all links visible again
-  runtimeCSS.text('');
-  clickedNodeId = '';
+  clickedNode = null;
+  unfocusNodes();
 }
 
-var clickedNodeId = '';
+var clickedNode = null;
 
 var svg = d3.select('body').append('svg')
     .on('click', function(d) {clickSvg();});
 
 var info = d3.select("body").append('div')
-    .attr('class', 'info').text('hover nodes...');
+    .attr('class', 'info')
+    .attr('style', 'display:none');
 
-var runtimeCSS = d3.select("head").append('style').attr('id', 'runtimeCSS');
 
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
@@ -146,9 +179,9 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
           .attr('class', 'node')
           .attr('resource', function(d) {return d.id;})
           .attr('typeof', function(d) {return d.rdftype;})
-          .on('click', function(d) {clickNode(this, d);})
-          .on('mouseover', function(d) {mouseOverNode(this, d);})
-          .on("mouseout", function(d) {mouseOutNode(this, d);})
+          .on('click', function(d) {clickNode(d);})
+          .on('mouseover', function(d) {mouseOverNode(d);})
+          .on("mouseout", function(d) {mouseOutNode(d);})
            .call(d3.drag()
                .on("start", dragstarted)
                .on("drag", dragged)

@@ -26,6 +26,14 @@ body {
   stroke-width: 1.5px;
 }
 
+.link.faint {
+  stroke-opacity: 0.1;
+}
+
+.node.faint {
+  fill-opacity: 0.1;
+}
+
 .link[property="http://xmlns.com/foaf/0.1/maker"] {
   stroke-width: 2px;
 }
