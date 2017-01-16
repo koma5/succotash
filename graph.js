@@ -226,11 +226,21 @@ var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().distance(50).id(function(d, i) { return d.id; }))
     .force("charge", d3.forceManyBody().strength(-200))
 
+var doap = "http://usefulinc.com/ns/doap#"
+var foaf = "http://xmlns.com/foaf/0.1/"
+var rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+var skos = "http://www.w3.org/2004/02/skos/core#"
 
-var doap = $rdf.Namespace("http://usefulinc.com/ns/doap#")
-var foaf = $rdf.Namespace("http://xmlns.com/foaf/0.1/")
-var rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
-var skos = $rdf.Namespace("http://www.w3.org/2004/02/skos/core#")
+d3.select('html').attr('prefix',
+'doap: ' + doap + '\n\
+foaf: ' + foaf + '\n\
+skos: ' + skos + '\n\
+rdf: ' + rdf)
+
+doap = $rdf.Namespace(doap)
+foaf = $rdf.Namespace(foaf)
+rdf = $rdf.Namespace(rdf)
+skos = $rdf.Namespace(skos)
 
 var store = $rdf.graph()
 var timeout = 5000 // 5000 ms timeout
