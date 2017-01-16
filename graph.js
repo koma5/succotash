@@ -38,12 +38,81 @@ function resize() {
 
 }
 
+//http://stackoverflow.com/questions/13165913/draw-an-arrow-between-two-circles/20909533#20909533
+var diff, div, free, length, prod, scale, sum, unit;
+
+length = function(arg) {
+  var x, y;
+  x = arg.x, y = arg.y;
+  return Math.sqrt(x * x + y * y);
+};
+
+sum = function(arg, arg1) {
+  var x1, x2, y1, y2;
+  x1 = arg.x, y1 = arg.y;
+  x2 = arg1.x, y2 = arg1.y;
+  return {
+    x: x1 + x2,
+    y: y1 + y2
+  };
+};
+
+diff = function(arg, arg1) {
+  var x1, x2, y1, y2;
+  x1 = arg.x, y1 = arg.y;
+  x2 = arg1.x, y2 = arg1.y;
+  return {
+    x: x1 - x2,
+    y: y1 - y2
+  };
+};
+
+prod = function(arg, scalar) {
+  var x, y;
+  x = arg.x, y = arg.y;
+  return {
+    x: x * scalar,
+    y: y * scalar
+  };
+};
+
+div = function(arg, scalar) {
+  var x, y;
+  x = arg.x, y = arg.y;
+  return {
+    x: x / scalar,
+    y: y / scalar
+  };
+};
+
+unit = function(vector) {
+  return div(vector, length(vector));
+};
+
+scale = function(vector, scalar) {
+  return prod(unit(vector), scalar);
+};
+
+free = function(arg) {
+  var coord1, coord2;
+  coord1 = arg[0], coord2 = arg[1];
+  return diff(coord2, coord1);
+};
+
 function ticked() {
   link
-      .attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
+  .attr('x1', function(d) {
+    return sum(d.source, scale(free([d.source, d.target]), circleSizeNormal+1.5)).x;
+  })
+  .attr('y1', function(d) {
+    return sum(d.source, scale(free([d.source, d.target]), circleSizeNormal+1.5)).y;
+  })
+  .attr('x2', function(d) {
+    return diff(d.target, scale(free([d.source, d.target]), circleSizeNormal+1.5)).x;
+  })
+  .attr('y2', function(d) {
+    return diff(d.target, scale(free([d.source, d.target]), circleSizeNormal+1.5)).y;
+  });
 
   node
       .attr("cx", function(d) { return d.x; })
@@ -54,6 +123,9 @@ function dragstarted(d) {
   if (!d3.event.active) simulation.alphaTarget(0.3).restart();
   d.fx = d.x;
   d.fy = d.y;
+  node.on('click', null)
+  .on('mouseover', null)
+  .on("mouseout", null)
 }
 
 function dragged(d) {
@@ -65,6 +137,9 @@ function dragended(d) {
   if (!d3.event.active) simulation.alphaTarget(0);
   d.fx = null;
   d.fy = null;
+  node.on('click', function(d) {clickNode(d);})
+  .on('mouseover', function(d) {mouseOverNode(d);})
+  .on("mouseout", function(d) {mouseOutNode(d);})
 }
 
 function mouseOverNode(node) {
@@ -139,6 +214,9 @@ var clickedNode = null;
 var svg = d3.select('body').append('svg')
     .on('click', function(d) {clickSvg();});
 
+var linesGroup = svg.append('g').attr('id', 'linesGroup');
+var nodesGroup = svg.append('g').attr('id', 'nodesGroup');
+
 var info = d3.select("body").append('div')
     .attr('class', 'info')
     .attr('style', 'display:none');
@@ -167,7 +245,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
       nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
       nodesLinksFromRdfProperty(store, skos('related'), graph)
 
-      link = svg.selectAll('.link')
+      link = linesGroup.selectAll('.link')
           .data(graph.links)
           .enter().append('line')
           .attr('about', function(d) {return d.source;}) //subject resource/about
@@ -175,7 +253,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
           .attr('href', function(d) {return d.target;}) //object href/resource2
           .attr('class', 'link');
 
-      node = svg.selectAll('.node')
+      node = nodesGroup.selectAll('.node')
           .data(graph.nodes)
           .enter().append('circle')
           .attr("r", circleSizeNormal)

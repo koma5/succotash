@@ -15,6 +15,8 @@
 * infobox not visible if empty!! will be empty
 * n3 instead of turtle?? is ... of
 * rename base to 5th.ch/succotash
+* while drag no unfocus and focus
+* node.faint transition not only fade out also fade in
 
 
 # bugs:

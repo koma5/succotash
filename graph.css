@@ -21,19 +21,16 @@ body {
   stroke-width: 0.75px;
 }
 
-.node {
-  stroke: #202020;
-  stroke-width: 1.5px;
-}
+.node {}
 
 .link.faint {
   stroke-opacity: 0.1;
-  transition: 0.2s ease;
+  transition: stroke-opacity 0.2s ease;
 }
 
 .node.faint {
   fill-opacity: 0.1;
-  transition: 0.2s ease;
+  transition: fill-opacity 0.2s ease;
 }
 
 .link[property="http://xmlns.com/foaf/0.1/maker"] {
