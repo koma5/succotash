@@ -1,8 +1,9 @@
 body {
-  background: #202020;
+  background: radial-gradient(#444, #222);
   color: white;
   font-family: sans-serif;
   margin:0;
+  overflow: hidden;
 }
 
 .info {
