@@ -21,8 +21,6 @@
     foaf:maker <http://marcoko.ch/#i> ;
     foaf:primaryTopic <http://marcoko.ch/#i> .
 
-<http://succotash.5th.ch/#Electronics> a skos:Concept .
-
 <http://succotash.5th.ch/#ZBPVRY> a :Project ;
     :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
     :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
@@ -70,6 +68,7 @@
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <git@github.com:koma5/holdEm.git>,
         <https://github.com/koma5/holdEm> ;
+    skos:related <http://succotash.5th.ch/#DataAnalytics> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://succotash.5th.ch/#matt> a :Project ;
@@ -144,7 +143,10 @@
     :name "succotash" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript,
-        <http://dbpedia.org/resource/Python_(programming_language)> ;
+        <http://dbpedia.org/resource/Python_(programming_language)>,
+        dbr:RDFa,
+        dbr:Resource_Description_Framework,
+        <http://dbpedia.org/resource/Turtle_(syntax)> ;
     :repository <git@github.com:koma5/succotash.git>,
         <https://github.com/koma5/succotash> ;
     skos:related <http://succotash.5th.ch/#DataVisualization>,
@@ -216,17 +218,24 @@
     rdfs:label "Turtle" ;
     dc:format "text/turtle" .
 
-<http://succotash.5th.ch/#DataAnalytics> a skos:Concept .
+<http://succotash.5th.ch/#Electronics> a skos:Concept .
 
-<http://succotash.5th.ch/#SemnaticWeb> a skos:Concept .
+<http://succotash.5th.ch/#LinkedData> a skos:Concept .
+
+<http://succotash.5th.ch/#SemnaticWeb> a skos:Concept ;
+    skos:narrower <http://succotash.5th.ch/#LinkedData> .
+
+<http://succotash.5th.ch/#DataAnalytics> a skos:Concept .
 
 <http://succotash.5th.ch/#DataVisualization> a skos:Concept .
 
+<http://succotash.5th.ch/#WebDevelopment> a skos:Concept ;
+    skos:narrower <http://succotash.5th.ch/#FrontEndDevelopment> .
+
 <http://succotash.5th.ch/#FrontEndDevelopment> a skos:Concept .
 
-<http://succotash.5th.ch/#WebDevelopment> a skos:Concept .
-
-<http://succotash.5th.ch/#IoT> a skos:Concept .
+<http://succotash.5th.ch/#IoT> a skos:Concept ;
+    skos:narrower <http://succotash.5th.ch/#Electronics> .
 
 <http://marcoko.ch/#i> a foaf:Person,
         wot:User ;
@@ -247,4 +256,3 @@
     foaf:nick "koma5" ;
     foaf:weblog <http://blog.5th.ch/> ;
     wot:hasKey <http://marcoko.ch/#gpgkey> .
-

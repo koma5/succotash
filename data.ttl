@@ -66,7 +66,8 @@
   skos:related <#IoT> .
 
 <#holdEm> a :Project ;
-  :programming-language dbr:Python_\(programming_language\) .
+  :programming-language dbr:Python_\(programming_language\) ;
+  skos:related <#DataAnalytics> .
 
 <#typer> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript,  dbr:PHP ;
@@ -77,18 +78,20 @@
   skos:related <#WebDevelopment>, <#FrontEndDevelopment> .
 
 <#succotash> a :Project ;
-  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\) ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\),
+  dbr:RDFa, dbr:Resource_Description_Framework, dbr:Turtle_\(syntax\) ;
   skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemnaticWeb> .
 
 
 
-<#IoT> a skos:Concept .
+<#IoT> a skos:Concept ; skos:narrower <#Electronics> .
 <#FrontEndDevelopment> a skos:Concept .
 <#DataVisualization> a skos:Concept .
-<#WebDevelopment> a skos:Concept .
+<#WebDevelopment> a skos:Concept ; skos:narrower <#FrontEndDevelopment> .
 <#Electronics> a skos:Concept .
 <#DataAnalytics> a skos:Concept .
-<#SemnaticWeb> a skos:Concept .
+<#SemnaticWeb> a skos:Concept ; skos:narrower <#LinkedData> .
+<#LinkedData> a skos:Concept .
 
 # dbo:programmingLanguage or :programming-language ?
 # dbo:computingPlatform

@@ -254,6 +254,7 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
       nodesLinksFromRdfProperty(store, foaf('maker'), graph)
       nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
       nodesLinksFromRdfProperty(store, skos('related'), graph)
+      nodesLinksFromRdfProperty(store, skos('narrower'), graph)
 
       link = linesGroup.selectAll('.link')
           .data(graph.links)
