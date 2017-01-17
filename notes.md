@@ -15,12 +15,12 @@
 - [x] bigger
 - [x] infobox not visible if empty!! will be empty
 - [ ] n3 instead of turtle?? is ... of
-- [ ] rename base to 5th.ch/succotash
+- [x] rename base to 5th.ch/succotash
 - [x] while drag no unfocus and focus
 - [ ] node.faint transition not only fade out also fade in
 
 
 # bugs:
 - [ ] default1 prefix??
-- [ ] marcoko.ch/ PersonalPrifileDocument maker in graph??
+- [ ] marcoko.ch/ PersonalProfileDocument maker in graph??
 - [x] svg 100% scroll bar height

@@ -5,7 +5,7 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 @prefix : <http://usefulinc.com/ns/doap#> .
-@base <http://succotash.5th.ch/> .
+@base <http://5th.ch/succotash> .
 
 <#ausleihdb> a :Project ;
   :name "IT Ausleih Datenbank"@de,
