@@ -199,11 +199,21 @@ function clickNode(node) {
   d3.event.stopPropagation();
   clickedNode = node;
   focusNodes(node);
+
+  //if(node.id.includes(window.location.origin) {
+  if(node.id.includes('/succotash')) { //dev purpose! ##################
+    window.history.pushState('', '', window.location.pathname +  '#' + node.id.split('#')[1]);
+  }
+  else {
+    window.history.pushState('', '', window.location.pathname);
+  }
+
 }
 
 function clickSvg() {
   clickedNode = null;
   unfocusNodes();
+  window.history.pushState('', '', window.location.pathname);
 }
 
 var circleSizeNormal = 10;
@@ -288,6 +298,16 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
 
       resize();
       d3.select(window).on("resize", resize);
+
+      //focus node by requested URL
+      d3.selectAll('.node').each(function(d) {
+        console.log(d);
+        if(window.location.hash && d.id.includes(window.location.hash)) {
+          clickedNode = d;
+          focusNodes(d);
+        }
+      });
+
     }
     else {
           console.log("Oops, something happened and couldn't fetch data");

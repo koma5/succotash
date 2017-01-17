@@ -18,7 +18,7 @@
 - [x] rename base to 5th.ch/succotash
 - [x] while drag no unfocus and focus
 - [ ] node.faint transition not only fade out also fade in
-- [ ] focus node by requesting url and rewrite url on node focus
+- [x] focus node by requesting url and rewrite url on node focus
 
 
 # bugs:
