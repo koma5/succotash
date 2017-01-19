@@ -155,7 +155,7 @@ function mouseOutNode(node) {
 }
 
 function focusNodes(node) {
-  info.attr('style', null).text(node.id);
+  showInfo();
 
   links = [];
 
@@ -215,6 +215,17 @@ function clickSvg() {
   unfocusNodes();
   window.history.pushState('', '', window.location.pathname);
 }
+
+function showInfo(node) {
+  info.attr('style', null)
+  .html('<h1>succotash <span class="uri">&lt;http://5th.ch/succotash#succotash&gt;</span></h1>\
+  <p>doap:Project <span class="typeLabel">rdf:type</span></p>\
+  <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\
+  <span class="langTag">@en</span></p>\
+  <a href="#blahhh">link</a>');
+}
+
+
 
 var circleSizeNormal = 10;
 var circleSizeBig = 13;
