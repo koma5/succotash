@@ -4,7 +4,6 @@ graph = rdflib.Graph()
 me = rdflib.URIRef("http://marcoko.ch/#i")
 
 graph.parse('./data.ttl', format='turtle')
-graph.parse(me)
 
 doap = rdflib.Namespace("http://usefulinc.com/ns/doap#")
 foaf = rdflib.namespace.FOAF

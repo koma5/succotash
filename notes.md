@@ -19,9 +19,10 @@
 - [x] while drag no unfocus and focus
 - [ ] node.faint transition not only fade out also fade in
 - [x] focus node by requesting url and rewrite url on node focus
+- [ ] more elegant developmet sate changes "//dev purpose! ##################"
 
 
 # bugs:
-- [ ] default1 prefix??
-- [ ] marcoko.ch/ PersonalProfileDocument maker in graph??
+- [x] default1 prefix??
+- [x] marcoko.ch/ PersonalProfileDocument maker in graph??
 - [x] svg 100% scroll bar height

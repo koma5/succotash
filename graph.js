@@ -1,9 +1,8 @@
-function nodesLinksFromRdfProperty(store, property, graph) {
+function nodesLinksFromRdfProperty(store, property, graph, source) {
 
-  var matches = store.statementsMatching(undefined, property, undefined)
+  var matches = store.statementsMatching(undefined, property, undefined, source)
   for (var i=0; i<matches.length; i++) {
     match = matches[i]
-    //console.log(match.subject.uri + " " + match.object.uri)
     addUniqueNodes(graph, match.subject.uri)
     addUniqueNodes(graph, match.object.uri)
     graph.links.push({
@@ -269,13 +268,25 @@ var fetcher = new $rdf.Fetcher(store, timeout)
 
 var graph = {nodes: [], links:[]}
 
-fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", function(ok, body, xhr) {
+var localDateFile = "http://" + window.location.host + "/graph.ttl"
+
+fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
     if (ok) {
 
-      nodesLinksFromRdfProperty(store, foaf('maker'), graph)
-      nodesLinksFromRdfProperty(store, doap('programming-language'), graph)
-      nodesLinksFromRdfProperty(store, skos('related'), graph)
-      nodesLinksFromRdfProperty(store, skos('narrower'), graph)
+      // fetch seeAlso
+      //seeAlsos = store.statementsMatching($rdf.sym(window.location.origin), rdf['seeAlso'], undefined)
+      seeAlsos = store.statementsMatching($rdf.sym('http://5th.ch/succotash'), rdf['seeAlso'], undefined) //dev purpose! ##################
+      for(var i=0; i < seeAlsos.length; i++) {
+        fetcher.nowOrWhenFetched(seeAlsos[i].object.value, function(ok, body, xhr) {});
+      }
+
+
+      nodesLinksFromRdfProperty(store, foaf('maker'), graph, $rdf.sym(localDateFile))
+      nodesLinksFromRdfProperty(store, doap('programming-language'), graph, $rdf.sym(localDateFile))
+      nodesLinksFromRdfProperty(store, skos('related'), graph, $rdf.sym(localDateFile))
+      nodesLinksFromRdfProperty(store, skos('narrower'), graph, $rdf.sym(localDateFile))
+
+
 
       link = linesGroup.selectAll('.link')
           .data(graph.links)
@@ -312,7 +323,6 @@ fetcher.nowOrWhenFetched("http://" + window.location.host + "/graph.ttl", functi
 
       //focus node by requested URL
       d3.selectAll('.node').each(function(d) {
-        console.log(d);
         if(window.location.hash && d.id.includes(window.location.hash)) {
           clickedNode = d;
           focusNodes(d);
