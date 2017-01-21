@@ -22,8 +22,9 @@
 - [ ] more elegant development sate changes "//dev purpose! ##################"
 - [ ] margin padding of info div WTF?
 - [ ] select language preference display if available
-- [ ] fetch dbpedia data about programming languages
+- [x] fetch dbpedia data about programming languages
 - [ ] skos broader narrower in info box
+- [ ] generic query of rdf store for info box
 
 
 

@@ -236,18 +236,14 @@ function showInfo(node) {
 
     try {
       var name = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.value;
-          infoData.name = name;
-    } catch(err) {}
-    try {
       var langTagName = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.lang;
+      infoData.name = name;
       infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
     } catch(err) {}
     try {
       var description = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.value;
-      infoData.description = description;
-    } catch(err) {}
-    try {
       var langTagDesc = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.lang;
+      infoData.description = description;
       infoData.langTagDesc = langTagDesc != '' ? '@' + langTagDesc : '';
     } catch(err) {}
     try {
@@ -272,16 +268,26 @@ function showInfo(node) {
     infoData.rdfType =  "skos:Concept";
     try {
       var name = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.value;
-      infoData.name = name;
-    } catch(err) {}
-    try {
       var langTagName = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.lang;
+      infoData.name = name;
       infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
     } catch(err) {}
   }
 
   else {
     infoData.uri = node.id;
+    try {
+      var name = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.value;
+      var langTagName = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.lang;
+      infoData.name = name;
+      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
+    } catch(err) {}
+    try {
+      var description = store.statementsMatching($rdf.sym(node.id), dbo("abstract"), undefined)[0].object.value;
+      var langTagDesc = store.statementsMatching($rdf.sym(node.id), dbo("abstract"), undefined)[0].object.lang;
+      infoData.description = description;
+      infoData.langTagDesc = langTagDesc != '' ? '@' + langTagDesc : '';
+    } catch(err) {}
   }
 
   Mustache.parse(infoTemplate);
@@ -317,22 +323,25 @@ var simulation = d3.forceSimulation()
 
 var doap = "http://usefulinc.com/ns/doap#"
 var foaf = "http://xmlns.com/foaf/0.1/"
-var rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 var skos = "http://www.w3.org/2004/02/skos/core#"
 var rdfs = "http://www.w3.org/2000/01/rdf-schema#"
+var dbo = "http://dbpedia.org/ontology/"
+var rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 
 d3.select('html').attr('prefix',
 'doap: ' + doap + '\n\
 foaf: ' + foaf + '\n\
 skos: ' + skos + '\n\
 rdfs: ' + rdfs + '\n\
+dbo: ' + dbo + '\n\
 rdf: ' + rdf)
 
 doap = $rdf.Namespace(doap)
 foaf = $rdf.Namespace(foaf)
-rdf = $rdf.Namespace(rdf)
-rdfs = $rdf.Namespace(rdfs)
 skos = $rdf.Namespace(skos)
+rdfs = $rdf.Namespace(rdfs)
+dbo = $rdf.Namespace(dbo)
+rdf = $rdf.Namespace(rdf)
 
 var store = $rdf.graph()
 var timeout = 5000 // 5000 ms timeout
