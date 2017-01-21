@@ -154,7 +154,7 @@ function mouseOutNode(node) {
 }
 
 function focusNodes(node) {
-  showInfo();
+  showInfo(node);
 
   links = [];
 
@@ -216,12 +216,60 @@ function clickSvg() {
 }
 
 function showInfo(node) {
+
+  var html = '<h1>%name%<span class="langTagName">%langTagName%</span> <span class="uri">&lt;%uri%&gt;</span></h1>\
+  <p>%rdfType% <span class="typeLabel">rdf:type</span></p>\
+  <p class="description">%description%\
+  <span class="langTagDesc">%langTagDesc%</span></p>\
+  <p><a href="%link%">link</a> \
+  <a href="%repo%">repo</a></p>'
+  try {
+    var type = store.statementsMatching($rdf.sym(node.id), rdf("type"), undefined)[0].object.value;
+  } catch(err) {}
+
+  if (type == doap('Project').value) { //doap:Project
+
+    var rdfType = "doap:Project";
+    html = html.replace('%rdfType%', rdfType);
+    html = html.replace('%uri%', node.id);
+
+    try {
+      var name = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.value;
+      html = html.replace('%name%', name);
+    } catch(err) {}
+    try {
+      var langTagName = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.lang;
+      html = html.replace('%langTagName%', langTagName != '' ? '@' + langTagName : '' );
+    } catch(err) {
+      html = html.replace('%langTagName%', '');
+    }
+    try {
+      var description = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.value;
+      html = html.replace('%description%', description);
+    } catch(err) {}
+    try {
+      var langTagDesc = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.lang;
+      html = html.replace('%langTagDesc%', langTagDesc != '' ? '@' + langTagDesc : '');
+    } catch(err) {
+      html = html.replace('%langTagDesc%', '');
+    }
+    try {
+      var link = store.statementsMatching($rdf.sym(node.id), doap("homepage"), undefined)[0].object.value;
+      html = html.replace('%link%', link);
+    } catch(err) {
+      html = html.replace('%link%', '');
+    }
+    try {
+      var repo = store.statementsMatching($rdf.sym(node.id), doap("repository"), undefined)[0].object.value;
+      html = html.replace('%repo%', repo);
+    } catch(err) {
+      html = html.replace('%repo%', '');
+    }
+
+  }
+
   info.attr('style', null)
-  .html('<h1>succotash <span class="uri">&lt;http://5th.ch/succotash#succotash&gt;</span></h1>\
-  <p>doap:Project <span class="typeLabel">rdf:type</span></p>\
-  <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\
-  <span class="langTag">@en</span></p>\
-  <a href="#blahhh">link</a>');
+  .html(html);
 }
 
 
