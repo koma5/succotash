@@ -33,8 +33,7 @@
     :homepage <https://github.com/koma5/bigShowerBrother/blob/master/shower.ipynb> ;
     :name "bigShowerBrother" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
-    :repository <git@github.com:koma5/bigShowerBrother.git>,
-        <https://github.com/koma5/bigShowerBrother> ;
+    :repository <https://github.com/koma5/bigShowerBrother> ;
     skos:related <http://5th.ch/succotash#DataAnalytics>,
         <http://5th.ch/succotash#DataVisualization>,
         <http://5th.ch/succotash#IoT> ;
@@ -45,8 +44,7 @@
     :name "daily" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
-    :repository <git@github.com:koma5/daily.git>,
-        <https://github.com/koma5/daily> ;
+    :repository <https://github.com/koma5/daily> ;
     skos:related <http://5th.ch/succotash#FrontEndDevelopment>,
         <http://5th.ch/succotash#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
@@ -56,8 +54,7 @@
     :homepage <https://github.com/koma5/holdEm/blob/master/holdEm.ipynb> ;
     :name "holdEm" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
-    :repository <git@github.com:koma5/holdEm.git>,
-        <https://github.com/koma5/holdEm> ;
+    :repository <https://github.com/koma5/holdEm> ;
     skos:related <http://5th.ch/succotash#DataAnalytics> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -66,8 +63,7 @@
     :name "matt" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript ;
-    :repository <git@github.com:koma5/matt.git>,
-        <https://github.com/koma5/matt> ;
+    :repository <https://github.com/koma5/matt> ;
     skos:related <http://5th.ch/succotash#DataVisualization>,
         <http://5th.ch/succotash#FrontEndDevelopment>,
         <http://5th.ch/succotash#IoT> ;
@@ -77,8 +73,7 @@
     :description "mqtt analog meter display for any values"@en ;
     :name "mqttAnalogMeter" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttAnalogMeter.git>,
-        <https://github.com/koma5/mqttAnalogMeter> ;
+    :repository <https://github.com/koma5/mqttAnalogMeter> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -86,8 +81,7 @@
     :description "mqtt light switch"@en ;
     :name "mqttLight" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttLight.git>,
-        <https://github.com/koma5/mqttLight> ;
+    :repository <https://github.com/koma5/mqttLight> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -95,8 +89,7 @@
     :description "mqtt controlled, color changing lamp"@en ;
     :name "mqttNEO" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttNEO.git>,
-        <https://github.com/koma5/mqttNEO> ;
+    :repository <https://github.com/koma5/mqttNEO> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -105,8 +98,7 @@
     :description "mqtt gps receiver"@en ;
     :name "mqttNMEA" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttNMEA.git>,
-        <https://github.com/koma5/mqttNMEA> ;
+    :repository <https://github.com/koma5/mqttNMEA> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -114,8 +106,7 @@
     :description "mqtt temperature and humidity sensor"@en ;
     :name "mqttSense" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttSense.git>,
-        <https://github.com/koma5/mqttSense> ;
+    :repository <https://github.com/koma5/mqttSense> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -123,8 +114,7 @@
     :description "mqtt device to switch on and off an electric heater in my camper "@en ;
     :name "mqttSwitch" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/mqttSwitch.git>,
-        <https://github.com/koma5/mqttSwitch> ;
+    :repository <https://github.com/koma5/mqttSwitch> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -137,8 +127,7 @@
         dbr:RDFa,
         dbr:Resource_Description_Framework,
         <http://dbpedia.org/resource/Turtle_(syntax)> ;
-    :repository <git@github.com:koma5/succotash.git>,
-        <https://github.com/koma5/succotash> ;
+    :repository <https://github.com/koma5/succotash> ;
     skos:related <http://5th.ch/succotash#DataVisualization>,
         <http://5th.ch/succotash#FrontEndDevelopment>,
         <http://5th.ch/succotash#SemnaticWeb>,
@@ -151,8 +140,7 @@
     :name "textly" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript ;
-    :repository <git@github.com:koma5/textly.git>,
-        <https://github.com/koma5/textly> ;
+    :repository <https://github.com/koma5/textly> ;
     skos:related <http://5th.ch/succotash#FrontEndDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -163,8 +151,7 @@
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript,
         dbr:PHP ;
-    :repository <git@github.com:koma5/typer.git>,
-        <https://github.com/koma5/typer> ;
+    :repository <https://github.com/koma5/typer> ;
     skos:related <http://5th.ch/succotash#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -172,8 +159,7 @@
     :description "xBees jeff, hugo and daisy talking to each other..."@en ;
     :name "xBeeSensorNetwork" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <git@github.com:koma5/xBeeSensorNetwork.git>,
-        <https://github.com/koma5/xBeeSensorNetwork> ;
+    :repository <https://github.com/koma5/xBeeSensorNetwork> ;
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 

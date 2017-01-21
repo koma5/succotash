@@ -38,10 +38,6 @@ for githubRepo in githubRepos:
 
             graph.add(( repoToFetch['project'],
                         doap.repository,
-                        rdflib.URIRef(githubRepo['ssh_url']) ))
-
-            graph.add(( repoToFetch['project'],
-                        doap.repository,
                         rdflib.URIRef(githubRepo['html_url']) ))
 
             if(githubRepo['description'] != None):
