@@ -5,7 +5,7 @@
 - [x] radial gradiant dark
 - [x] click nodes stay big...
 - [x] links of specific node or hovered node get bigger or others disappear / soften other links disapear
-- [ ] label/name besides small uri in <>
+- [x] label/name besides small uri in <>
 - [ ] link to turtle file humans and machines
 - [ ] all data is there but not visible - parsing rdfa
 - [ ] get dbpedia data typeof
@@ -19,7 +19,7 @@
 - [x] while drag no unfocus and focus
 - [ ] node.faint transition not only fade out also fade in
 - [x] focus node by requesting url and rewrite url on node focus
-- [ ] more elegant developmet sate changes "//dev purpose! ##################"
+- [ ] more elegant development sate changes "//dev purpose! ##################"
 - [ ] margin padding of info div WTF?
 - [ ] select language preference display if available
 - [ ] fetch dbpedia data about programming languages
@@ -32,3 +32,5 @@
 - [x] marcoko.ch/ PersonalProfileDocument maker in graph??
 - [x] svg 100% scroll bar height
 - [x] mustache links no <p></p> if links empty
+- [ ] display: table in safari not working text overflowing info div
+- [ ] rdflib.js:20423 Refused to get unsafe header "link" (http://jaketrent.com/post/expose-http-headers-in-cors/)
