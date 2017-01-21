@@ -20,9 +20,11 @@
 - [ ] node.faint transition not only fade out also fade in
 - [x] focus node by requesting url and rewrite url on node focus
 - [ ] more elegant developmet sate changes "//dev purpose! ##################"
+- [ ] margin padding of info div WTF?
 
 
 # bugs:
 - [x] default1 prefix??
 - [x] marcoko.ch/ PersonalProfileDocument maker in graph??
 - [x] svg 100% scroll bar height
+- [x] mustache links no <p></p> if links empty

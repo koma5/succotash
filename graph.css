@@ -10,7 +10,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 5px 15px;
+  padding: 15px 15px;
   color: #eee;
   font-size: 13px;
   background-color: rgba(0, 0, 0, .5);
@@ -20,6 +20,7 @@ body {
 
 .info h1 {
   font-size: 18px;
+  display: inline;
 }
 
 .info .typeLabel, .info .uri, .info .langTagDesc, .info .langTagName {
@@ -30,11 +31,11 @@ body {
 .info a {
   color: #eee;
   font-size: 13px;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .info a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .link {

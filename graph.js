@@ -217,60 +217,67 @@ function clickSvg() {
 
 function showInfo(node) {
 
-  var html = '<h1>%name%<span class="langTagName">%langTagName%</span> <span class="uri">&lt;%uri%&gt;</span></h1>\
-  <p>%rdfType% <span class="typeLabel">rdf:type</span></p>\
-  <p class="description">%description%\
-  <span class="langTagDesc">%langTagDesc%</span></p>\
-  <p><a href="%link%">link</a> \
-  <a href="%repo%">repo</a></p>'
+  var infoTemplate = '{{#name}}<h1>{{name}}</h1>{{/name}}{{#langTagName}}<span class="langTagName">{{langTagName}} {{/langTagName}}</span> {{#uri}}<span class="uri"> &lt;{{uri}}&gt;</span>{{/uri}}\
+  {{#rdfType}}<p>{{rdfType}} <span class="typeLabel">rdf:type</span></p>{{/rdfType}}\
+  {{#description}}<p class="description">{{description}}\
+  {{#langTagDesc}}<span class="langTagDesc">{{langTagDesc}}</span>{{/langTagDesc}}</p>{{/description}}\
+  <p>{{#links}}<a href="{{href}}">{{name}}</a> {{/links}}</p>';
+
+  var infoData = {links : []};
+
   try {
-    var type = store.statementsMatching($rdf.sym(node.id), rdf("type"), undefined)[0].object.value;
+    infoData.type = store.statementsMatching($rdf.sym(node.id), rdf("type"), undefined)[0].object.value;
   } catch(err) {}
 
-  if (type == doap('Project').value) { //doap:Project
+  if (infoData.type == doap('Project').value) { //doap:Project
 
-    var rdfType = "doap:Project";
-    html = html.replace('%rdfType%', rdfType);
-    html = html.replace('%uri%', node.id);
+    infoData.rdfType =  "doap:Project"
+    infoData.uri = node.id;
 
     try {
       var name = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.value;
-      html = html.replace('%name%', name);
+          infoData.name = name;
     } catch(err) {}
     try {
       var langTagName = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.lang;
-      html = html.replace('%langTagName%', langTagName != '' ? '@' + langTagName : '' );
-    } catch(err) {
-      html = html.replace('%langTagName%', '');
-    }
+      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
+    } catch(err) {}
     try {
       var description = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.value;
-      html = html.replace('%description%', description);
+      infoData.description = description;
     } catch(err) {}
     try {
       var langTagDesc = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.lang;
-      html = html.replace('%langTagDesc%', langTagDesc != '' ? '@' + langTagDesc : '');
-    } catch(err) {
-      html = html.replace('%langTagDesc%', '');
-    }
+      infoData.langTagDesc = langTagDesc != '' ? '@' + langTagDesc : '';
+    } catch(err) {}
     try {
       var link = store.statementsMatching($rdf.sym(node.id), doap("homepage"), undefined)[0].object.value;
-      html = html.replace('%link%', link);
-    } catch(err) {
-      html = html.replace('%link%', '');
-    }
+      infoData.links.push({
+        name: "link",
+        href: link
+      });
+    } catch(err) {}
     try {
       var repo = store.statementsMatching($rdf.sym(node.id), doap("repository"), undefined)[0].object.value;
-      html = html.replace('%repo%', repo);
-    } catch(err) {
-      html = html.replace('%repo%', '');
-    }
+      infoData.links.push({
+        name: "repo",
+        href: repo
+      });
+    } catch(err) {}
 
   }
+  else {
+    infoData.uri = node.id;
+  }
+
+  Mustache.parse(infoTemplate);
+  html = Mustache.render(infoTemplate, infoData);
 
   info.attr('style', null)
   .html(html);
 }
+
+
 
 
 
