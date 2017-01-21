@@ -1,5 +1,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dbr: <http://dbpedia.org/resource/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
@@ -7,7 +8,7 @@
 @prefix : <http://usefulinc.com/ns/doap#> .
 @base <http://5th.ch/succotash> .
 
-<> rdf:seeAlso <http://marcoko.ch/> .
+<> rdfs:seeAlso <http://marcoko.ch/> .
 
 <#ausleihdb> a :Project ;
   :name "IT Ausleih Datenbank"@de,
@@ -82,18 +83,18 @@
 <#succotash> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\),
   dbr:RDFa, dbr:Resource_Description_Framework, dbr:Turtle_\(syntax\) ;
-  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemnaticWeb> .
+  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb> .
 
 
 
-<#IoT> a skos:Concept ; skos:narrower <#Electronics> .
-<#FrontEndDevelopment> a skos:Concept .
-<#DataVisualization> a skos:Concept .
-<#WebDevelopment> a skos:Concept ; skos:narrower <#FrontEndDevelopment> .
-<#Electronics> a skos:Concept .
-<#DataAnalytics> a skos:Concept .
-<#SemnaticWeb> a skos:Concept ; skos:narrower <#LinkedData> .
-<#LinkedData> a skos:Concept .
+<#IoT> rdfs:label "Internet of Things"@en ; a skos:Concept ; skos:narrower <#Electronics> .
+<#FrontEndDevelopment> rdfs:label "Frontend Development"@en; a skos:Concept .
+<#DataVisualization> rdfs:label "Data Visualization"@en; a skos:Concept .
+<#WebDevelopment> rdfs:label "Web-Development"@en; a skos:Concept ; skos:narrower <#FrontEndDevelopment> .
+<#Electronics> rdfs:label "Electronics"@en; a skos:Concept .
+<#DataAnalytics> rdfs:label "Data Analytics"@en; a skos:Concept .
+<#SemanticWeb> rdfs:label "semantic web"@en; a skos:Concept ; skos:narrower <#LinkedData> .
+<#LinkedData> rdfs:label "linked data"@en; a skos:Concept .
 
 # dbo:programmingLanguage or :programming-language ?
 # dbo:computingPlatform

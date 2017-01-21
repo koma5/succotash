@@ -21,6 +21,10 @@
 - [x] focus node by requesting url and rewrite url on node focus
 - [ ] more elegant developmet sate changes "//dev purpose! ##################"
 - [ ] margin padding of info div WTF?
+- [ ] select language preference display if available
+- [ ] fetch dbpedia data about programming languages
+- [ ] skos broader narrower in info box
+
 
 
 # bugs:

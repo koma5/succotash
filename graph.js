@@ -266,6 +266,20 @@ function showInfo(node) {
     } catch(err) {}
 
   }
+
+  else if (infoData.type == skos('Concept').value) { //skos:Concept
+    infoData.uri = node.id;
+    infoData.rdfType =  "skos:Concept";
+    try {
+      var name = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.value;
+      infoData.name = name;
+    } catch(err) {}
+    try {
+      var langTagName = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.lang;
+      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
+    } catch(err) {}
+  }
+
   else {
     infoData.uri = node.id;
   }
@@ -305,16 +319,19 @@ var doap = "http://usefulinc.com/ns/doap#"
 var foaf = "http://xmlns.com/foaf/0.1/"
 var rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 var skos = "http://www.w3.org/2004/02/skos/core#"
+var rdfs = "http://www.w3.org/2000/01/rdf-schema#"
 
 d3.select('html').attr('prefix',
 'doap: ' + doap + '\n\
 foaf: ' + foaf + '\n\
 skos: ' + skos + '\n\
+rdfs: ' + rdfs + '\n\
 rdf: ' + rdf)
 
 doap = $rdf.Namespace(doap)
 foaf = $rdf.Namespace(foaf)
 rdf = $rdf.Namespace(rdf)
+rdfs = $rdf.Namespace(rdfs)
 skos = $rdf.Namespace(skos)
 
 var store = $rdf.graph()
@@ -330,7 +347,7 @@ fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
 
       // fetch seeAlso
       //seeAlsos = store.statementsMatching($rdf.sym(window.location.origin), rdf['seeAlso'], undefined)
-      seeAlsos = store.statementsMatching($rdf.sym('http://5th.ch/succotash'), rdf['seeAlso'], undefined) //dev purpose! ##################
+      seeAlsos = store.statementsMatching($rdf.sym('http://5th.ch/succotash'), rdfs['seeAlso'], undefined) //dev purpose! ##################
       for(var i=0; i < seeAlsos.length; i++) {
         fetcher.nowOrWhenFetched(seeAlsos[i].object.value, function(ok, body, xhr) {});
       }

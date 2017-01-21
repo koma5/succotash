@@ -9,7 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 
-<http://5th.ch/succotash> rdf:seeAlso <http://marcoko.ch/> .
+<http://5th.ch/succotash> rdfs:seeAlso <http://marcoko.ch/> .
 
 <http://5th.ch/succotash#ZBPVRY> a :Project ;
     :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
@@ -130,7 +130,7 @@
     :repository <https://github.com/koma5/succotash> ;
     skos:related <http://5th.ch/succotash#DataVisualization>,
         <http://5th.ch/succotash#FrontEndDevelopment>,
-        <http://5th.ch/succotash#SemnaticWeb>,
+        <http://5th.ch/succotash#SemanticWeb>,
         <http://5th.ch/succotash#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
@@ -163,22 +163,30 @@
     skos:related <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#Electronics> a skos:Concept .
+<http://5th.ch/succotash#Electronics> a skos:Concept ;
+    rdfs:label "Electronics"@en .
 
-<http://5th.ch/succotash#LinkedData> a skos:Concept .
+<http://5th.ch/succotash#LinkedData> a skos:Concept ;
+    rdfs:label "linked data"@en .
 
-<http://5th.ch/succotash#SemnaticWeb> a skos:Concept ;
+<http://5th.ch/succotash#SemanticWeb> a skos:Concept ;
+    rdfs:label "semantic web"@en ;
     skos:narrower <http://5th.ch/succotash#LinkedData> .
 
-<http://5th.ch/succotash#DataAnalytics> a skos:Concept .
+<http://5th.ch/succotash#DataAnalytics> a skos:Concept ;
+    rdfs:label "Data Analytics"@en .
 
-<http://5th.ch/succotash#DataVisualization> a skos:Concept .
+<http://5th.ch/succotash#DataVisualization> a skos:Concept ;
+    rdfs:label "Data Visualization"@en .
 
 <http://5th.ch/succotash#WebDevelopment> a skos:Concept ;
+    rdfs:label "Web-Development"@en ;
     skos:narrower <http://5th.ch/succotash#FrontEndDevelopment> .
 
-<http://5th.ch/succotash#FrontEndDevelopment> a skos:Concept .
+<http://5th.ch/succotash#FrontEndDevelopment> a skos:Concept ;
+    rdfs:label "Frontend Development"@en .
 
 <http://5th.ch/succotash#IoT> a skos:Concept ;
+    rdfs:label "Internet of Things"@en ;
     skos:narrower <http://5th.ch/succotash#Electronics> .
 
