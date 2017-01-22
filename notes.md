@@ -35,3 +35,4 @@
 - [x] mustache links no <p></p> if links empty
 - [ ] display: table in safari not working text overflowing info div
 - [ ] rdflib.js:20423 Refused to get unsafe header "link" (http://jaketrent.com/post/expose-http-headers-in-cors/)
+- [x] safari navigator.languages array not existing

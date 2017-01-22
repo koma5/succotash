@@ -216,7 +216,10 @@ function clickSvg() {
 }
 
 function getObjectRightLanguage(node, prop) {
-  var languages = navigator.languages;
+
+  //Safari / Chrome
+  var languages = navigator.languages != undefined ? navigator.languages : [ navigator.language ];
+  
   for(var l = 0; l < languages.length; l++) {
     if(languages[l].indexOf('-') > 0) {
       languages[l] = languages[l].split('-')[0];
