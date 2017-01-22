@@ -11,10 +11,10 @@
 <> rdfs:seeAlso <http://marcoko.ch/> .
 
 <#ausleihdb> a :Project ;
-  :name "IT Ausleih Datenbank"@de,
-        "IT lending database"@en ;
-  :description "Webapp um verliehene Geräte der IT zu erfassen."@de,
-               "webapp to track lended IT devices"@en ;
+  :name "HSR IT Ausleih Datenbank"@de,
+        "HSR IT lending database"@en ;
+  :description "Webapp um verliehene Geräte der HSR IT zu erfassen."@de,
+               "webapp to track lended HSR IT devices"@en ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:PHP  ;
   foaf:maker <http://marcoko.ch/#i> ;
   skos:related <#WebDevelopment> .

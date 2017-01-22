@@ -21,10 +21,10 @@
 - [x] focus node by requesting url and rewrite url on node focus
 - [ ] more elegant development sate changes "//dev purpose! ##################"
 - [ ] margin padding of info div WTF?
-- [ ] select language preference display if available
+- [x] select language preference display if available
 - [x] fetch dbpedia data about programming languages
 - [ ] skos broader narrower in info box
-- [ ] generic query of rdf store for info box
+- [x] generic query of rdf store for info box
 
 
 

@@ -19,10 +19,10 @@
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#ausleihdb> a :Project ;
-    :description "Webapp um verliehene Geräte der IT zu erfassen."@de,
-        "webapp to track lended IT devices"@en ;
-    :name "IT Ausleih Datenbank"@de,
-        "IT lending database"@en ;
+    :description "Webapp um verliehene Geräte der HSR IT zu erfassen."@de,
+        "webapp to track lended HSR IT devices"@en ;
+    :name "HSR IT Ausleih Datenbank"@de,
+        "HSR IT lending database"@en ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
     skos:related <http://5th.ch/succotash#WebDevelopment> ;

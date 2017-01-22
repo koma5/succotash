@@ -215,6 +215,36 @@ function clickSvg() {
   window.history.pushState('', '', window.location.pathname);
 }
 
+function getObjectRightLanguage(node, prop) {
+  var languages = navigator.languages;
+  for(var l = 0; l < languages.length; l++) {
+    if(languages[l].indexOf('-') > 0) {
+      languages[l] = languages[l].split('-')[0];
+    }
+  }
+
+  returnData = {'string': undefined, 'lang' : undefined}
+
+  try {
+    strings = store.statementsMatching($rdf.sym(node.id), prop, undefined);
+    dance:
+    for(var l = 0; l < languages.length; l++) {
+      for(var s = 0; s < strings.length; s++) {
+        if(languages[l] == strings[s].object.lang) {
+          returnData.string = strings[s].object.value;
+          returnData.lang = strings[s].object.lang != '' ? '@' + strings[s].object.lang : '';
+          break dance;
+        }
+        else {
+          returnData.string = strings[s].object.value;
+          returnData.lang = strings[s].object.lang != '' ? '@' + strings[s].object.lang : '';
+        }
+      }
+    }
+  } catch(err) {}
+  return returnData;
+}
+
 function showInfo(node) {
 
   var infoTemplate = '{{#name}}<h1>{{name}}</h1>{{/name}}{{#langTagName}}<span class="langTagName">{{langTagName}} {{/langTagName}}</span> {{#uri}}<span class="uri"> &lt;{{uri}}&gt;</span>{{/uri}}\
@@ -225,69 +255,64 @@ function showInfo(node) {
 
   var infoData = {links : []};
 
-  try {
-    infoData.type = store.statementsMatching($rdf.sym(node.id), rdf("type"), undefined)[0].object.value;
-  } catch(err) {}
+  var o = getObjectRightLanguage(node, rdf('type'))
+  infoData.type = o.string;
 
   if (infoData.type == doap('Project').value) { //doap:Project
 
     infoData.rdfType =  "doap:Project"
     infoData.uri = node.id;
 
-    try {
-      var name = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.value;
-      var langTagName = store.statementsMatching($rdf.sym(node.id), doap("name"), undefined)[0].object.lang;
-      infoData.name = name;
-      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
-    } catch(err) {}
-    try {
-      var description = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.value;
-      var langTagDesc = store.statementsMatching($rdf.sym(node.id), doap("description"), undefined)[0].object.lang;
-      infoData.description = description;
-      infoData.langTagDesc = langTagDesc != '' ? '@' + langTagDesc : '';
-    } catch(err) {}
-    try {
-      var link = store.statementsMatching($rdf.sym(node.id), doap("homepage"), undefined)[0].object.value;
+
+    var o = getObjectRightLanguage(node, doap('name'))
+    infoData.name = o.string;
+    infoData.langTagName = o.lang ;
+
+    var o = getObjectRightLanguage(node, doap("description"))
+    infoData.description = o.string;
+    infoData.langTagDesc = o.lang ;
+
+    var o = getObjectRightLanguage(node, doap("homepage"))
+    if (o.string != undefined) {
       infoData.links.push({
         name: "link",
-        href: link
+        href: o.string
       });
-    } catch(err) {}
-    try {
-      var repo = store.statementsMatching($rdf.sym(node.id), doap("repository"), undefined)[0].object.value;
+    }
+
+    var o = getObjectRightLanguage(node, doap("repository"))
+    if (o.string != undefined) {
       infoData.links.push({
         name: "repo",
-        href: repo
+        href: o.string
       });
-    } catch(err) {}
+    }
 
   }
 
   else if (infoData.type == skos('Concept').value) { //skos:Concept
+
     infoData.uri = node.id;
     infoData.rdfType =  "skos:Concept";
-    try {
-      var name = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.value;
-      var langTagName = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.lang;
-      infoData.name = name;
-      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
-    } catch(err) {}
+
+    var o = getObjectRightLanguage(node, rdfs("label"))
+    infoData.name = o.string;
+    infoData.langTagName = o.lang ;
+
   }
 
   else {
+
     infoData.uri = node.id;
-    try {
-      var name = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.value;
-      var langTagName = store.statementsMatching($rdf.sym(node.id), rdfs("label"), undefined)[0].object.lang;
-      infoData.name = name;
-      infoData.langTagName = langTagName != '' ? '@' + langTagName : '';
-    } catch(err) {}
-    try {
-      var description = store.statementsMatching($rdf.sym(node.id), dbo("abstract"), undefined)[0].object.value;
-      var langTagDesc = store.statementsMatching($rdf.sym(node.id), dbo("abstract"), undefined)[0].object.lang;
-      infoData.description = description;
-      infoData.langTagDesc = langTagDesc != '' ? '@' + langTagDesc : '';
-    } catch(err) {}
+
+    var o = getObjectRightLanguage(node, rdfs("label"))
+    infoData.name = o.string;
+    infoData.langTagName = o.lang ;
+
+    var o = getObjectRightLanguage(node, dbo("abstract"))
+    infoData.description = o.string;
+    infoData.langTagDesc = o.lang ;
+
   }
 
   Mustache.parse(infoTemplate);
