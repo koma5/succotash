@@ -20,6 +20,7 @@
 - [ ] node.faint transition not only fade out also fade in
 - [x] focus node by requesting url and rewrite url on node focus
 - [x] more elegant development sate changes "//dev purpose! ##################"
+- [ ] origin in graph.js =S
 - [ ] margin padding of info div WTF?
 - [x] select language preference display if available
 - [x] fetch dbpedia data about programming languages

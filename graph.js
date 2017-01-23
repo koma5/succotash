@@ -357,7 +357,7 @@ function showInfo(node) {
   .html(html);
 }
 
-var origin = "http://5th.ch/succotash";
+var origin = "http://5th.ch/succotash/";
 
 var circleSizeNormal = 10;
 var circleSizeBig = 13;
