@@ -6,7 +6,7 @@
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 @prefix : <http://usefulinc.com/ns/doap#> .
-@base <http://5th.ch/succotash> .
+@base <http://5th.ch/succotash/> .
 
 <> rdfs:seeAlso <http://marcoko.ch/> .
 

@@ -9,175 +9,138 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix yago: <http://dbpedia.org/class/yago/> .
 
-<http://5th.ch/succotash> rdfs:seeAlso <http://marcoko.ch/> .
+<http://5th.ch/succotash/> rdfs:seeAlso <http://marcoko.ch/> .
 
-<http://5th.ch/succotash#OOP_Python_Human.ipynb> a :Project ;
+<http://5th.ch/succotash/#OOP_Python_Human.ipynb> a :Project ;
     :description "some OOP class in Python"@en ;
     :homepage <https://gist.github.com/koma5/f43f940dfdfa29f7188137c3734da369> ;
     :name "OOP_Python_Human.ipynb" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
-    skos:related <http://5th.ch/succotash#OOP> ;
+    skos:related <http://5th.ch/succotash/#OOP> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#ZBPVRY> a :Project ;
+<http://5th.ch/succotash/#ZBPVRY> a :Project ;
     :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
     :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
     :name "Zürich HB – Generalanzeiger S-Bahn" ;
     :programming-language dbr:Cascading_Style_Sheets ;
-    skos:related <http://5th.ch/succotash#FrontEndDevelopment> ;
+    skos:related <http://5th.ch/succotash/#FrontEndDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#ausleihdb> a :Project ;
+<http://5th.ch/succotash/#ausleihdb> a :Project ;
     :description "Webapp um verliehene Geräte der HSR IT zu erfassen."@de,
         "webapp to track lended HSR IT devices"@en ;
     :name "HSR IT Ausleih Datenbank"@de,
         "HSR IT lending database"@en ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
-    skos:related <http://5th.ch/succotash#WebDevelopment> ;
+    skos:related <http://5th.ch/succotash/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#bigShowerBrother> a :Project ;
+<http://5th.ch/succotash/#bigShowerBrother> a :Project ;
     :description "script to detect someone showering by humidity time series"@en ;
     :homepage <https://github.com/koma5/bigShowerBrother/blob/master/shower.ipynb> ;
     :name "bigShowerBrother" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <https://github.com/koma5/bigShowerBrother> ;
-    skos:related <http://5th.ch/succotash#DataAnalytics>,
-        <http://5th.ch/succotash#DataVisualization>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#DataAnalytics>,
+        <http://5th.ch/succotash/#DataVisualization>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#daily> a :Project ;
+<http://5th.ch/succotash/#daily> a :Project ;
     :description "minimal wordpress theme, which changes color on daylight"@en ;
     :name "daily" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:PHP ;
     :repository <https://github.com/koma5/daily> ;
-    skos:related <http://5th.ch/succotash#FrontEndDevelopment>,
-        <http://5th.ch/succotash#WebDevelopment> ;
+    skos:related <http://5th.ch/succotash/#FrontEndDevelopment>,
+        <http://5th.ch/succotash/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#ephemSunsetSunrise.ipynb> a :Project ;
+<http://5th.ch/succotash/#ephemSunsetSunrise.ipynb> a :Project ;
     :description "calculating excact sunsrise, sunset and suntransit times for a specific location and day"@en ;
     :homepage <https://gist.github.com/koma5/1a1f1e108d5a04a525dd5942f8048e7a> ;
     :name "ephemSunsetSunrise.ipynb" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#holdEm> a :Project ;
+<http://5th.ch/succotash/#holdEm> a :Project ;
     :description "Texas Hold'Em Hand simulator as python notebook"@en ;
     :homepage <https://github.com/koma5/holdEm/blob/master/holdEm.ipynb> ;
     :name "holdEm" ;
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <https://github.com/koma5/holdEm> ;
-    skos:related <http://5th.ch/succotash#DataAnalytics> ;
+    skos:related <http://5th.ch/succotash/#DataAnalytics> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#matt> a :Project ;
+<http://5th.ch/succotash/#matt> a :Project ;
     :description "JavaScript site to turn (my) mqtt devices on and off and display their state."@en ;
     :name "matt" ;
     :programming-language dbr:Cascading_Style_Sheets,
         dbr:JavaScript ;
     :repository <https://github.com/koma5/matt> ;
-    skos:related <http://5th.ch/succotash#DataVisualization>,
-        <http://5th.ch/succotash#FrontEndDevelopment>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#DataVisualization>,
+        <http://5th.ch/succotash/#FrontEndDevelopment>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttAnalogMeter> a :Project ;
+<http://5th.ch/succotash/#mqttAnalogMeter> a :Project ;
     :description "mqtt analog meter display for any values"@en ;
     :name "mqttAnalogMeter" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttAnalogMeter> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttLight> a :Project ;
+<http://5th.ch/succotash/#mqttLight> a :Project ;
     :description "mqtt light switch"@en ;
     :name "mqttLight" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttLight> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttNEO> a :Project ;
+<http://5th.ch/succotash/#mqttNEO> a :Project ;
     :description "mqtt controlled, color changing lamp"@en ;
     :name "mqttNEO" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttNEO> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttNMEA> a :Project ;
+<http://5th.ch/succotash/#mqttNMEA> a :Project ;
     dbo:computingPlatform dbr:Arduino ;
     :description "mqtt gps receiver"@en ;
     :name "mqttNMEA" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttNMEA> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttSense> a :Project ;
+<http://5th.ch/succotash/#mqttSense> a :Project ;
     :description "mqtt temperature and humidity sensor"@en ;
     :name "mqttSense" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttSense> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#mqttSwitch> a :Project ;
+<http://5th.ch/succotash/#mqttSwitch> a :Project ;
     :description "mqtt device to switch on and off an electric heater in my camper "@en ;
     :name "mqttSwitch" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttSwitch> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#textly> a :Project ;
-    :description "a very simple text editor which uses localStorage and html editable content."@en ;
-    :homepage <http://koma5.github.io/textly/textly.html> ;
-    :name "textly" ;
-    :programming-language dbr:Cascading_Style_Sheets,
-        dbr:JavaScript ;
-    :repository <https://github.com/koma5/textly> ;
-    skos:related <http://5th.ch/succotash#FrontEndDevelopment> ;
-    foaf:maker <http://marcoko.ch/#i> .
-
-<http://5th.ch/succotash#typer> a :Project ;
-    :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _"@en ;
-    :homepage <http://5th.li/typer_> ;
-    :name "typer" ;
-    :programming-language dbr:Cascading_Style_Sheets,
-        dbr:JavaScript,
-        dbr:PHP ;
-    :repository <https://github.com/koma5/typer> ;
-    skos:related <http://5th.ch/succotash#WebDevelopment> ;
-    foaf:maker <http://marcoko.ch/#i> .
-
-<http://5th.ch/succotash#xBeeSensorNetwork> a :Project ;
-    :description "xBees jeff, hugo and daisy talking to each other..."@en ;
-    :name "xBeeSensorNetwork" ;
-    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
-    :repository <https://github.com/koma5/xBeeSensorNetwork> ;
-    skos:related <http://5th.ch/succotash#Electronics>,
-        <http://5th.ch/succotash#IoT> ;
-    foaf:maker <http://marcoko.ch/#i> .
-
-<http://5th.ch/succotash#OOP> a skos:Concept ;
-    rdfs:label "object oriented programming"@en .
-
-<http://5th.ch/succotash#SemanticWeb> a skos:Concept ;
-    rdfs:label "semantic web"@en ;
-    skos:narrower <http://5th.ch/succotash#LinkedData> .
-
-<http://5th.ch/succotash#succotash> a :Project ;
+<http://5th.ch/succotash/#succotash> a :Project ;
     :description "fancy, static, multi language, linked portfolio site generated from rdf data with all my projects."@en ;
     :homepage <http://5th.ch/succotash#succotash> ;
     :name "succotash" ;
@@ -188,12 +151,49 @@
         dbr:Resource_Description_Framework,
         <http://dbpedia.org/resource/Turtle_(syntax)> ;
     :repository <https://github.com/koma5/succotash> ;
-    skos:related <http://5th.ch/succotash#DataVisualization>,
-        <http://5th.ch/succotash#FrontEndDevelopment>,
-        <http://5th.ch/succotash#LinkedData>,
-        <http://5th.ch/succotash#SemanticWeb>,
-        <http://5th.ch/succotash#WebDevelopment> ;
+    skos:related <http://5th.ch/succotash/#DataVisualization>,
+        <http://5th.ch/succotash/#FrontEndDevelopment>,
+        <http://5th.ch/succotash/#LinkedData>,
+        <http://5th.ch/succotash/#SemanticWeb>,
+        <http://5th.ch/succotash/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#textly> a :Project ;
+    :description "a very simple text editor which uses localStorage and html editable content."@en ;
+    :homepage <http://koma5.github.io/textly/textly.html> ;
+    :name "textly" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript ;
+    :repository <https://github.com/koma5/textly> ;
+    skos:related <http://5th.ch/succotash/#FrontEndDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#typer> a :Project ;
+    :description "this yourls plugin (http://yourls.org) will ask the visitor to type in the URL by himself, if the requested URL is trailed by the character _"@en ;
+    :homepage <http://5th.li/typer_> ;
+    :name "typer" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript,
+        dbr:PHP ;
+    :repository <https://github.com/koma5/typer> ;
+    skos:related <http://5th.ch/succotash/#WebDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#xBeeSensorNetwork> a :Project ;
+    :description "xBees jeff, hugo and daisy talking to each other..."@en ;
+    :name "xBeeSensorNetwork" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
+    :repository <https://github.com/koma5/xBeeSensorNetwork> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#OOP> a skos:Concept ;
+    rdfs:label "object oriented programming"@en .
+
+<http://5th.ch/succotash/#SemanticWeb> a skos:Concept ;
+    rdfs:label "semantic web"@en ;
+    skos:narrower <http://5th.ch/succotash/#LinkedData> .
 
 dbr:Arduino rdfs:label "آردوينو"@ar,
         "Arduino (Plattform)"@de,
@@ -270,13 +270,13 @@ dbr:Resource_Description_Framework rdfs:label "إطار توصيف الموار�
         "Turtle, ook bekend als Terse RDF Triple Language, is een serialisatieformaat voor het Resource Description Framework (RDF), een universele taal voor het weergeven van informatie op het Web. Turtle is verenigbaar met, en een onderdeel van, Notation3 (N3). Net als Notation3 is Turtle een alternatieve syntaxis voor RDF/XML. Het biedt een zekere compatibiliteit met de bestaande N-Triples- en Notation3-formaten, evenals de triple syntax van SPARQL. Een triple bestaat uit een subject, een predicate en een object. Elk van deze items wordt uitgedrukt als een Web URI. Turtle biedt een systematiek om drie URI's steeds te groeperen tot een triple en op die manier informatie op te bouwen en de onderlinge relaties aan te geven. De MIME-type van Turtle is text/turtle . De karaktercodering van Turtle inhoud is altijd UTF-8."@nl,
         "Turtle (англ. Terse RDF Triple Language, краткий язык RDF Triple) — формат для сериализации графов RDF (модель описания ресурсов).  Является подмножеством формата  Notation 3 (N3), разработанного Тимом Бернерс-Ли и Дэном Конноли. Разработан Дэйвом Бэкеттом. Является расширением минималистичного формата N-Triples. Поддерживает только модели RDF (в отличие от полного формата N3). В протоколе SPARQL и языке запросов RDF для описания шаблонов графов используется подмножество формата N3, аналогичное Triple, но отличающееся использованием скобок для обозначения границ подграфов.Не существует организации, ответственной за стандартизацию Turtle. Формат популярен среди разработчиков семантического веба из-за синтаксиса, удобного для человека (в отличии от RDF/XML). Некоторые утилиты для обработки RDF (например, Redland, Sesame, Jena и RDFLib) поддерживают чтение данных в формате Turtle и запись данных в формат Turtle."@ru .
 
-<http://5th.ch/succotash#DataAnalytics> a skos:Concept ;
+<http://5th.ch/succotash/#DataAnalytics> a skos:Concept ;
     rdfs:label "Data Analytics"@en .
 
-<http://5th.ch/succotash#LinkedData> a skos:Concept ;
+<http://5th.ch/succotash/#LinkedData> a skos:Concept ;
     rdfs:label "linked data"@en .
 
-<http://5th.ch/succotash#DataVisualization> a skos:Concept ;
+<http://5th.ch/succotash/#DataVisualization> a skos:Concept ;
     rdfs:label "Data Visualization"@en .
 
 dbr:PHP a dbo:ProgrammingLanguage ;
@@ -303,9 +303,9 @@ dbr:PHP a dbo:ProgrammingLanguage ;
         "PHP – interpretowany skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym. PHP jest najczęściej stosowany do tworzenia skryptów po stronie serwera WWW, ale może być on również używany do przetwarzania danych z poziomu wiersza poleceń, a nawet do pisania programów pracujących w trybie graficznym (np. za pomocą biblioteki GTK+, używając rozszerzenia PHP-GTK). Implementacja PHP wraz z serwerem WWW Apache oraz serwerem baz danych MySQL określana jest jako platforma AMP (w środowisku Linux – LAMP, w Windows – WAMP)."@pl,
         "PHP (um acrônimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web. Figura entre as primeiras linguagens passíveis de inserção em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O código é interpretado no lado do servidor pelo módulo PHP, que também gera a página web a ser visualizada no lado do cliente. A linguagem evoluiu, passou a oferecer funcionalidades em linha de comando, e além disso, ganhou características adicionais, que possibilitaram usos adicionais do PHP, não relacionados a web sites. É possível instalar o PHP na maioria dos sistemas operacionais, gratuitamente. Concorrente direto da tecnologia ASP pertencente à Microsoft, o PHP é utilizado em aplicações como o MediaWiki, Facebook, Drupal, Joomla, WordPress, Magento e o Oscommerce. Criado por Rasmus Lerdorf em 1995, o PHP tem a produção de sua implementação principal, referência formal da linguagem, mantida por uma organização chamada The PHP Group. O PHP é software livre, licenciado sob a PHP License, uma licença incompatível com a GNU General Public License (GPL) devido a restrições no uso do termo PHP."@pt .
 
-<http://5th.ch/succotash#WebDevelopment> a skos:Concept ;
+<http://5th.ch/succotash/#WebDevelopment> a skos:Concept ;
     rdfs:label "Web-Development"@en ;
-    skos:narrower <http://5th.ch/succotash#FrontEndDevelopment> .
+    skos:narrower <http://5th.ch/succotash/#FrontEndDevelopment> .
 
 dbr:JavaScript a dbo:ProgrammingLanguage ;
     rdfs:label "جافا سكريبت"@ar,
@@ -355,7 +355,7 @@ dbr:JavaScript a dbo:ProgrammingLanguage ;
         "Python – język programowania wysokiego poziomu ogólnego przeznaczenia, o rozbudowanym pakiecie bibliotek standardowych, którego ideą przewodnią jest czytelność i klarowność kodu źródłowego. Jego składnia cechuje się przejrzystością i zwięzłością. Python wspiera różne paradygmaty programowania: obiektowy, imperatywny oraz w mniejszym stopniu funkcyjny. Posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią, będąc w tym podobnym do języków Perl, Ruby, Scheme czy Tcl. Podobnie jak inne języki dynamiczne jest często używany jako język skryptowy. Interpretery Pythona są dostępne na wiele systemów operacyjnych. Python rozwijany jest jako projekt Open Source zarządzany przez Python Software Foundation, która jest organizacją non-profit. Standardową implementacja języka jest CPython (napisany w C), ale istnieją też inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformę .NET) i PyPy (napisany w Pythonie, zob. bootstrap)."@pl,
         "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Apesar de várias partes da linguagem possuírem padrões e especificações formais, a linguagem como um todo não é formalmente especificada. O padrão de facto é a implementação CPython. A linguagem foi projetada com a filosofia de enfatizar a importância do esforço do programador sobre o esforço computacional. Prioriza a legibilidade do código sobre a velocidade ou expressividade. Combina uma sintaxe concisa e clara com os recursos poderosos de sua biblioteca padrão e por módulos e frameworks desenvolvidos por terceiros. Python é uma linguagem de propósito geral de alto nível, multi paradigma, suporta o paradigma orientado a objetos, imperativo, funcional e procedural. Possui tipagem dinâmica e uma de suas principais características é permitir a fácil leitura do código e exigir poucas linhas de código se comparado ao mesmo programa em outras linguagens. Devido as suas características, ela é principalmente utilizada para processamento de textos, dados científicos e criação de CGIs para páginas dinâmicas para a web. O nome Python teve a sua origem no grupo humorístico britânico Monty Python, criador do programa Monty Python's Flying Circus, embora muitas pessoas façam associação com o réptil do mesmo nome (em português, píton ou pitão)."@pt .
 
-<http://5th.ch/succotash#FrontEndDevelopment> a skos:Concept ;
+<http://5th.ch/succotash/#FrontEndDevelopment> a skos:Concept ;
     rdfs:label "Frontend Development"@en .
 
 <http://dbpedia.org/resource/C_(programming_language)> a dbo:ProgrammingLanguage ;
@@ -406,10 +406,10 @@ dbr:Cascading_Style_Sheets rdfs:label "صفحات الطرز المتراصة"@a
         "Cascading Style Sheets (CSS) é uma linguagem de folhas de estilo utilizada para definir a apresentação de documentos escritos em uma linguagem de marcação, como HTML ou XML. O seu principal benefício é a separação entre o formato e o conteúdo de um documento. Em vez de colocar a formatação dentro do documento, o desenvolvedor cria um link (ligação) para uma página que contém os estilos, procedendo de forma idêntica para todas as páginas de um portal. Quando quiser alterar a aparência do portal basta portanto modificar apenas um arquivo. Com a variação de atualizações dos navegadores (browsers) como Internet Explorer que ficou sem nova versão de 2001 a 2006, o suporte ao CSS pode variar. O Internet Explorer 6, por exemplo, tem suporte total a CSS1 e praticamente nulo a CSS2. Navegadores mais modernos como Google Chrome e Mozilla Firefox tem suporte maior, inclusive até a CSS3, ainda em desenvolvimento. A interpretação dos navegadores pode ser avaliada com o teste Acid2, que se tornou uma forma base de revelar quão eficiente é o suporte de CSS, fazendo com que a nova versão em desenvolvimento do Firefox seja totalmente compatível a ele assim como o Opera já é. O Doctype informado ou a ausência dele determina o quirks mode ou o strict mode modificando o modo como o CSS é interpretado e a página desenhada."@pt,
         "Шаблон:CSSCSS (англ. Cascading Style Sheets — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.Преимущественно используется как средство описания, оформления внешнего вида веб-страниц, написанных с помощью языков разметки HTML и XHTML, но может также применяться к любым XML-документам, например, к SVG или XUL."@ru .
 
-<http://5th.ch/succotash#Electronics> a skos:Concept ;
+<http://5th.ch/succotash/#Electronics> a skos:Concept ;
     rdfs:label "Electronics"@en .
 
-<http://5th.ch/succotash#IoT> a skos:Concept ;
+<http://5th.ch/succotash/#IoT> a skos:Concept ;
     rdfs:label "Internet of Things"@en ;
-    skos:narrower <http://5th.ch/succotash#Electronics> .
+    skos:narrower <http://5th.ch/succotash/#Electronics> .
 
