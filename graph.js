@@ -199,8 +199,7 @@ function clickNode(node) {
   clickedNode = node;
   focusNodes(node);
 
-  //if(node.id.includes(window.location.origin) {
-  if(node.id.includes('/succotash')) { //dev purpose! ##################
+  if(node.id.includes(origin)) {
     window.history.pushState('', '', window.location.pathname +  '#' + node.id.split('#')[1]);
   }
   else {
@@ -358,9 +357,7 @@ function showInfo(node) {
   .html(html);
 }
 
-
-
-
+var origin = "http://5th.ch/succotash";
 
 var circleSizeNormal = 10;
 var circleSizeBig = 13;
@@ -467,8 +464,7 @@ fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
     if (ok) {
 
       // fetch seeAlso
-      //seeAlsos = store.statementsMatching($rdf.sym(window.location.origin), rdf['seeAlso'], undefined)
-      seeAlsos = store.statementsMatching($rdf.sym('http://5th.ch/succotash'), rdfs['seeAlso'], undefined) //dev purpose! ##################
+      seeAlsos = store.statementsMatching($rdf.sym(origin), rdf['seeAlso'], undefined)
       for(var i=0; i < seeAlsos.length; i++) {
         fetcher.nowOrWhenFetched(seeAlsos[i].object.value, function(ok, body, xhr) {});
       }
