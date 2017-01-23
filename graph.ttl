@@ -11,11 +11,20 @@
 
 <http://5th.ch/succotash> rdfs:seeAlso <http://marcoko.ch/> .
 
+<http://5th.ch/succotash#OOP_Python_Human.ipynb> a :Project ;
+    :description "some OOP class in Python"@en ;
+    :homepage <https://gist.github.com/koma5/f43f940dfdfa29f7188137c3734da369> ;
+    :name "OOP_Python_Human.ipynb" ;
+    :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
+    skos:related <http://5th.ch/succotash#OOP> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://5th.ch/succotash#ZBPVRY> a :Project ;
     :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
     :homepage <http://codepen.io/koma5/pen/ZBPVRY> ;
     :name "Zürich HB – Generalanzeiger S-Bahn" ;
     :programming-language dbr:Cascading_Style_Sheets ;
+    skos:related <http://5th.ch/succotash#FrontEndDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#ausleihdb> a :Project ;
@@ -49,6 +58,13 @@
         <http://5th.ch/succotash#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
+<http://5th.ch/succotash#ephemSunsetSunrise.ipynb> a :Project ;
+    :description "calculating excact sunsrise, sunset and suntransit times for a specific location and day"@en ;
+    :homepage <https://gist.github.com/koma5/1a1f1e108d5a04a525dd5942f8048e7a> ;
+    :name "ephemSunsetSunrise.ipynb" ;
+    :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://5th.ch/succotash#holdEm> a :Project ;
     :description "Texas Hold'Em Hand simulator as python notebook"@en ;
     :homepage <https://github.com/koma5/holdEm/blob/master/holdEm.ipynb> ;
@@ -74,7 +90,8 @@
     :name "mqttAnalogMeter" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttAnalogMeter> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#mqttLight> a :Project ;
@@ -82,7 +99,8 @@
     :name "mqttLight" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttLight> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#mqttNEO> a :Project ;
@@ -90,7 +108,8 @@
     :name "mqttNEO" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttNEO> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#mqttNMEA> a :Project ;
@@ -99,7 +118,8 @@
     :name "mqttNMEA" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttNMEA> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#mqttSense> a :Project ;
@@ -107,7 +127,8 @@
     :name "mqttSense" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttSense> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#mqttSwitch> a :Project ;
@@ -115,23 +136,8 @@
     :name "mqttSwitch" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/mqttSwitch> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
-    foaf:maker <http://marcoko.ch/#i> .
-
-<http://5th.ch/succotash#succotash> a :Project ;
-    :description "fancy, static portfolio website from rdf data"@en ;
-    :name "succotash" ;
-    :programming-language dbr:Cascading_Style_Sheets,
-        dbr:JavaScript,
-        <http://dbpedia.org/resource/Python_(programming_language)>,
-        dbr:RDFa,
-        dbr:Resource_Description_Framework,
-        <http://dbpedia.org/resource/Turtle_(syntax)> ;
-    :repository <https://github.com/koma5/succotash> ;
-    skos:related <http://5th.ch/succotash#DataVisualization>,
-        <http://5th.ch/succotash#FrontEndDevelopment>,
-        <http://5th.ch/succotash#SemanticWeb>,
-        <http://5th.ch/succotash#WebDevelopment> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash#textly> a :Project ;
@@ -160,18 +166,34 @@
     :name "xBeeSensorNetwork" ;
     :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
     :repository <https://github.com/koma5/xBeeSensorNetwork> ;
-    skos:related <http://5th.ch/succotash#IoT> ;
+    skos:related <http://5th.ch/succotash#Electronics>,
+        <http://5th.ch/succotash#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash#Electronics> a skos:Concept ;
-    rdfs:label "Electronics"@en .
-
-<http://5th.ch/succotash#LinkedData> a skos:Concept ;
-    rdfs:label "linked data"@en .
+<http://5th.ch/succotash#OOP> a skos:Concept ;
+    rdfs:label "object oriented programming"@en .
 
 <http://5th.ch/succotash#SemanticWeb> a skos:Concept ;
     rdfs:label "semantic web"@en ;
     skos:narrower <http://5th.ch/succotash#LinkedData> .
+
+<http://5th.ch/succotash#succotash> a :Project ;
+    :description "fancy, static, multi language, linked portfolio site generated from rdf data with all my projects."@en ;
+    :homepage <http://5th.ch/succotash#succotash> ;
+    :name "succotash" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript,
+        <http://dbpedia.org/resource/Python_(programming_language)>,
+        dbr:RDFa,
+        dbr:Resource_Description_Framework,
+        <http://dbpedia.org/resource/Turtle_(syntax)> ;
+    :repository <https://github.com/koma5/succotash> ;
+    skos:related <http://5th.ch/succotash#DataVisualization>,
+        <http://5th.ch/succotash#FrontEndDevelopment>,
+        <http://5th.ch/succotash#LinkedData>,
+        <http://5th.ch/succotash#SemanticWeb>,
+        <http://5th.ch/succotash#WebDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
 
 dbr:Arduino rdfs:label "آردوينو"@ar,
         "Arduino (Plattform)"@de,
@@ -251,6 +273,9 @@ dbr:Resource_Description_Framework rdfs:label "إطار توصيف الموار�
 <http://5th.ch/succotash#DataAnalytics> a skos:Concept ;
     rdfs:label "Data Analytics"@en .
 
+<http://5th.ch/succotash#LinkedData> a skos:Concept ;
+    rdfs:label "linked data"@en .
+
 <http://5th.ch/succotash#DataVisualization> a skos:Concept ;
     rdfs:label "Data Visualization"@en .
 
@@ -277,30 +302,6 @@ dbr:PHP a dbo:ProgrammingLanguage ;
         "PHP (PHP: Hypertext Preprocessor) is een scripttaal, die bedoeld is om op webservers dynamische webpagina's te creëren. PHP is in 1994 ontworpen door Rasmus Lerdorf, een senior softwareontwikkelaar bij IBM. Lerdorf gebruikte Perl als inspiratie. Aanvankelijk stonden de letters PHP voor Personal Home Page (de volledige naam was Personal Home Page/Forms Interpreter, PHP/FI). Sinds PHP 3.0 is de betekenis een recursief acroniem geworden: PHP: Hypertext Preprocessor. Deze naam geeft aan waar de taal meestal voor gebruikt wordt: informatie verwerken tot hypertext (meestal HyperText Markup Language (HTML) en Extensible HyperText Markup Language (XHTML))."@nl,
         "PHP – interpretowany skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym. PHP jest najczęściej stosowany do tworzenia skryptów po stronie serwera WWW, ale może być on również używany do przetwarzania danych z poziomu wiersza poleceń, a nawet do pisania programów pracujących w trybie graficznym (np. za pomocą biblioteki GTK+, używając rozszerzenia PHP-GTK). Implementacja PHP wraz z serwerem WWW Apache oraz serwerem baz danych MySQL określana jest jako platforma AMP (w środowisku Linux – LAMP, w Windows – WAMP)."@pl,
         "PHP (um acrônimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web. Figura entre as primeiras linguagens passíveis de inserção em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O código é interpretado no lado do servidor pelo módulo PHP, que também gera a página web a ser visualizada no lado do cliente. A linguagem evoluiu, passou a oferecer funcionalidades em linha de comando, e além disso, ganhou características adicionais, que possibilitaram usos adicionais do PHP, não relacionados a web sites. É possível instalar o PHP na maioria dos sistemas operacionais, gratuitamente. Concorrente direto da tecnologia ASP pertencente à Microsoft, o PHP é utilizado em aplicações como o MediaWiki, Facebook, Drupal, Joomla, WordPress, Magento e o Oscommerce. Criado por Rasmus Lerdorf em 1995, o PHP tem a produção de sua implementação principal, referência formal da linguagem, mantida por uma organização chamada The PHP Group. O PHP é software livre, licenciado sob a PHP License, uma licença incompatível com a GNU General Public License (GPL) devido a restrições no uso do termo PHP."@pt .
-
-<http://dbpedia.org/resource/Python_(programming_language)> a dbo:ProgrammingLanguage ;
-    rdfs:label "بايثون"@ar,
-        "Python (Programmiersprache)"@de,
-        "Python (programming language)"@en,
-        "Python"@es,
-        "Python (langage)"@fr,
-        "Python"@it,
-        "Python"@ja,
-        "Python (programmeertaal)"@nl,
-        "Python"@pl,
-        "Python"@pt,
-        "Python"@ru,
-        "Python"@zh ;
-    dbo:abstract "بايثون لغة برمجة، من لغات المستوى العالي، تتميز ببساطة كتابتها وقراءتها، سهلة التعلم، تستخدم أسلوب البرمجة الكائنية (OOP)، مفتوحة المصدر، وقابلة للتطوير. تعتبر لغة بايثون لغة تفسيرية، متعددة الأغراض وتستخدم بشكل واسع في العديد من المجالات، كبناء البرامج المستقلة باستخدام الواجهات الرسومية المعروفة وفي عمل برامج الويب، بالإضافة إلى استخدامها كلغة برمجة نصية للتحكم في أداء بعض من أشهر البرامج المعروفة أو في بناء برامج ملحقة لها. وبشكل عام يمكن استخدام بايثون لبرمجة البرامج البسيطة للمبتدئين، ولإنجاز المشاريع الضخمة كأي لغة برمجية أخرى في نفس الوقت. غالباً ما يُنصح المبتدئين في ميدان البرمجة بتعلم هذه اللغة لأنها من بين أسرع اللغات البرمجية تعلماً.نشأت بايثون في مركز CWI (مركز العلوم والحاسب الآلي) بأمستردام على يد جويدو فان رُزوم في أواخر الثمانينات من القرن المنصرم، وكان أول إعلان عنها في عام 1991. تم كتابة نواة اللغة بلغة C. أطلق فان رُزوم اسم \"بايثون\" على لغته تعبيرًا عن إعجابه بفِرقَة مسرحية هزلية شهيرة من بريطانيا، كانت تطلق على نفسها اسم مونتي بايثون (بالإنجليزية: Monty Python).تتميز بايثون بمجتمعها النشط، كما أن لها الكثير من المكتبات البرمجية ذات الأغراض الخاصة والتي برمجها أشخاص من مجتمع هذه اللغة، مثلاً مكتبة PyGame التي توفر مجموعه من الوظائف من أجل برمجة الألعاب. ويمكن لبايثون التعامل مع العديد من أنواع قواعد البيانات مثل MySQL وغيره."@ar,
-        "Python ([ˈpaɪθn̩], [ˈpaɪθɑn], auf Deutsch auch [ˈpyːtɔn]) ist eine universelle, üblicherweise interpretierte höhere Programmiersprache. Ihre Entwurfsphilosophie betont Programmlesbarkeit, außerdem ist Python-Code im Vergleich mit anderssprachigem Code teilweise deutlich kürzer. Zur besseren Lesbarkeit soll auch der Verzicht auf geschweifte Klammern zur Bildung von Code-Blöcken dienen, da die Programmstruktur durch Einrückungen gebildet wird. Python unterstützt mehrere Programmierparadigmen, z. B. die objektorientierte, die aspektorientierte und die funktionale Programmierung. Ferner bietet es eine dynamische Typisierung. Wie viele dynamische Sprachen wird Python oft als Skriptsprache genutzt. Die Sprache hat ein offenes, gemeinschaftsbasiertes Entwicklungsmodell, das durch die gemeinnützige Python Software Foundation, die de facto die Definition der Sprache in der Referenzumsetzung CPython pflegt, gestützt wird. Python gilt als einfach zu erlernende Sprache, da sie über eine klare und übersichtliche Syntax verfügt. Ferner besitzt sie eine umfangreiche Standardbibliothek und zahlreiche Pakete im Python Package Index."@de,
-        "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale. Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management and has a large and comprehensive standard library. Python interpreters are available for installation on many operating systems, allowing Python code execution on a wide variety of systems. Using third-party tools, such as Py2exe or Pyinstaller, Python code can be packaged into stand-alone executable programs for some of the most popular operating systems, allowing the distribution of Python-based software for use on those environments without requiring the installation of a Python interpreter. CPython, the reference implementation of Python, is free and open-source software and has a community-based development model, as do nearly all of its alternative implementations. CPython is managed by the non-profit Python Software Foundation."@en,
-        "Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma. Es administrado por la Python Software Foundation. Posee una licencia de código abierto, denominada Python Software Foundation License, que es compatible con la Licencia pública general de GNU a partir de la versión 2.1.1, e incompatible en ciertas versiones anteriores."@es,
-        "Python est un langage de programmation objet, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet. Il est doté d'un typage dynamique fort, d'une gestion automatique de la mémoire par ramasse-miettes et d'un système de gestion d'exceptions ; il est ainsi similaire à Perl, Ruby, Scheme, Smalltalk et Tcl. Le langage Python est placé sous une licence libre proche de la licence BSD et fonctionne sur la plupart des plates-formes informatiques, des supercalculateurs aux ordinateurs centraux, de Windows à Unix en passant par GNU/Linux, Mac OS, ou encore Android, iOS, et aussi avec Java ou encore .NET. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser. Il est également apprécié par les pédagogues qui y trouvent un langage où la syntaxe, clairement séparée des mécanismes de bas niveau, permet une initiation aisée aux concepts de base de la programmation."@fr,
-        "Python è un linguaggio di programmazione ad alto livello, orientato agli oggetti, adatto, tra gli altri usi, per sviluppare applicazioni distribuite, scripting, computazione numerica e system testing. Python è spesso paragonato a Ruby, Tcl, Perl, Java, JavaScript, Visual Basic o Scheme. Fu ideato da Guido van Rossum all'inizio degli anni novanta. Il nome fu scelto per via della passione di van Rossum per i Monty Python e per la loro serie televisiva Monty Python's Flying Circus."@it,
-        "Python（パイソン）は、汎用のプログラミング言語である。コードのリーダビリティが高くなるように言語を設計していると主張している。その構文のおかげで、Cなどの言語に比べて、より少ないコード行数でプログラムを表現できると主張している。小規模なプログラムから大規模なプログラムまで、さまざまなプログラムを分かり易く書けるように、多くのコードを提供している。 Pythonは複数のプログラミングパラダイムに対応している。オブジェクト指向、命令型、手続き型、関数型などの形式でプログラムを書くことができる。Pythonは動的型付け言語であり、参照カウントベースの自動メモリ管理（ガベージコレクタ）を持つ。さまざまな領域に対応する大規模な標準ライブラリを提供している。 Pythonは、汎用のプログラミング言語として設計している。標準ライブラリや他者製のライブラリも充実している。そのためPythonはWebアプリケーションやデスクトップアプリケーションなどの開発はもとより、システム用の記述(script)や、各種の自動処理、理工学や統計解析のための道具としてなど、幅広い領域で使用されている。ヨーロッパ製の道具類では、その道具の命令がPythonを使っているものがある。 Pythonのリファレンス実装であるCPythonは、フリーかつオープンソースのソフトウェアであり、コミュニティベースの開発モデルを採用している。CPythonは、非営利団体であるPythonソフトウェア財団が管理している。その他の実装としては、PyPyやIronPythonなどが有名である。 Pythonは、オランダ人のグイド・ヴァンロッサムが開発した。名前の由来は、イギリスのテレビ局 BBC が製作したコメディ番組『空飛ぶモンティ・パイソン』である。Pythonという英単語が意味する爬虫類のニシキヘビがPython言語のマスコットやアイコンとして使われている。"@ja,
-        "Python is een programmeertaal die begin jaren 90 ontworpen en ontwikkeld werd door Guido van Rossum, destijds verbonden aan het Centrum voor Wiskunde en Informatica (daarvoor Mathematisch Centrum) in Amsterdam. De taal is mede gebaseerd op inzichten van professor Lambert Meertens die een op BASIC gebaseerde taal genaamd ABC had ontworpen, maar dan met allerlei zeer geavanceerde datastructuren. Inmiddels wordt de taal doorontwikkeld door een enthousiaste groep, geleid door Van Rossum. Deze groep wordt ondersteund door vrijwilligers op het internet. De ontwikkeling van Python wordt geleid door de Python Software Foundation. Python is vrije software. Python heeft zijn naam te danken aan het favoriete televisieprogramma van Guido van Rossum, Monty Python's Flying Circus."@nl,
-        "Python – język programowania wysokiego poziomu ogólnego przeznaczenia, o rozbudowanym pakiecie bibliotek standardowych, którego ideą przewodnią jest czytelność i klarowność kodu źródłowego. Jego składnia cechuje się przejrzystością i zwięzłością. Python wspiera różne paradygmaty programowania: obiektowy, imperatywny oraz w mniejszym stopniu funkcyjny. Posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią, będąc w tym podobnym do języków Perl, Ruby, Scheme czy Tcl. Podobnie jak inne języki dynamiczne jest często używany jako język skryptowy. Interpretery Pythona są dostępne na wiele systemów operacyjnych. Python rozwijany jest jako projekt Open Source zarządzany przez Python Software Foundation, która jest organizacją non-profit. Standardową implementacja języka jest CPython (napisany w C), ale istnieją też inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformę .NET) i PyPy (napisany w Pythonie, zob. bootstrap)."@pl,
-        "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Apesar de várias partes da linguagem possuírem padrões e especificações formais, a linguagem como um todo não é formalmente especificada. O padrão de facto é a implementação CPython. A linguagem foi projetada com a filosofia de enfatizar a importância do esforço do programador sobre o esforço computacional. Prioriza a legibilidade do código sobre a velocidade ou expressividade. Combina uma sintaxe concisa e clara com os recursos poderosos de sua biblioteca padrão e por módulos e frameworks desenvolvidos por terceiros. Python é uma linguagem de propósito geral de alto nível, multi paradigma, suporta o paradigma orientado a objetos, imperativo, funcional e procedural. Possui tipagem dinâmica e uma de suas principais características é permitir a fácil leitura do código e exigir poucas linhas de código se comparado ao mesmo programa em outras linguagens. Devido as suas características, ela é principalmente utilizada para processamento de textos, dados científicos e criação de CGIs para páginas dinâmicas para a web. O nome Python teve a sua origem no grupo humorístico britânico Monty Python, criador do programa Monty Python's Flying Circus, embora muitas pessoas façam associação com o réptil do mesmo nome (em português, píton ou pitão)."@pt .
 
 <http://5th.ch/succotash#WebDevelopment> a skos:Concept ;
     rdfs:label "Web-Development"@en ;
@@ -329,6 +330,30 @@ dbr:JavaScript a dbo:ProgrammingLanguage ;
         "JavaScript is een veelgebruikte scripttaal om webpagina's interactief te maken en webapplicaties te ontwikkelen. Het script wordt middels HTML overgebracht in de webbrowser en wordt hierin uitgevoerd. De syntaxis van JavaScript vertoont overeenkomsten met de programmeertaal Java, maar dit is voornamelijk het gevolg van de gemeenschappelijke afkomst van de programmeertaal C. Omdat beide talen het meest zichtbaar zijn op en rond de browser, maar vooral door de naamgeving, worden ze vaak met elkaar verward. De gelijkenis houdt daar echter op, want JavaScript heeft inhoudelijk meer gemeen met functionele programmeertalen, het biedt prototype-gebaseerde overerving en niet, zoals Java en de meeste objectgeoriënteerde talen, klasse-gebaseerde overerving."@nl,
         "JavaScript, JS – skryptowy język programowania, stworzony przez firmę Netscape, najczęściej stosowany na stronach internetowych. Pod koniec lat 90. XX wieku organizacja ECMA wydała na podstawie JavaScriptu standard języka skryptowego o nazwie ECMAScript. Głównym autorem JavaScriptu jest Brendan Eich."@pl,
         "JavaScript é uma linguagem de programação interpretada. Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuário sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicação assíncrona e alterando o conteúdo do documento exibido. É atualmente a principal linguagem para programação client-side em navegadores web. Começa também a ser bastante utilizada do lado do servidor através de ambientes como o node.js. Foi concebida para ser uma linguagem script com orientação a objetos baseada em protótipos, tipagem fraca e dinâmica e funções de primeira classe. Possui suporte à programação funcional e apresenta recursos como fechamentos e funções de alta ordem comumente indisponíveis em linguagens populares como Java e C++. É baseada em ECMAScript padronizada pela Ecma international nas especificações ECMA-262 e ISO/IEC 16262."@pt .
+
+<http://dbpedia.org/resource/Python_(programming_language)> a dbo:ProgrammingLanguage ;
+    rdfs:label "بايثون"@ar,
+        "Python (Programmiersprache)"@de,
+        "Python (programming language)"@en,
+        "Python"@es,
+        "Python (langage)"@fr,
+        "Python"@it,
+        "Python"@ja,
+        "Python (programmeertaal)"@nl,
+        "Python"@pl,
+        "Python"@pt,
+        "Python"@ru,
+        "Python"@zh ;
+    dbo:abstract "بايثون لغة برمجة، من لغات المستوى العالي، تتميز ببساطة كتابتها وقراءتها، سهلة التعلم، تستخدم أسلوب البرمجة الكائنية (OOP)، مفتوحة المصدر، وقابلة للتطوير. تعتبر لغة بايثون لغة تفسيرية، متعددة الأغراض وتستخدم بشكل واسع في العديد من المجالات، كبناء البرامج المستقلة باستخدام الواجهات الرسومية المعروفة وفي عمل برامج الويب، بالإضافة إلى استخدامها كلغة برمجة نصية للتحكم في أداء بعض من أشهر البرامج المعروفة أو في بناء برامج ملحقة لها. وبشكل عام يمكن استخدام بايثون لبرمجة البرامج البسيطة للمبتدئين، ولإنجاز المشاريع الضخمة كأي لغة برمجية أخرى في نفس الوقت. غالباً ما يُنصح المبتدئين في ميدان البرمجة بتعلم هذه اللغة لأنها من بين أسرع اللغات البرمجية تعلماً.نشأت بايثون في مركز CWI (مركز العلوم والحاسب الآلي) بأمستردام على يد جويدو فان رُزوم في أواخر الثمانينات من القرن المنصرم، وكان أول إعلان عنها في عام 1991. تم كتابة نواة اللغة بلغة C. أطلق فان رُزوم اسم \"بايثون\" على لغته تعبيرًا عن إعجابه بفِرقَة مسرحية هزلية شهيرة من بريطانيا، كانت تطلق على نفسها اسم مونتي بايثون (بالإنجليزية: Monty Python).تتميز بايثون بمجتمعها النشط، كما أن لها الكثير من المكتبات البرمجية ذات الأغراض الخاصة والتي برمجها أشخاص من مجتمع هذه اللغة، مثلاً مكتبة PyGame التي توفر مجموعه من الوظائف من أجل برمجة الألعاب. ويمكن لبايثون التعامل مع العديد من أنواع قواعد البيانات مثل MySQL وغيره."@ar,
+        "Python ([ˈpaɪθn̩], [ˈpaɪθɑn], auf Deutsch auch [ˈpyːtɔn]) ist eine universelle, üblicherweise interpretierte höhere Programmiersprache. Ihre Entwurfsphilosophie betont Programmlesbarkeit, außerdem ist Python-Code im Vergleich mit anderssprachigem Code teilweise deutlich kürzer. Zur besseren Lesbarkeit soll auch der Verzicht auf geschweifte Klammern zur Bildung von Code-Blöcken dienen, da die Programmstruktur durch Einrückungen gebildet wird. Python unterstützt mehrere Programmierparadigmen, z. B. die objektorientierte, die aspektorientierte und die funktionale Programmierung. Ferner bietet es eine dynamische Typisierung. Wie viele dynamische Sprachen wird Python oft als Skriptsprache genutzt. Die Sprache hat ein offenes, gemeinschaftsbasiertes Entwicklungsmodell, das durch die gemeinnützige Python Software Foundation, die de facto die Definition der Sprache in der Referenzumsetzung CPython pflegt, gestützt wird. Python gilt als einfach zu erlernende Sprache, da sie über eine klare und übersichtliche Syntax verfügt. Ferner besitzt sie eine umfangreiche Standardbibliothek und zahlreiche Pakete im Python Package Index."@de,
+        "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale. Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management and has a large and comprehensive standard library. Python interpreters are available for installation on many operating systems, allowing Python code execution on a wide variety of systems. Using third-party tools, such as Py2exe or Pyinstaller, Python code can be packaged into stand-alone executable programs for some of the most popular operating systems, allowing the distribution of Python-based software for use on those environments without requiring the installation of a Python interpreter. CPython, the reference implementation of Python, is free and open-source software and has a community-based development model, as do nearly all of its alternative implementations. CPython is managed by the non-profit Python Software Foundation."@en,
+        "Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma. Es administrado por la Python Software Foundation. Posee una licencia de código abierto, denominada Python Software Foundation License, que es compatible con la Licencia pública general de GNU a partir de la versión 2.1.1, e incompatible en ciertas versiones anteriores."@es,
+        "Python est un langage de programmation objet, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet. Il est doté d'un typage dynamique fort, d'une gestion automatique de la mémoire par ramasse-miettes et d'un système de gestion d'exceptions ; il est ainsi similaire à Perl, Ruby, Scheme, Smalltalk et Tcl. Le langage Python est placé sous une licence libre proche de la licence BSD et fonctionne sur la plupart des plates-formes informatiques, des supercalculateurs aux ordinateurs centraux, de Windows à Unix en passant par GNU/Linux, Mac OS, ou encore Android, iOS, et aussi avec Java ou encore .NET. Il est conçu pour optimiser la productivité des programmeurs en offrant des outils de haut niveau et une syntaxe simple à utiliser. Il est également apprécié par les pédagogues qui y trouvent un langage où la syntaxe, clairement séparée des mécanismes de bas niveau, permet une initiation aisée aux concepts de base de la programmation."@fr,
+        "Python è un linguaggio di programmazione ad alto livello, orientato agli oggetti, adatto, tra gli altri usi, per sviluppare applicazioni distribuite, scripting, computazione numerica e system testing. Python è spesso paragonato a Ruby, Tcl, Perl, Java, JavaScript, Visual Basic o Scheme. Fu ideato da Guido van Rossum all'inizio degli anni novanta. Il nome fu scelto per via della passione di van Rossum per i Monty Python e per la loro serie televisiva Monty Python's Flying Circus."@it,
+        "Python（パイソン）は、汎用のプログラミング言語である。コードのリーダビリティが高くなるように言語を設計していると主張している。その構文のおかげで、Cなどの言語に比べて、より少ないコード行数でプログラムを表現できると主張している。小規模なプログラムから大規模なプログラムまで、さまざまなプログラムを分かり易く書けるように、多くのコードを提供している。 Pythonは複数のプログラミングパラダイムに対応している。オブジェクト指向、命令型、手続き型、関数型などの形式でプログラムを書くことができる。Pythonは動的型付け言語であり、参照カウントベースの自動メモリ管理（ガベージコレクタ）を持つ。さまざまな領域に対応する大規模な標準ライブラリを提供している。 Pythonは、汎用のプログラミング言語として設計している。標準ライブラリや他者製のライブラリも充実している。そのためPythonはWebアプリケーションやデスクトップアプリケーションなどの開発はもとより、システム用の記述(script)や、各種の自動処理、理工学や統計解析のための道具としてなど、幅広い領域で使用されている。ヨーロッパ製の道具類では、その道具の命令がPythonを使っているものがある。 Pythonのリファレンス実装であるCPythonは、フリーかつオープンソースのソフトウェアであり、コミュニティベースの開発モデルを採用している。CPythonは、非営利団体であるPythonソフトウェア財団が管理している。その他の実装としては、PyPyやIronPythonなどが有名である。 Pythonは、オランダ人のグイド・ヴァンロッサムが開発した。名前の由来は、イギリスのテレビ局 BBC が製作したコメディ番組『空飛ぶモンティ・パイソン』である。Pythonという英単語が意味する爬虫類のニシキヘビがPython言語のマスコットやアイコンとして使われている。"@ja,
+        "Python is een programmeertaal die begin jaren 90 ontworpen en ontwikkeld werd door Guido van Rossum, destijds verbonden aan het Centrum voor Wiskunde en Informatica (daarvoor Mathematisch Centrum) in Amsterdam. De taal is mede gebaseerd op inzichten van professor Lambert Meertens die een op BASIC gebaseerde taal genaamd ABC had ontworpen, maar dan met allerlei zeer geavanceerde datastructuren. Inmiddels wordt de taal doorontwikkeld door een enthousiaste groep, geleid door Van Rossum. Deze groep wordt ondersteund door vrijwilligers op het internet. De ontwikkeling van Python wordt geleid door de Python Software Foundation. Python is vrije software. Python heeft zijn naam te danken aan het favoriete televisieprogramma van Guido van Rossum, Monty Python's Flying Circus."@nl,
+        "Python – język programowania wysokiego poziomu ogólnego przeznaczenia, o rozbudowanym pakiecie bibliotek standardowych, którego ideą przewodnią jest czytelność i klarowność kodu źródłowego. Jego składnia cechuje się przejrzystością i zwięzłością. Python wspiera różne paradygmaty programowania: obiektowy, imperatywny oraz w mniejszym stopniu funkcyjny. Posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią, będąc w tym podobnym do języków Perl, Ruby, Scheme czy Tcl. Podobnie jak inne języki dynamiczne jest często używany jako język skryptowy. Interpretery Pythona są dostępne na wiele systemów operacyjnych. Python rozwijany jest jako projekt Open Source zarządzany przez Python Software Foundation, która jest organizacją non-profit. Standardową implementacja języka jest CPython (napisany w C), ale istnieją też inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformę .NET) i PyPy (napisany w Pythonie, zob. bootstrap)."@pl,
+        "Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional, de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991. Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização sem fins lucrativos Python Software Foundation. Apesar de várias partes da linguagem possuírem padrões e especificações formais, a linguagem como um todo não é formalmente especificada. O padrão de facto é a implementação CPython. A linguagem foi projetada com a filosofia de enfatizar a importância do esforço do programador sobre o esforço computacional. Prioriza a legibilidade do código sobre a velocidade ou expressividade. Combina uma sintaxe concisa e clara com os recursos poderosos de sua biblioteca padrão e por módulos e frameworks desenvolvidos por terceiros. Python é uma linguagem de propósito geral de alto nível, multi paradigma, suporta o paradigma orientado a objetos, imperativo, funcional e procedural. Possui tipagem dinâmica e uma de suas principais características é permitir a fácil leitura do código e exigir poucas linhas de código se comparado ao mesmo programa em outras linguagens. Devido as suas características, ela é principalmente utilizada para processamento de textos, dados científicos e criação de CGIs para páginas dinâmicas para a web. O nome Python teve a sua origem no grupo humorístico britânico Monty Python, criador do programa Monty Python's Flying Circus, embora muitas pessoas façam associação com o réptil do mesmo nome (em português, píton ou pitão)."@pt .
 
 <http://5th.ch/succotash#FrontEndDevelopment> a skos:Concept ;
     rdfs:label "Frontend Development"@en .
@@ -380,6 +405,9 @@ dbr:Cascading_Style_Sheets rdfs:label "صفحات الطرز المتراصة"@a
         "Kaskadowe arkusze stylów (ang. Cascading Style Sheets, w skrócie CSS) to język służący do opisu formy prezentacji (wyświetlania) stron WWW. CSS został opracowany przez organizację W3C w 1996 r. jako potomek języka DSSSL przeznaczony do używania w połączeniu z SGML-em. Pierwszy szkic CSS zaproponował w 1994 r. Håkon Wium Lie. Arkusz stylów CSS to lista dyrektyw (tzw. reguł) ustalających w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranego elementu (lub elementów) (X)HTML lub XML. Można w ten sposób opisać wszystkie pojęcia odpowiedzialne za prezentację elementów dokumentów internetowych, takie jak rodzina czcionek, kolor tekstu, marginesy, odstęp międzywierszowy lub nawet pozycja danego elementu względem innych elementów bądź okna przeglądarki. Wykorzystanie arkuszy stylów daje znacznie większe możliwości pozycjonowania elementów na stronie, niż oferuje sam (X)HTML. CSS został stworzony w celu odseparowania struktury dokumentu od formy jego prezentacji. Separacja ta zwiększa zakres dostępności witryny, zmniejsza zawiłość dokumentu, ułatwia wprowadzanie zmian w strukturze dokumentu. CSS ułatwia także zmiany w renderowaniu strony w zależności od obsługiwanego medium (ekran, palmtop, dokument w druku, czytnik ekranowy). Stosowanie zewnętrznych arkuszy CSS daje możliwość zmiany wyglądu wielu stron naraz bez ingerowania w sam kod (X)HTML, ponieważ arkusze mogą być wspólne dla wielu dokumentów."@pl,
         "Cascading Style Sheets (CSS) é uma linguagem de folhas de estilo utilizada para definir a apresentação de documentos escritos em uma linguagem de marcação, como HTML ou XML. O seu principal benefício é a separação entre o formato e o conteúdo de um documento. Em vez de colocar a formatação dentro do documento, o desenvolvedor cria um link (ligação) para uma página que contém os estilos, procedendo de forma idêntica para todas as páginas de um portal. Quando quiser alterar a aparência do portal basta portanto modificar apenas um arquivo. Com a variação de atualizações dos navegadores (browsers) como Internet Explorer que ficou sem nova versão de 2001 a 2006, o suporte ao CSS pode variar. O Internet Explorer 6, por exemplo, tem suporte total a CSS1 e praticamente nulo a CSS2. Navegadores mais modernos como Google Chrome e Mozilla Firefox tem suporte maior, inclusive até a CSS3, ainda em desenvolvimento. A interpretação dos navegadores pode ser avaliada com o teste Acid2, que se tornou uma forma base de revelar quão eficiente é o suporte de CSS, fazendo com que a nova versão em desenvolvimento do Firefox seja totalmente compatível a ele assim como o Opera já é. O Doctype informado ou a ausência dele determina o quirks mode ou o strict mode modificando o modo como o CSS é interpretado e a página desenhada."@pt,
         "Шаблон:CSSCSS (англ. Cascading Style Sheets — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.Преимущественно используется как средство описания, оформления внешнего вида веб-страниц, написанных с помощью языков разметки HTML и XHTML, но может также применяться к любым XML-документам, например, к SVG или XUL."@ru .
+
+<http://5th.ch/succotash#Electronics> a skos:Concept ;
+    rdfs:label "Electronics"@en .
 
 <http://5th.ch/succotash#IoT> a skos:Concept ;
     rdfs:label "Internet of Things"@en ;

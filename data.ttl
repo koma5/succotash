@@ -10,6 +10,21 @@
 
 <> rdfs:seeAlso <http://marcoko.ch/> .
 
+<#OOP_Python_Human.ipynb> a :Project ;
+  :name "OOP_Python_Human.ipynb" ;
+  :description "some OOP class in Python"@en ;
+  :programming-language dbr:Python_\(programming_language\)  ;
+  :homepage <https://gist.github.com/koma5/f43f940dfdfa29f7188137c3734da369> ;
+  foaf:maker <http://marcoko.ch/#i> ;
+  skos:related <#OOP> .
+
+<#ephemSunsetSunrise.ipynb> a :Project ;
+  :name "ephemSunsetSunrise.ipynb" ;
+  :description "calculating excact sunsrise, sunset and suntransit times for a specific location and day"@en ;
+  :programming-language dbr:Python_\(programming_language\)  ;
+  :homepage <https://gist.github.com/koma5/1a1f1e108d5a04a525dd5942f8048e7a> ;
+  foaf:maker <http://marcoko.ch/#i> .
+
 <#ausleihdb> a :Project ;
   :name "HSR IT Ausleih Datenbank"@de,
         "HSR IT lending database"@en ;
@@ -22,26 +37,10 @@
 # codePen pens below
 
 <#ZBPVRY> a :Project;
-  :programming-language dbr:Cascading_Style_Sheets .
+  :programming-language dbr:Cascading_Style_Sheets ;
+  skos:related <#FrontEndDevelopment> .
 
 #github projects below
-
-<#bigShowerBrother> a :Project ;
-  skos:related  <#IoT>, <#DataVisualization>, <#DataAnalytics> ;
-  :programming-language dbr:Python_\(programming_language\) ;
-  skos:related <#IoT> .
-
-<#mqttSense> a :Project ;
-  :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
-
-<#mqttSwitch> a :Project ;
-  :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
-
-<#xBeeSensorNetwork> a :Project ;
-  :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
 
 <#textly> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
@@ -51,22 +50,38 @@
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
   skos:related <#IoT>, <#DataVisualization>, <#FrontEndDevelopment> .
 
+<#bigShowerBrother> a :Project ;
+  skos:related  <#IoT>, <#DataVisualization>, <#DataAnalytics>, <#IoT> ;
+  :programming-language dbr:Python_\(programming_language\) .
+
+<#mqttSense> a :Project ;
+  :programming-language dbr:C_\(programming_language\) ;
+  skos:related <#IoT>, <#Electronics> .
+
+<#mqttSwitch> a :Project ;
+  :programming-language dbr:C_\(programming_language\) ;
+  skos:related <#IoT>, <#Electronics> .
+
+<#xBeeSensorNetwork> a :Project ;
+  :programming-language dbr:C_\(programming_language\) ;
+  skos:related <#IoT>, <#Electronics> .
+
 <#mqttNMEA> a :Project ;
   dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
+  skos:related <#IoT>, <#Electronics> .
 
 <#mqttAnalogMeter> a :Project ;
   :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
+  skos:related <#IoT>, <#Electronics> .
 
 <#mqttLight> a :Project ;
   :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
+  skos:related <#IoT>, <#Electronics> .
 
 <#mqttNEO> a :Project ;
   :programming-language dbr:C_\(programming_language\) ;
-  skos:related <#IoT> .
+  skos:related <#IoT>, <#Electronics> .
 
 <#holdEm> a :Project ;
   :programming-language dbr:Python_\(programming_language\) ;
@@ -83,7 +98,7 @@
 <#succotash> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript, dbr:Python_\(programming_language\),
   dbr:RDFa, dbr:Resource_Description_Framework, dbr:Turtle_\(syntax\) ;
-  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb> .
+  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb>, <#LinkedData> .
 
 
 
@@ -95,6 +110,7 @@
 <#DataAnalytics> rdfs:label "Data Analytics"@en; a skos:Concept .
 <#SemanticWeb> rdfs:label "semantic web"@en; a skos:Concept ; skos:narrower <#LinkedData> .
 <#LinkedData> rdfs:label "linked data"@en; a skos:Concept .
+<#OOP> rdfs:label "object oriented programming"@en; a skos:Concept .
 
 # dbo:programmingLanguage or :programming-language ?
 # dbo:computingPlatform

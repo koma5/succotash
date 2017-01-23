@@ -24,7 +24,13 @@
 - [x] select language preference display if available
 - [x] fetch dbpedia data about programming languages
 - [ ] skos broader narrower in info box
+- [ ] links in infobox?
+- [ ] semantic link instead of skos:Concept
 - [x] generic query of rdf store for info box
+- [x] display marcoko.ch/#i
+- [ ] color schema
+- [ ] rdfa in info box
+- [ ] explanation
 
 
 
