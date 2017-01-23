@@ -31,6 +31,8 @@
 - [ ] color schema
 - [ ] rdfa in info box
 - [x] explanation
+- [ ] .htaccess for html/turtle delivery
+- [ ] target blank links
 
 
 
