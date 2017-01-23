@@ -143,3 +143,7 @@ for triple in tempGraph.triples((None, None, dbo.ProgrammingLanguage)):
 outputFile = open('graph.ttl', 'wb')
 outputFile.write(graph.serialize(format='turtle'))
 outputFile.close()
+
+outputFile = open('graph.rdf', 'wb')
+outputFile.write(graph.serialize(format="pretty-xml", max_depth=2))
+outputFile.close()

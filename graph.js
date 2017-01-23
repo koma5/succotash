@@ -254,7 +254,7 @@ function showInfo(node) {
   {{#image}}<img src="{{image}}" alt=""/>{{/image}}\
   {{#description}}<p class="description">{{description}}\
   {{#langTagDesc}}<span class="langTagDesc">{{langTagDesc}}</span>{{/langTagDesc}}</p>{{/description}}\
-  <p>{{#links}}<a href="{{href}}">{{name}}</a> {{/links}}</p>';
+  <p>{{#links}}<a href="{{href}}" target="_blank">{{name}}</a> {{/links}}</p>';
 
   var infoData = {links : []};
 
