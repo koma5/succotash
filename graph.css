@@ -75,3 +75,32 @@ body {
 .node[resource^="http://dbpedia.org/resource/"] {
   fill: rgba( 62,  0,  0,1);
 }
+
+#explanation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 15px;
+  color: #eee;
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, .5);
+  max-width: 33%;
+  display: table;
+}
+#explanation * {
+  border-radius:5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+#explanation .doap {
+  background: rgba(119,174, 10,1);
+}
+
+#explanation .skos {
+  background: rgba(  7,112,112,1);
+}
+
+#explanation .dbpedia {
+  background: rgba( 62,  0,  0,1);
+}
