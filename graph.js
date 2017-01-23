@@ -219,7 +219,7 @@ function getObjectRightLanguage(node, prop) {
 
   //Safari / Chrome
   var languages = navigator.languages != undefined ? navigator.languages : [ navigator.language ];
-  
+
   for(var l = 0; l < languages.length; l++) {
     if(languages[l].indexOf('-') > 0) {
       languages[l] = languages[l].split('-')[0];
@@ -252,6 +252,7 @@ function showInfo(node) {
 
   var infoTemplate = '{{#name}}<h1>{{name}}</h1>{{/name}}{{#langTagName}}<span class="langTagName">{{langTagName}} {{/langTagName}}</span> {{#uri}}<span class="uri"> &lt;{{uri}}&gt;</span>{{/uri}}\
   {{#rdfType}}<p>{{rdfType}} <span class="typeLabel">rdf:type</span></p>{{/rdfType}}\
+  {{#image}}<img src="{{image}}" alt=""/>{{/image}}\
   {{#description}}<p class="description">{{description}}\
   {{#langTagDesc}}<span class="langTagDesc">{{langTagDesc}}</span>{{/langTagDesc}}</p>{{/description}}\
   <p>{{#links}}<a href="{{href}}">{{name}}</a> {{/links}}</p>';
@@ -304,6 +305,36 @@ function showInfo(node) {
 
   }
 
+  else if (infoData.type == foaf('Person').value) { //foaf:Person
+
+    infoData.uri = node.id;
+    infoData.rdfType =  "foaf:Person";
+
+    var o = getObjectRightLanguage(node, foaf("name"))
+    infoData.name = o.string;
+
+    var o = getObjectRightLanguage(node, foaf("img"))
+    infoData.image = o.string;
+
+    var o = getObjectRightLanguage(node, foaf("homepage"))
+    if (o.string != undefined) {
+      infoData.links.push({
+        name: "website",
+        href: o.string
+      });
+    }
+
+    var o = getObjectRightLanguage(node, foaf("weblog"))
+    if (o.string != undefined) {
+      infoData.links.push({
+        name: "blog",
+        href: o.string
+      });
+    }
+    
+  }
+
+
   else {
 
     infoData.uri = node.id;
@@ -316,6 +347,8 @@ function showInfo(node) {
     infoData.description = o.string;
     infoData.langTagDesc = o.lang ;
 
+    var o = getObjectRightLanguage(node, rdf("type"))
+    infoData.rdfType = o.string != undefined ? '<' + o.string + '>' : '';
   }
 
   Mustache.parse(infoTemplate);
@@ -377,6 +410,57 @@ var fetcher = new $rdf.Fetcher(store, timeout)
 
 var graph = {nodes: [], links:[]}
 
+function buildGraph() {
+
+  nodesLinksFromRdfProperty(store, foaf('maker'), graph, $rdf.sym(localDateFile))
+  nodesLinksFromRdfProperty(store, doap('programming-language'), graph, $rdf.sym(localDateFile))
+  nodesLinksFromRdfProperty(store, skos('related'), graph, $rdf.sym(localDateFile))
+  nodesLinksFromRdfProperty(store, skos('narrower'), graph, $rdf.sym(localDateFile))
+
+
+
+  link = linesGroup.selectAll('.link')
+      .data(graph.links)
+      .enter().append('line')
+      .attr('about', function(d) {return d.source;}) //subject resource/about
+      .attr('property', function(d) {return d.uri;}) // predicate rel/property
+      .attr('href', function(d) {return d.target;}) //object href/resource2
+      .attr('class', 'link');
+
+  node = nodesGroup.selectAll('.node')
+      .data(graph.nodes)
+      .enter().append('circle')
+      .attr("r", circleSizeNormal)
+      .attr('class', 'node')
+      .attr('resource', function(d) {return d.id;})
+      .attr('typeof', function(d) {return d.rdftype;})
+      .on('click', function(d) {clickNode(d);})
+      .on('mouseover', function(d) {mouseOverNode(d);})
+      .on("mouseout", function(d) {mouseOutNode(d);})
+       .call(d3.drag()
+           .on("start", dragstarted)
+           .on("drag", dragged)
+           .on("end", dragended));
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  resize();
+  d3.select(window).on("resize", resize);
+
+  //focus node by requested URL
+  d3.selectAll('.node').each(function(d) {
+    if(window.location.hash && d.id.includes(window.location.hash)) {
+      clickedNode = d;
+      focusNodes(d);
+    }
+  });
+}
+
 var localDateFile = "http://" + window.location.host + "/graph.ttl"
 
 fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
@@ -389,57 +473,7 @@ fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
         fetcher.nowOrWhenFetched(seeAlsos[i].object.value, function(ok, body, xhr) {});
       }
 
-
-      nodesLinksFromRdfProperty(store, foaf('maker'), graph, $rdf.sym(localDateFile))
-      nodesLinksFromRdfProperty(store, doap('programming-language'), graph, $rdf.sym(localDateFile))
-      nodesLinksFromRdfProperty(store, skos('related'), graph, $rdf.sym(localDateFile))
-      nodesLinksFromRdfProperty(store, skos('narrower'), graph, $rdf.sym(localDateFile))
-
-
-
-      link = linesGroup.selectAll('.link')
-          .data(graph.links)
-          .enter().append('line')
-          .attr('about', function(d) {return d.source;}) //subject resource/about
-          .attr('property', function(d) {return d.uri;}) // predicate rel/property
-          .attr('href', function(d) {return d.target;}) //object href/resource2
-          .attr('class', 'link');
-
-      node = nodesGroup.selectAll('.node')
-          .data(graph.nodes)
-          .enter().append('circle')
-          .attr("r", circleSizeNormal)
-          .attr('class', 'node')
-          .attr('resource', function(d) {return d.id;})
-          .attr('typeof', function(d) {return d.rdftype;})
-          .on('click', function(d) {clickNode(d);})
-          .on('mouseover', function(d) {mouseOverNode(d);})
-          .on("mouseout", function(d) {mouseOutNode(d);})
-           .call(d3.drag()
-               .on("start", dragstarted)
-               .on("drag", dragged)
-               .on("end", dragended));
-
-      simulation
-          .nodes(graph.nodes)
-          .on("tick", ticked);
-
-      simulation.force("link")
-          .links(graph.links);
-
-      resize();
-      d3.select(window).on("resize", resize);
-
-      //focus node by requested URL
-      d3.selectAll('.node').each(function(d) {
-        if(window.location.hash && d.id.includes(window.location.hash)) {
-          clickedNode = d;
-          focusNodes(d);
-        }
-      });
+      buildGraph();
 
     }
-    else {
-          console.log("Oops, something happened and couldn't fetch data");
-    }
-})
+});
