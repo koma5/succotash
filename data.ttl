@@ -34,6 +34,23 @@
   foaf:maker <http://marcoko.ch/#i> ;
   skos:related <#WebDevelopment> .
 
+<#IPA> a :Project ;
+  :name "Individuelle Projektarbeit 802.1x"@de,
+        "Project Thesis 802.1x"@en ;
+  :description "Planung und Umsetztung der Authentifikation und Authorisation am Netzwerk der Hochschule Rapperswil mittels 802.1x."@de,
+               "Planning and implementation of network authentication and authorization by 802.1x at the University of Applied Science in Rapperswil."@en ;
+  :homepage <https://files.5th.ch/IPA_802.1x.pdf> ;
+  skos:related <#Networking>, <#ITSecurity> ;
+  foaf:maker <http://marcoko.ch/#i> .
+
+<#BMA> a :Project ;
+  :name "BMA Veränderung des Schweizer Schienennetzes"@de,
+        "The Change of the Swiss Railway Network Thesis"@en ;
+  :description "Berufsmaturitätsarbeit zum Thema der Veränderung des Schweizer Schienennetzes."@de,
+               "Thesis about the change of the swiss railway network"@en ;
+  :homepage <https://files.5th.ch/BMA_web_gross.pdf> ;
+  foaf:maker <http://marcoko.ch/#i>, [ a foaf:Person; foaf:name "Koray Adigüzel" ] .
+
 # codePen pens below
 
 <#ZBPVRY> a :Project;
@@ -111,6 +128,8 @@
 <#SemanticWeb> rdfs:label "semantic web"@en; a skos:Concept ; skos:narrower <#LinkedData> .
 <#LinkedData> rdfs:label "linked data"@en; a skos:Concept .
 <#OOP> rdfs:label "object oriented programming"@en; a skos:Concept .
+<#Networking> rdfs:label "Networking"@en; a skos:Concept .
+<#ITSecurity> rdfs:label "IT Security"@en; a skos:Concept .
 
 # dbo:programmingLanguage or :programming-language ?
 # dbo:computingPlatform

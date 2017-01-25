@@ -11,6 +11,26 @@
 
 <http://5th.ch/succotash/> rdfs:seeAlso <http://marcoko.ch/> .
 
+<http://5th.ch/succotash/#BMA> a :Project ;
+    :description "Berufsmaturitätsarbeit zum Thema der Veränderung des Schweizer Schienennetzes."@de,
+        "Thesis about the change of the swiss railway network"@en ;
+    :homepage <https://files.5th.ch/BMA_web_gross.pdf> ;
+    :name "BMA Veränderung des Schweizer Schienennetzes"@de,
+        "The Change of the Swiss Railway Network Thesis"@en ;
+    foaf:maker [ a foaf:Person ;
+            foaf:name "Koray Adigüzel" ],
+        <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#IPA> a :Project ;
+    :description "Planung und Umsetztung der Authentifikation und Authorisation am Netzwerk der Hochschule Rapperswil mittels 802.1x."@de,
+        "Planning and implementation of network authentication and authorization by 802.1x at the University of Applied Science in Rapperswil."@en ;
+    :homepage <https://files.5th.ch/IPA_802.1x.pdf> ;
+    :name "Individuelle Projektarbeit 802.1x"@de,
+        "Project Thesis 802.1x"@en ;
+    skos:related <http://5th.ch/succotash/#ITSecurity>,
+        <http://5th.ch/succotash/#Networking> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://5th.ch/succotash/#OOP_Python_Human.ipynb> a :Project ;
     :description "some OOP class in Python"@en ;
     :homepage <https://gist.github.com/koma5/f43f940dfdfa29f7188137c3734da369> ;
@@ -140,24 +160,6 @@
         <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
-<http://5th.ch/succotash/#succotash> a :Project ;
-    :description "fancy, static, multi language, linked portfolio site generated from rdf data with all my projects."@en ;
-    :homepage <http://5th.ch/succotash#succotash> ;
-    :name "succotash" ;
-    :programming-language dbr:Cascading_Style_Sheets,
-        dbr:JavaScript,
-        <http://dbpedia.org/resource/Python_(programming_language)>,
-        dbr:RDFa,
-        dbr:Resource_Description_Framework,
-        <http://dbpedia.org/resource/Turtle_(syntax)> ;
-    :repository <https://github.com/koma5/succotash> ;
-    skos:related <http://5th.ch/succotash/#DataVisualization>,
-        <http://5th.ch/succotash/#FrontEndDevelopment>,
-        <http://5th.ch/succotash/#LinkedData>,
-        <http://5th.ch/succotash/#SemanticWeb>,
-        <http://5th.ch/succotash/#WebDevelopment> ;
-    foaf:maker <http://marcoko.ch/#i> .
-
 <http://5th.ch/succotash/#textly> a :Project ;
     :description "a very simple text editor which uses localStorage and html editable content."@en ;
     :homepage <http://koma5.github.io/textly/textly.html> ;
@@ -188,12 +190,36 @@
         <http://5th.ch/succotash/#IoT> ;
     foaf:maker <http://marcoko.ch/#i> .
 
+<http://5th.ch/succotash/#ITSecurity> a skos:Concept ;
+    rdfs:label "IT Security"@en .
+
+<http://5th.ch/succotash/#Networking> a skos:Concept ;
+    rdfs:label "Networking"@en .
+
 <http://5th.ch/succotash/#OOP> a skos:Concept ;
     rdfs:label "object oriented programming"@en .
 
 <http://5th.ch/succotash/#SemanticWeb> a skos:Concept ;
     rdfs:label "semantic web"@en ;
     skos:narrower <http://5th.ch/succotash/#LinkedData> .
+
+<http://5th.ch/succotash/#succotash> a :Project ;
+    :description "fancy, static, multi language, linked portfolio site generated from rdf data with all my projects."@en ;
+    :homepage <http://5th.ch/succotash/#succotash> ;
+    :name "succotash" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:JavaScript,
+        <http://dbpedia.org/resource/Python_(programming_language)>,
+        dbr:RDFa,
+        dbr:Resource_Description_Framework,
+        <http://dbpedia.org/resource/Turtle_(syntax)> ;
+    :repository <https://github.com/koma5/succotash> ;
+    skos:related <http://5th.ch/succotash/#DataVisualization>,
+        <http://5th.ch/succotash/#FrontEndDevelopment>,
+        <http://5th.ch/succotash/#LinkedData>,
+        <http://5th.ch/succotash/#SemanticWeb>,
+        <http://5th.ch/succotash/#WebDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
 
 dbr:Arduino rdfs:label "آردوينو"@ar,
         "Arduino (Plattform)"@de,

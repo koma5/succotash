@@ -34,6 +34,7 @@
 - [x] explanation
 - [x] .htaccess for html/turtle delivery
 - [x] target blank links
+- [ ] https marcoko.ch fetch xhr
 
 
 
