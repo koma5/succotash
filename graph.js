@@ -3,13 +3,15 @@ function nodesLinksFromRdfProperty(store, property, graph, source) {
   var matches = store.statementsMatching(undefined, property, undefined, source)
   for (var i=0; i<matches.length; i++) {
     match = matches[i]
-    addUniqueNodes(graph, match.subject.uri)
-    addUniqueNodes(graph, match.object.uri)
-    graph.links.push({
-      source: match.subject.uri,
-      target: match.object.uri,
-      uri: property.value
-    })
+    if(match.subject.termType == "NamedNode" && match.object.termType == "NamedNode") {
+      addUniqueNodes(graph, match.subject.uri)
+      addUniqueNodes(graph, match.object.uri)
+      graph.links.push({
+        source: match.subject.uri,
+        target: match.object.uri,
+        uri: property.value
+      })
+    }
   }
 
 }
