@@ -4,6 +4,7 @@ IndexOptions -FancyIndexing
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^5th.ch$
+RewriteCond %{HTTP} !=on
 RewriteRule ^(.*)$ http://5th.ch/succotash/$1 [R=301,L]
 
 
