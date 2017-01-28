@@ -59,6 +59,11 @@
 
 #github projects below
 
+<#dnsSuffixSpoofingManInTheMiddleRootZoneSomething> a :Project ;
+  :programming-language dbr:Bash_\(Unix_shell\) ;
+  dbo:computingPlatform dbr:Docker_\(software\) ;
+  skos:related <#ITSecurity>, <#Hacking>, <#pentesting> .
+
 <#textly> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
   skos:related <#FrontEndDevelopment> .
@@ -72,14 +77,17 @@
   :programming-language dbr:Python_\(programming_language\) .
 
 <#mqttSense> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
 <#mqttSwitch> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
 <#xBeeSensorNetwork> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
@@ -89,6 +97,7 @@
   skos:related <#IoT>, <#Electronics> .
 
 <#mqttAnalogMeter> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
@@ -97,6 +106,7 @@
   skos:related <#IoT>, <#Electronics> .
 
 <#mqttNEO> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
@@ -130,6 +140,5 @@
 <#OOP> rdfs:label "object oriented programming"@en; a skos:Concept .
 <#Networking> rdfs:label "Networking"@en; a skos:Concept .
 <#ITSecurity> rdfs:label "IT Security"@en; a skos:Concept .
-
-# dbo:programmingLanguage or :programming-language ?
-# dbo:computingPlatform
+<#Hacking> rdfs:label "hacking"@en; a skos:Concept ; skos:narrower <#pentesting> .
+<#pentesting> rdfs:label "Penetration testing"@en; a skos:Concept .

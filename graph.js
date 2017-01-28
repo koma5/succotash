@@ -415,6 +415,7 @@ function buildGraph() {
   nodesLinksFromRdfProperty(store, doap('programming-language'), graph, $rdf.sym(localDateFile))
   nodesLinksFromRdfProperty(store, skos('related'), graph, $rdf.sym(localDateFile))
   nodesLinksFromRdfProperty(store, skos('narrower'), graph, $rdf.sym(localDateFile))
+  nodesLinksFromRdfProperty(store, dbo('computingPlatform'), graph, $rdf.sym(localDateFile))
 
 
 
