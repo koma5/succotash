@@ -35,8 +35,8 @@ RewriteCond %{HTTP_ACCEPT} text/turtle
 RewriteRule ^$ graph.ttl [R=303]
 
 # firefox display xml by default but downloads turtle
-RewriteCond %{HTTP_USER_AGENT} Firefox/.*
-RewriteRule ^$ graph.rdf [R=303]
+#RewriteCond %{HTTP_USER_AGENT} Firefox/.*
+#RewriteRule ^$ graph.rdf [R=303]
 
 # Choose the default response
 # Serve RDF/XML by default
