@@ -11,6 +11,14 @@
 
 <http://5th.ch/succotash/> rdfs:seeAlso <http://marcoko.ch/> .
 
+<http://5th.ch/succotash/#302-Instead> a :Project ;
+    :description "YOURLS Plugin to send a 302 (temporary) redirect instead of 301 (permanent) for sites where shortlinks may change."@en ;
+    :name "302-Instead" ;
+    :programming-language dbr:PHP ;
+    :repository <https://github.com/koma5/302-Instead> ;
+    skos:related <http://5th.ch/succotash/#WebDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://5th.ch/succotash/#BMA> a :Project ;
     :description "Berufsmaturitätsarbeit zum Thema der Veränderung des Schweizer Schienennetzes."@de,
         "Thesis about the change of the swiss railway network"@en ;
@@ -78,6 +86,16 @@
         <http://5th.ch/succotash/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
+<http://5th.ch/succotash/#deHumqtt> a :Project ;
+    dbo:computingPlatform dbr:Arduino ;
+    :description "mqtt enabled mini pelti dehumidifier."@en ;
+    :name "deHumqtt" ;
+    :programming-language <http://dbpedia.org/resource/C_(programming_language)> ;
+    :repository <https://github.com/koma5/deHumqtt> ;
+    skos:related <http://5th.ch/succotash/#Electronics>,
+        <http://5th.ch/succotash/#IoT> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
 <http://5th.ch/succotash/#dnsSuffixSpoofingManInTheMiddleRootZoneSomething> a :Project ;
     dbo:computingPlatform <http://dbpedia.org/resource/Docker_(software)> ;
     :description "some hack involving the root zone dot, DNS suffixes docker, evil DNS servers and good webservers."@en ;
@@ -104,6 +122,16 @@
     :programming-language <http://dbpedia.org/resource/Python_(programming_language)> ;
     :repository <https://github.com/koma5/holdEm> ;
     skos:related <http://5th.ch/succotash/#DataAnalytics> ;
+    foaf:maker <http://marcoko.ch/#i> .
+
+<http://5th.ch/succotash/#linkGone> a :Project ;
+    :description "YOURLS Plugin to send a 410 if the link was deleted."@en ;
+    :homepage <http://5th.li/8m> ;
+    :name "linkGone" ;
+    :programming-language dbr:Cascading_Style_Sheets,
+        dbr:PHP ;
+    :repository <https://github.com/koma5/linkGone> ;
+    skos:related <http://5th.ch/succotash/#WebDevelopment> ;
     foaf:maker <http://marcoko.ch/#i> .
 
 <http://5th.ch/succotash/#matt> a :Project ;
@@ -349,34 +377,6 @@ dbr:Resource_Description_Framework rdfs:label "إطار توصيف الموار�
 <http://5th.ch/succotash/#DataVisualization> a skos:Concept ;
     rdfs:label "Data Visualization"@en .
 
-dbr:PHP a dbo:ProgrammingLanguage ;
-    rdfs:label "بي إتش بي"@ar,
-        "PHP"@de,
-        "PHP"@en,
-        "PHP"@es,
-        "PHP"@fr,
-        "PHP"@it,
-        "PHP: Hypertext Preprocessor"@ja,
-        "PHP"@nl,
-        "PHP"@pl,
-        "PHP"@pt,
-        "PHP"@ru,
-        "PHP"@zh ;
-    dbo:abstract "'بي إتش بي' (PHP: Hypertext Preprocessor، 'الصفحة الرئيسية الشخصية': \"المعالج المسبق للنصوص الفائقة\") هي لغة برمجة نصية صممت أساسا من أجل استخدامها لتطوير وبرمجة تطبيقات الويب. كما يمكن استخدامها لإنتاج برامج قائمة بذاتها وليس لها علاقة بالويب فقط.بي إتش بي لغة مفتوحة المصدر ويطورها فريق من المتطوعين تحت رخصة PHP، تدعم البرمجة كائنية التوجه وتركيبها النحوي يشبه كثيرا التركيب النحوي للغة السي هذا بالإضافة إلى أنها تعمل على أنظمة تشغيل متعددة مثل لينكس وويندوز."@ar,
-        "PHP (rekursives Akronym und Backronym für „PHP: Hypertext Preprocessor“, ursprünglich „Personal Home Page Tools“) ist eine Skriptsprache mit einer an C und Perl angelehnten Syntax, die hauptsächlich zur Erstellung dynamischer Webseiten oder Webanwendungen verwendet wird. PHP wird als freie Software unter der PHP-Lizenz verbreitet. PHP zeichnet sich durch breite Datenbankunterstützung und Internet-Protokolleinbindung sowie die Verfügbarkeit zahlreicher Funktionsbibliotheken aus."@de,
-        "PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Group. PHP originally stood for Personal Home Page, but it now stands for the recursive backronym PHP: Hypertext Preprocessor. PHP code may be embedded into HTML code, or it can be used in combination with various web template systems, web content management system and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications. The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge. The PHP language evolved without a written formal specification or standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has been ongoing to create a formal PHP specification."@en,
-        "PHP es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico. Fue uno de los primeros lenguajes de programación del lado del servidor que se podían incorporar directamente en el documento HTML en lugar de llamar a un archivo externo que procese los datos. El código es interpretado por un servidor web con un módulo de procesador de PHP que genera la página Web resultante. PHP ha evolucionado por lo que ahora incluye también una interfaz de línea de comandos que puede ser usada en aplicaciones gráficas independientes. Puede ser usado en la mayoría de los servidores web al igual que en casi todos los sistemas operativos y plataformas sin ningún costo. PHP se considera uno de los lenguajes más flexibles, potentes y de alto rendimiento conocidos hasta el día de hoy[cita requerida], lo que ha atraído el interés de múltiples sitios con gran demanda de tráfico, como Facebook, para optar por el mismo como tecnología de servidor. Fue creado originalmente por Rasmus Lerdorf en 1995. Actualmente el lenguaje sigue siendo desarrollado con nuevas funciones por el grupo PHP. Este lenguaje forma parte del software libre publicado bajo la licencia PHP, que es incompatible con la Licencia Pública General de GNU debido a las restricciones del uso del término PHP."@es,
-        "PHP: Hypertext Preprocessor, plus connu sous son sigle PHP (acronyme récursif), est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet comme C++. PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook, YouTube, Wikipedia, etc. Il est considéré comme la base de la création des sites Internet dits dynamiques."@fr,
-        "PHP (acronimo ricorsivo di \"PHP: Hypertext Preprocessor\", preprocessore di ipertesti; originariamente acronimo di \"Personal Home Page\") è un linguaggio di scripting interpretato, originariamente concepito per la programmazione di pagine web dinamiche. L'interprete PHP è un software libero distribuito sotto la PHP License. Attualmente è principalmente utilizzato per sviluppare applicazioni web lato server, ma può essere usato anche per scrivere script a riga di comando o applicazioni stand-alone con interfaccia grafica. Un esempio di software scritto in PHP è MediaWiki, su cui si basano progetti wiki come Wikipedia e Wikizionario."@it,
-        "PHP: Hypertext Preprocessor（ピー・エイチ・ピー ハイパーテキスト プリプロセッサー）とは、動的にHTMLデータを生成することによって、動的なウェブページを実現することを主な目的としたプログラミング言語、およびその言語処理系である。一般的には PHP と省略して用いられており、これは「個人的なホームページ」を意味する英語の \"Personal Home Page\" に由来する。 PHPはサーバーサイド・スクリプト言語として利用されており、Webサーバ上で動作し、Webサーバ上でPHPスクリプトの文書が要求されるたびに、そのPHPスクリプトが実行され、結果をウェブブラウザに対して送信する。平易な文法のため初心者でも習得しやすく、また大規模な開発にも多く用いられている。多くのフレームワークやライブラリが存在し、開発の手助けとなっている。 数多くのオープンソースウェブアプリケーションに利用されている一方、しばしば脆弱性の報告がなされ、過去に深刻なセキュリティホールが何度か報告されている。"@ja,
-        "PHP (PHP: Hypertext Preprocessor) is een scripttaal, die bedoeld is om op webservers dynamische webpagina's te creëren. PHP is in 1994 ontworpen door Rasmus Lerdorf, een senior softwareontwikkelaar bij IBM. Lerdorf gebruikte Perl als inspiratie. Aanvankelijk stonden de letters PHP voor Personal Home Page (de volledige naam was Personal Home Page/Forms Interpreter, PHP/FI). Sinds PHP 3.0 is de betekenis een recursief acroniem geworden: PHP: Hypertext Preprocessor. Deze naam geeft aan waar de taal meestal voor gebruikt wordt: informatie verwerken tot hypertext (meestal HyperText Markup Language (HTML) en Extensible HyperText Markup Language (XHTML))."@nl,
-        "PHP – interpretowany skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym. PHP jest najczęściej stosowany do tworzenia skryptów po stronie serwera WWW, ale może być on również używany do przetwarzania danych z poziomu wiersza poleceń, a nawet do pisania programów pracujących w trybie graficznym (np. za pomocą biblioteki GTK+, używając rozszerzenia PHP-GTK). Implementacja PHP wraz z serwerem WWW Apache oraz serwerem baz danych MySQL określana jest jako platforma AMP (w środowisku Linux – LAMP, w Windows – WAMP)."@pl,
-        "PHP (um acrônimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web. Figura entre as primeiras linguagens passíveis de inserção em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O código é interpretado no lado do servidor pelo módulo PHP, que também gera a página web a ser visualizada no lado do cliente. A linguagem evoluiu, passou a oferecer funcionalidades em linha de comando, e além disso, ganhou características adicionais, que possibilitaram usos adicionais do PHP, não relacionados a web sites. É possível instalar o PHP na maioria dos sistemas operacionais, gratuitamente. Concorrente direto da tecnologia ASP pertencente à Microsoft, o PHP é utilizado em aplicações como o MediaWiki, Facebook, Drupal, Joomla, WordPress, Magento e o Oscommerce. Criado por Rasmus Lerdorf em 1995, o PHP tem a produção de sua implementação principal, referência formal da linguagem, mantida por uma organização chamada The PHP Group. O PHP é software livre, licenciado sob a PHP License, uma licença incompatível com a GNU General Public License (GPL) devido a restrições no uso do termo PHP."@pt .
-
-<http://5th.ch/succotash/#WebDevelopment> a skos:Concept ;
-    rdfs:label "Web-Development"@en ;
-    skos:narrower <http://5th.ch/succotash/#FrontEndDevelopment> .
-
 dbr:JavaScript a dbo:ProgrammingLanguage ;
     rdfs:label "جافا سكريبت"@ar,
         "JavaScript"@de,
@@ -400,6 +400,30 @@ dbr:JavaScript a dbo:ProgrammingLanguage ;
         "JavaScript is een veelgebruikte scripttaal om webpagina's interactief te maken en webapplicaties te ontwikkelen. Het script wordt middels HTML overgebracht in de webbrowser en wordt hierin uitgevoerd. De syntaxis van JavaScript vertoont overeenkomsten met de programmeertaal Java, maar dit is voornamelijk het gevolg van de gemeenschappelijke afkomst van de programmeertaal C. Omdat beide talen het meest zichtbaar zijn op en rond de browser, maar vooral door de naamgeving, worden ze vaak met elkaar verward. De gelijkenis houdt daar echter op, want JavaScript heeft inhoudelijk meer gemeen met functionele programmeertalen, het biedt prototype-gebaseerde overerving en niet, zoals Java en de meeste objectgeoriënteerde talen, klasse-gebaseerde overerving."@nl,
         "JavaScript, JS – skryptowy język programowania, stworzony przez firmę Netscape, najczęściej stosowany na stronach internetowych. Pod koniec lat 90. XX wieku organizacja ECMA wydała na podstawie JavaScriptu standard języka skryptowego o nazwie ECMAScript. Głównym autorem JavaScriptu jest Brendan Eich."@pl,
         "JavaScript é uma linguagem de programação interpretada. Foi originalmente implementada como parte dos navegadores web para que scripts pudessem ser executados do lado do cliente e interagissem com o usuário sem a necessidade deste script passar pelo servidor, controlando o navegador, realizando comunicação assíncrona e alterando o conteúdo do documento exibido. É atualmente a principal linguagem para programação client-side em navegadores web. Começa também a ser bastante utilizada do lado do servidor através de ambientes como o node.js. Foi concebida para ser uma linguagem script com orientação a objetos baseada em protótipos, tipagem fraca e dinâmica e funções de primeira classe. Possui suporte à programação funcional e apresenta recursos como fechamentos e funções de alta ordem comumente indisponíveis em linguagens populares como Java e C++. É baseada em ECMAScript padronizada pela Ecma international nas especificações ECMA-262 e ISO/IEC 16262."@pt .
+
+dbr:PHP a dbo:ProgrammingLanguage ;
+    rdfs:label "بي إتش بي"@ar,
+        "PHP"@de,
+        "PHP"@en,
+        "PHP"@es,
+        "PHP"@fr,
+        "PHP"@it,
+        "PHP: Hypertext Preprocessor"@ja,
+        "PHP"@nl,
+        "PHP"@pl,
+        "PHP"@pt,
+        "PHP"@ru,
+        "PHP"@zh ;
+    dbo:abstract "'بي إتش بي' (PHP: Hypertext Preprocessor، 'الصفحة الرئيسية الشخصية': \"المعالج المسبق للنصوص الفائقة\") هي لغة برمجة نصية صممت أساسا من أجل استخدامها لتطوير وبرمجة تطبيقات الويب. كما يمكن استخدامها لإنتاج برامج قائمة بذاتها وليس لها علاقة بالويب فقط.بي إتش بي لغة مفتوحة المصدر ويطورها فريق من المتطوعين تحت رخصة PHP، تدعم البرمجة كائنية التوجه وتركيبها النحوي يشبه كثيرا التركيب النحوي للغة السي هذا بالإضافة إلى أنها تعمل على أنظمة تشغيل متعددة مثل لينكس وويندوز."@ar,
+        "PHP (rekursives Akronym und Backronym für „PHP: Hypertext Preprocessor“, ursprünglich „Personal Home Page Tools“) ist eine Skriptsprache mit einer an C und Perl angelehnten Syntax, die hauptsächlich zur Erstellung dynamischer Webseiten oder Webanwendungen verwendet wird. PHP wird als freie Software unter der PHP-Lizenz verbreitet. PHP zeichnet sich durch breite Datenbankunterstützung und Internet-Protokolleinbindung sowie die Verfügbarkeit zahlreicher Funktionsbibliotheken aus."@de,
+        "PHP is a server-side scripting language designed for web development but also used as a general-purpose programming language. Originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Group. PHP originally stood for Personal Home Page, but it now stands for the recursive backronym PHP: Hypertext Preprocessor. PHP code may be embedded into HTML code, or it can be used in combination with various web template systems, web content management system and web frameworks. PHP code is usually processed by a PHP interpreter implemented as a module in the web server or as a Common Gateway Interface (CGI) executable. The web server combines the results of the interpreted and executed PHP code, which may be any type of data, including images, with the generated web page. PHP code may also be executed with a command-line interface (CLI) and can be used to implement standalone graphical applications. The standard PHP interpreter, powered by the Zend Engine, is free software released under the PHP License. PHP has been widely ported and can be deployed on most web servers on almost every operating system and platform, free of charge. The PHP language evolved without a written formal specification or standard until 2014, leaving the canonical PHP interpreter as a de facto standard. Since 2014 work has been ongoing to create a formal PHP specification."@en,
+        "PHP es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico. Fue uno de los primeros lenguajes de programación del lado del servidor que se podían incorporar directamente en el documento HTML en lugar de llamar a un archivo externo que procese los datos. El código es interpretado por un servidor web con un módulo de procesador de PHP que genera la página Web resultante. PHP ha evolucionado por lo que ahora incluye también una interfaz de línea de comandos que puede ser usada en aplicaciones gráficas independientes. Puede ser usado en la mayoría de los servidores web al igual que en casi todos los sistemas operativos y plataformas sin ningún costo. PHP se considera uno de los lenguajes más flexibles, potentes y de alto rendimiento conocidos hasta el día de hoy[cita requerida], lo que ha atraído el interés de múltiples sitios con gran demanda de tráfico, como Facebook, para optar por el mismo como tecnología de servidor. Fue creado originalmente por Rasmus Lerdorf en 1995. Actualmente el lenguaje sigue siendo desarrollado con nuevas funciones por el grupo PHP. Este lenguaje forma parte del software libre publicado bajo la licencia PHP, que es incompatible con la Licencia Pública General de GNU debido a las restricciones del uso del término PHP."@es,
+        "PHP: Hypertext Preprocessor, plus connu sous son sigle PHP (acronyme récursif), est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP est un langage impératif orienté objet comme C++. PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook, YouTube, Wikipedia, etc. Il est considéré comme la base de la création des sites Internet dits dynamiques."@fr,
+        "PHP (acronimo ricorsivo di \"PHP: Hypertext Preprocessor\", preprocessore di ipertesti; originariamente acronimo di \"Personal Home Page\") è un linguaggio di scripting interpretato, originariamente concepito per la programmazione di pagine web dinamiche. L'interprete PHP è un software libero distribuito sotto la PHP License. Attualmente è principalmente utilizzato per sviluppare applicazioni web lato server, ma può essere usato anche per scrivere script a riga di comando o applicazioni stand-alone con interfaccia grafica. Un esempio di software scritto in PHP è MediaWiki, su cui si basano progetti wiki come Wikipedia e Wikizionario."@it,
+        "PHP: Hypertext Preprocessor（ピー・エイチ・ピー ハイパーテキスト プリプロセッサー）とは、動的にHTMLデータを生成することによって、動的なウェブページを実現することを主な目的としたプログラミング言語、およびその言語処理系である。一般的には PHP と省略して用いられており、これは「個人的なホームページ」を意味する英語の \"Personal Home Page\" に由来する。 PHPはサーバーサイド・スクリプト言語として利用されており、Webサーバ上で動作し、Webサーバ上でPHPスクリプトの文書が要求されるたびに、そのPHPスクリプトが実行され、結果をウェブブラウザに対して送信する。平易な文法のため初心者でも習得しやすく、また大規模な開発にも多く用いられている。多くのフレームワークやライブラリが存在し、開発の手助けとなっている。 数多くのオープンソースウェブアプリケーションに利用されている一方、しばしば脆弱性の報告がなされ、過去に深刻なセキュリティホールが何度か報告されている。"@ja,
+        "PHP (PHP: Hypertext Preprocessor) is een scripttaal, die bedoeld is om op webservers dynamische webpagina's te creëren. PHP is in 1994 ontworpen door Rasmus Lerdorf, een senior softwareontwikkelaar bij IBM. Lerdorf gebruikte Perl als inspiratie. Aanvankelijk stonden de letters PHP voor Personal Home Page (de volledige naam was Personal Home Page/Forms Interpreter, PHP/FI). Sinds PHP 3.0 is de betekenis een recursief acroniem geworden: PHP: Hypertext Preprocessor. Deze naam geeft aan waar de taal meestal voor gebruikt wordt: informatie verwerken tot hypertext (meestal HyperText Markup Language (HTML) en Extensible HyperText Markup Language (XHTML))."@nl,
+        "PHP – interpretowany skryptowy język programowania zaprojektowany do generowania stron internetowych i budowania aplikacji webowych w czasie rzeczywistym. PHP jest najczęściej stosowany do tworzenia skryptów po stronie serwera WWW, ale może być on również używany do przetwarzania danych z poziomu wiersza poleceń, a nawet do pisania programów pracujących w trybie graficznym (np. za pomocą biblioteki GTK+, używając rozszerzenia PHP-GTK). Implementacja PHP wraz z serwerem WWW Apache oraz serwerem baz danych MySQL określana jest jako platforma AMP (w środowisku Linux – LAMP, w Windows – WAMP)."@pl,
+        "PHP (um acrônimo recursivo para \"PHP: Hypertext Preprocessor\", originalmente Personal Home Page) é uma linguagem interpretada livre, usada originalmente apenas para o desenvolvimento de aplicações presentes e atuantes no lado do servidor, capazes de gerar conteúdo dinâmico na World Wide Web. Figura entre as primeiras linguagens passíveis de inserção em documentos HTML, dispensando em muitos casos o uso de arquivos externos para eventuais processamentos de dados. O código é interpretado no lado do servidor pelo módulo PHP, que também gera a página web a ser visualizada no lado do cliente. A linguagem evoluiu, passou a oferecer funcionalidades em linha de comando, e além disso, ganhou características adicionais, que possibilitaram usos adicionais do PHP, não relacionados a web sites. É possível instalar o PHP na maioria dos sistemas operacionais, gratuitamente. Concorrente direto da tecnologia ASP pertencente à Microsoft, o PHP é utilizado em aplicações como o MediaWiki, Facebook, Drupal, Joomla, WordPress, Magento e o Oscommerce. Criado por Rasmus Lerdorf em 1995, o PHP tem a produção de sua implementação principal, referência formal da linguagem, mantida por uma organização chamada The PHP Group. O PHP é software livre, licenciado sob a PHP License, uma licença incompatível com a GNU General Public License (GPL) devido a restrições no uso do termo PHP."@pt .
 
 <http://dbpedia.org/resource/Python_(programming_language)> a dbo:ProgrammingLanguage ;
     rdfs:label "بايثون"@ar,
@@ -427,6 +451,10 @@ dbr:JavaScript a dbo:ProgrammingLanguage ;
 
 <http://5th.ch/succotash/#FrontEndDevelopment> a skos:Concept ;
     rdfs:label "Frontend Development"@en .
+
+<http://5th.ch/succotash/#WebDevelopment> a skos:Concept ;
+    rdfs:label "Web-Development"@en ;
+    skos:narrower <http://5th.ch/succotash/#FrontEndDevelopment> .
 
 dbr:Arduino rdfs:label "آردوينو"@ar,
         "Arduino (Plattform)"@de,

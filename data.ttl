@@ -110,12 +110,25 @@
   :programming-language dbr:C_\(programming_language\) ;
   skos:related <#IoT>, <#Electronics> .
 
+<#deHumqtt> a :Project ;
+  dbo:computingPlatform dbr:Arduino ;
+  :programming-language dbr:C_\(programming_language\) ;
+  skos:related <#IoT>, <#Electronics> .
+
 <#holdEm> a :Project ;
   :programming-language dbr:Python_\(programming_language\) ;
   skos:related <#DataAnalytics> .
 
 <#typer> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript,  dbr:PHP ;
+  skos:related <#WebDevelopment> .
+
+<#linkGone> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:PHP ;
+  skos:related <#WebDevelopment> .
+
+<#302-Instead> a :Project ;
+  :programming-language dbr:PHP ;
   skos:related <#WebDevelopment> .
 
 <#daily> a :Project ;
