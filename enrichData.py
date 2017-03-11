@@ -19,7 +19,7 @@ ReposToFetch = graph.query(
        WHERE { ?project a :Project . }""")
 
 
-githubReposUrl = "https://api.github.com/users/koma5/repos"
+githubReposUrl = "https://api.github.com/users/koma5/repos?per_page=999"
 githubRepos = requests.get(githubReposUrl).json()
 
 
