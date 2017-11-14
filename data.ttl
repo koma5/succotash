@@ -141,6 +141,9 @@
   skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb>, <#LinkedData> .
 
 
+<#dinacon17SparqlChallenge> a :Project ;
+  :programming-language dbr:JavaScript, dbr:Resource_Description_Framework;
+  skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb>, <#LinkedData> .
 
 <#IoT> rdfs:label "Internet of Things"@en ; a skos:Concept ; skos:narrower <#Electronics> .
 <#FrontEndDevelopment> rdfs:label "Frontend Development"@en; a skos:Concept .
