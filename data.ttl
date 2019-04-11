@@ -54,8 +54,12 @@
 # codePen pens below
 
 <#ZBPVRY> a :Project;
-  :programming-language dbr:Cascading_Style_Sheets ;
-  skos:related <#FrontEndDevelopment> .
+    :description "CSS rebuild of the LED main display / Generalanzeiger S-Bahn in Zürich HB" ;
+    :homepage <https://codepen.io/koma5/pen/ZBPVRY> ;
+    :name "Zürich HB – Generalanzeiger S-Bahn" ;
+    :programming-language dbr:Cascading_Style_Sheets ;
+    skos:related <#FrontEndDevelopment> ;
+    foaf:maker <http://marcoko.ch/#i> .
 
 #github projects below
 
@@ -70,6 +74,7 @@
 
 <#matt> a :Project ;
   :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
+  dbo:computingPlatform dbr:D3.js ;
   skos:related <#IoT>, <#DataVisualization>, <#FrontEndDevelopment> .
 
 <#bigShowerBrother> a :Project ;
@@ -140,11 +145,19 @@
   dbr:RDFa, dbr:Resource_Description_Framework, dbr:Turtle_\(syntax\) ;
   skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb>, <#LinkedData> .
 
-
 <#dinacon17SparqlChallenge> a :Project ;
   :programming-language dbr:JavaScript, dbr:Resource_Description_Framework;
   skos:related <#WebDevelopment>, <#DataVisualization>, <#FrontEndDevelopment>, <#SemanticWeb>, <#LinkedData> .
 
+<#rancidShoeBomb> a :Project ;
+    :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
+    dbo:computingPlatform dbr:Docker_\(software\), dbr:Vue.js ;
+    skos:related <#WebDevelopment>, <#FrontEndDevelopment> .
+
+<#generativeDesignSteps> a :Project ;
+    :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
+    dbo:computingPlatform dbr:D3.js .
+    
 <#IoT> rdfs:label "Internet of Things"@en ; a skos:Concept ; skos:narrower <#Electronics> .
 <#FrontEndDevelopment> rdfs:label "Frontend Development"@en; a skos:Concept .
 <#DataVisualization> rdfs:label "Data Visualization"@en; a skos:Concept .
