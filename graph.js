@@ -461,7 +461,7 @@ function buildGraph() {
   });
 }
 
-var localDateFile = window.location.origin + window.location.pathname.replace('index.html', '') + "/graph.ttl"
+var localDateFile = window.location.origin + window.location.pathname.replace('index.html', '') + "/graph.rdf"
 
 fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
     if (ok) {
