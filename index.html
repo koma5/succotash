@@ -10,8 +10,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
   <script src="graph.js"></script>
   <div id="overlay">
-      hold your horses!
-      <a onclick="document.getElementsByTagName('svg')[0].style.filter = 'unset'">got it!</a>
+    <script>
+            var gotIt = function() {
+            document.getElementsByTagName('svg')[0].style.filter = 'unset'
+            document.getElementById('overlay').style.display = "none";
+        }
+    </script>
+    hold your horses!
+      <a onclick="gotIt()">got it!</a>
   </div>
+  </body>
+</html>
 </body>
 </html>
