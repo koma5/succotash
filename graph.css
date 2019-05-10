@@ -104,3 +104,20 @@ body {
 #explanation .dbpedia {
   background: rgba( 62,  0,  0,1);
 }
+
+svg {
+    filter: blur(6px);
+}
+
+
+#overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    opacity: 0.5;
+    background-color: black;
+    z-index: 1 ;
+    filter: unset;
+}
