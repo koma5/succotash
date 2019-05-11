@@ -10,12 +10,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
   <script src="graph.js"></script>
   <div id="overlay">
-    <script>
-            var gotIt = function() {
-            document.getElementsByTagName('svg')[0].style.filter = 'unset'
-            document.getElementById('overlay').style.display = "none";
-        }
-    </script>
     <p>Hold on! A few words before you can unblur the pure awsomeness.</p>
     <p>A tabular version of my portfolio of projects was to lame. So i built a graph.</p>
 
@@ -30,7 +24,7 @@
     <p>For more information about this succotash thing. Click <a href="#succotash" alt="anchor #succotash">[#succotash]</a> and see the node representing itself highlighted in the back.</p>
 
 
-    <p><a onclick="gotIt()">[got it!]</a></p>
+    <p><a onclick="gotItUnblur()">[got it, unblur already!]</a></p>
   </div>
   </body>
 </html>

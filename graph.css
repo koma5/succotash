@@ -16,6 +16,7 @@ body {
   background-color: rgba(0, 0, 0, .5);
   max-width: 33%;
   display: table;
+  filter: blur(2px);
 }
 
 .info h1 {

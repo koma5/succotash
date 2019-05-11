@@ -485,3 +485,9 @@ fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
 
     }
 });
+
+var gotItUnblur = function() {
+    document.getElementsByTagName('svg')[0].style.filter = 'unset'
+    document.getElementsByClassName('info')[0].style.filter = 'unset'
+    document.getElementById('overlay').style.display = "none";
+}
