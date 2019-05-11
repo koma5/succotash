@@ -452,14 +452,23 @@ function buildGraph() {
   resize();
   d3.select(window).on("resize", resize);
 
+  focusFromHashInUrl();
+
+}
+
+function focusFromHashInUrl() {
   //focus node by requested URL
   d3.selectAll('.node').each(function(d) {
     if(window.location.hash && d.id.includes(window.location.hash)) {
+      unfocusNodes();
       clickedNode = d;
       focusNodes(d);
     }
   });
 }
+
+
+window.onhashchange = function() { focusFromHashInUrl(); }
 
 var localDateFile = window.location.origin + window.location.pathname.replace('index.html', '') + "/graph.rdf"
 

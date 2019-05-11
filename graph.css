@@ -65,50 +65,36 @@ body {
 }
 
 .node[typeof="http://www.w3.org/2004/02/skos/core#Concept"] {
-  fill: rgba(  7,112,112,1);
+  fill: rgba(  7,112,112, 1);
 }
 
 .node[resource="http://marcoko.ch/#i"] {
-  fill: rgba(186, 11, 11,1);
+  fill: gray;
 }
 
 .node[resource^="http://dbpedia.org/resource/"] {
-  fill: rgba( 62,  0,  0,1);
+  fill: rgb(249, 84, 29, 1);
 }
 
-#explanation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 15px 15px;
-  color: #eee;
-  font-size: 13px;
-  background-color: rgba(0, 0, 0, .5);
-  max-width: 33%;
-  display: table;
-}
-#explanation * {
-  border-radius:5px;
-  padding: 5px;
-  margin: 5px;
-}
-
-#explanation .doap {
+.doap {
   background: rgba(119,174, 10,1);
 }
 
-#explanation .skos {
+.skos {
   background: rgba(  7,112,112,1);
 }
 
-#explanation .dbpedia {
-  background: rgba( 62,  0,  0,1);
+.dbpedia {
+  background: rgb(249, 84, 29, 1);
+}
+
+.me {
+    background-color: darkgray;
 }
 
 svg {
     filter: blur(6px);
 }
-
 
 #overlay {
     position: fixed;
@@ -116,8 +102,23 @@ svg {
     width: 100%;
     top:0;
     left:0;
-    opacity: 0.5;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1 ;
-    filter: unset;
+    padding: 30px;
 }
+
+#overlay p, #overlay li, #overlay a{
+    color: white;
+    font-weight: normal;
+    text-align: left;
+    list-style-type: none;
+    font-size: 25px;
+}
+
+.dot {
+  height:25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
