@@ -355,7 +355,10 @@ function showInfo(node) {
   Mustache.parse(infoTemplate);
   html = Mustache.render(infoTemplate, infoData);
 
-  info.attr('style', null)
+  //if svg is still blured, blur info box aswell
+  var style = (document.getElementsByTagName('svg')[0].style.filter.search('blur') >= 0 ? 'filter: blur(4px)': null)
+
+  info.attr('style', style)
   .html(html);
 }
 
@@ -453,6 +456,9 @@ function buildGraph() {
   d3.select(window).on("resize", resize);
 
   focusFromHashInUrl();
+  document.getElementsByTagName('svg')[0].style.filter = 'blur(6px)';
+  document.getElementsByClassName('info')[0].style.filter = 'blur(4px)';
+
 
 }
 
