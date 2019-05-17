@@ -282,7 +282,7 @@
     rdfs:label "object oriented programming"@en .
 
 <http://5th.ch/succotash/#succotash> a :Project ;
-    :description "fancy, static, multi language, linked portfolio site generated from rdf data with all my projects."@en ;
+    :description "This fancy website serves as my personal portiolio and puts on display the things I made. Because a tabular version was to lame I built a graph with colorful circles."@en ;
     :homepage <http://5th.ch/succotash/#succotash> ;
     :name "succotash" ;
     :programming-language dbr:Cascading_Style_Sheets,
