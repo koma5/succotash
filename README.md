@@ -1,7 +1,7 @@
 # succotash
 This fancy website serves as my personal portfolio and puts on display the things I made. Because a tabular version was to lame I built a graph with colorful circles.
 
-The graph is made from linked data which is accsesible as [turtle] or [rdf-xml]. JavaScript renders the graph on page-load from these files.
+The graph is made from linked data which is accessible as [turtle] or [rdf-xml]. JavaScript renders the graph on page-load from these files.
 
 The selection of the circles is bound to the #anchor of the page.
 
