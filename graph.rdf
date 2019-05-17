@@ -567,7 +567,7 @@
     <programming-language rdf:resource="http://dbpedia.org/resource/Cascading_Style_Sheets"/>
     <programming-language rdf:resource="http://dbpedia.org/resource/JavaScript"/>
     <foaf:maker rdf:resource="http://marcoko.ch/#i"/>
-    <description xml:lang="en">This fancy website serves as my personal portiolio and puts on display the things I made. Because a tabular version was to lame I built a graph with colorful circles.</description>
+    <description xml:lang="en">This fancy website serves as my personal portfolio and puts on display the things I made. Because a tabular version was to lame I built a graph with colorful circles.</description>
   </Project>
   <Project rdf:about="http://5th.ch/succotash/#mqttLight">
     <programming-language rdf:resource="http://dbpedia.org/resource/C_(programming_language)"/>
