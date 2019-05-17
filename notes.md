@@ -35,7 +35,9 @@
 - [x] .htaccess for html/turtle delivery
 - [x] target blank links
 - [x] https marcoko.ch fetch xhr
-
+- [x] fake mimetype of to display served rdf data in forefox and chrome (like marcoko.ch)
+- [x] prefetch gravatar
+- [x] get overlay back after unblur
 
 
 # bugs:
