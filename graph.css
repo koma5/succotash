@@ -61,7 +61,7 @@ body {
 }
 
 .node[typeof="http://usefulinc.com/ns/doap#Project"] {
-  fill: rgba(119,174, 10,1);
+  fill: rgb(249, 84, 29, 1);
 }
 
 .node[typeof="http://www.w3.org/2004/02/skos/core#Concept"] {
@@ -73,10 +73,10 @@ body {
 }
 
 .node[resource^="http://dbpedia.org/resource/"] {
-  fill: rgb(249, 84, 29, 1);
+  fill: rgba(119,174, 10,1);
 }
 
-.doap {
+.dbpedia {
   background: rgba(119,174, 10,1);
 }
 
@@ -84,7 +84,7 @@ body {
   background: rgba(  7,112,112,1);
 }
 
-.dbpedia {
+.doap {
   background: rgb(249, 84, 29, 1);
 }
 
@@ -98,7 +98,7 @@ body {
     width: 100%;
     top:0;
     left:0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1 ;
     padding: 30px;
 }
@@ -109,6 +109,15 @@ body {
     text-align: left;
     list-style-type: none;
     font-size: 25px;
+    text-decoration: none;
+}
+
+#overlay a {
+    cursor: pointer;
+}
+
+#overlay a:hover {
+    text-decoration: underline;
 }
 
 .dot {
