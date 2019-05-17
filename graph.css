@@ -44,7 +44,9 @@ body {
   stroke-width: 0.75px;
 }
 
-.node {}
+.node {
+    cursor: move;
+}
 
 .link.faint {
   stroke-opacity: 0.1;
