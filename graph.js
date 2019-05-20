@@ -457,8 +457,13 @@ function buildGraph() {
   d3.select(window).on("resize", resize);
 
   focusFromHashInUrl();
-  document.getElementsByTagName('svg')[0].style.filter = 'blur(6px)';
-  document.getElementsByClassName('info')[0].style.filter = 'blur(4px)';
+  if (window.location.search === "?overlay=false")
+  { gotItUnblur(); }
+    else {
+        document.getElementById('overlay').style.display = null;
+        document.getElementsByTagName('svg')[0].style.filter = 'blur(6px)';
+        document.getElementsByClassName('info')[0].style.filter = 'blur(4px)';
+  }
 
 
 }
