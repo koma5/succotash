@@ -482,7 +482,7 @@ function focusFromHashInUrl() {
 
 window.onhashchange = function() { focusFromHashInUrl(); }
 
-var localDateFile = window.location.origin + window.location.pathname.replace('index.html', '') + "/graph.rdf"
+var localDateFile = window.location.origin + window.location.pathname.replace('index.html', '') + "/graph_cached.nt"
 
 fetcher.nowOrWhenFetched(localDateFile, function(ok, body, xhr) {
     if (ok) {
