@@ -1,4 +1,4 @@
-curl icedbroccoli.5th.ch/broccoli/query -X POST -H 'accept: application/n-triples' --data-urlencode query@- <<EOF > graph_cached.nt
+curl icedbroccoli.5th.ch/broccoli/query -X POST -H 'accept: application/n-triples' --data-urlencode query@- <<EOF
 PREFIX doap: <http://usefulinc.com/ns/doap#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
