@@ -4,7 +4,7 @@ IndexOptions -FancyIndexing
 
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^5th.ch$
-RewriteCond %{HTTP} !=on
+RewriteCond %{HTTPS} =on
 RewriteRule ^(.*)$ http://5th.ch/succotash/$1 [R=301,L]
 
 
@@ -28,11 +28,11 @@ RewriteBase /succotash/
 
 # Rewrite rule to serve RDF/XML content from the vocabulary URI if requested
 RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
-RewriteRule ^$ graph.rdf [R=303]
+RewriteRule ^$ http://icedbroccoli.5th.ch/broccoli [R=303]
 
 # Rewrite rule to serve RDF/XML content from the vocabulary URI if requested
 RewriteCond %{HTTP_ACCEPT} text/turtle
-RewriteRule ^$ graph.ttl [R=303]
+RewriteRule ^$ http://icedbroccoli.5th.ch/broccoli [R=303]
 
 # firefox display xml by default but downloads turtle
 #RewriteCond %{HTTP_USER_AGENT} Firefox/.*
