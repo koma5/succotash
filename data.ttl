@@ -154,6 +154,21 @@
     dbo:computingPlatform dbr:Docker_\(software\), dbr:Vue.js ;
     skos:related <#WebDevelopment>, <#FrontEndDevelopment> .
 
+<#ritt> a :Project ;
+  :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
+  dbo:computingPlatform dbr:Docker_\(software\) ;
+  skos:related <#WebDevelopment>, <#FrontEndDevelopment>, <#DataVisualization> .
+
+<#waylett> a :Project ;
+  :programming-language dbr:JavaScript ;
+  dbo:computingPlatform dbr:Docker_\(software\) ;
+  skos:related <#IoT> .
+
+<#icedBroccoli> a :Project ;
+  :programming-language dbr:JavaScript, dbr:Resource_Description_Framework;
+  dbo:computingPlatform dbr:Docker_\(software\) ;
+  skos:related <#SemanticWeb>, <#LinkedData> .
+
 <#generativeDesignSteps> a :Project ;
     :programming-language dbr:Cascading_Style_Sheets, dbr:JavaScript ;
     dbo:computingPlatform dbr:D3.js .
