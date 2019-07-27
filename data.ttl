@@ -164,7 +164,7 @@
   dbo:computingPlatform dbr:Docker_\(software\) ;
   skos:related <#IoT> .
 
-<#icedBroccoli> a :Project ;
+<#icedbroccoli> a :Project ;
   :programming-language dbr:JavaScript, dbr:Resource_Description_Framework;
   dbo:computingPlatform dbr:Docker_\(software\) ;
   skos:related <#SemanticWeb>, <#LinkedData> .
